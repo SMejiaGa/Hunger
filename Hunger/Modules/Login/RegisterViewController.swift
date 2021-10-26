@@ -38,6 +38,9 @@ class RegisterViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     // MARK: - Private methods
     private func performRegister(){
         if FormsUtils.isValidEmail(registeredEmailTextField.text ?? "") && passwordTextField.text?.count ?? 0 > 3{

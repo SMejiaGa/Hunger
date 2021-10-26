@@ -31,6 +31,12 @@ class ListViewController: UIViewController {
         //setupDescriptionText()
     }
     
+    // MARK: - IBActions
+    
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     // MARK: - Private methods
     private func fetchData() {
         bussines.fetchMessages(onFinished: {

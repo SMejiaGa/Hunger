@@ -9,11 +9,11 @@ import UIKit
 
 class RecoveryViewController: UIViewController {
     
-    //MARK: -IBoutlets
+    //MARK: - IBoutlets
     @IBOutlet private weak var recoveryTextField: UITextField!
     @IBOutlet weak var facebookLoginText: UILabel!
     
-    //MARK: -Properties
+    //MARK: - Properties
     private let facebookHighlightText = "FACEBOOK"
     
     // MARK: - ViewController life cycle
@@ -23,7 +23,7 @@ class RecoveryViewController: UIViewController {
         setupGestureToHelpText()
     }
     
-    //MARK: -IBActions
+    //MARK: - IBActions
     @IBAction private func submitButton() {
         checkEmail()
     }
@@ -32,7 +32,11 @@ class RecoveryViewController: UIViewController {
         showMessage(alertMessage: Lang.Main.notAvailableError)
     }
     
-    //MARK: Private methods
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    //MARK: - Private methods
     private func checkEmail(){
         if recoveryTextField.text != nil{
             showMessage(alertMessage: Lang.Recovery.alertMessage)
