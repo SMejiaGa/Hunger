@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Regular.ttf">
+            <string>SourceSansPro-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--List View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="ListViewController" customModule="Hunger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6n3-gD-zSu">
+                                <rect key="frame" x="20" y="177" width="374" height="654"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <activityIndicatorView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" id="zD6-Ln-dVJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkV-8U-rzl">
+                                <rect key="frame" x="10" y="64" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fkV-8U-rzl" secondAttribute="height" multiplier="1:1" id="c1Q-Y9-gzg"/>
+                                    <constraint firstAttribute="width" constant="35" id="qI7-E0-lKA"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="BackButton"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTAURANTES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9X-Ry-gJz">
+                                <rect key="frame" x="140.5" y="69" width="133" height="25.5"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="20"/>
+                                <color key="textColor" red="0.1176470588" green="0.12549019610000001" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encuentra los lugares con buena comida a la medida del gusto y precio justo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhT-wX-ref">
+                                <rect key="frame" x="41" y="118" width="332" height="48"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6n3-gD-zSu" secondAttribute="trailing" constant="20" id="678-27-thm"/>
+                            <constraint firstItem="mhT-wX-ref" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="41" id="7fp-zm-5AM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mhT-wX-ref" secondAttribute="trailing" constant="41" id="8or-ve-SEw"/>
+                            <constraint firstItem="6n3-gD-zSu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="FO3-vH-SYo"/>
+                            <constraint firstItem="mhT-wX-ref" firstAttribute="top" secondItem="G9X-Ry-gJz" secondAttribute="bottom" constant="23.5" id="Fsr-cH-LgF"/>
+                            <constraint firstItem="G9X-Ry-gJz" firstAttribute="centerY" secondItem="fkV-8U-rzl" secondAttribute="centerY" id="KDa-hN-Z8V"/>
+                            <constraint firstItem="6n3-gD-zSu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="133" id="XVx-Jm-WmZ"/>
+                            <constraint firstItem="fkV-8U-rzl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="dWz-Yq-CIk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="6n3-gD-zSu" secondAttribute="bottom" constant="31" id="dcq-aB-njP"/>
+                            <constraint firstItem="G9X-Ry-gJz" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="nwe-on-HKI"/>
+                            <constraint firstItem="fkV-8U-rzl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="sXl-6Y-QQu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionText" destination="mhT-wX-ref" id="2FY-EN-cgO"/>
+                        <outlet property="loader" destination="zD6-Ln-dVJ" id="7hp-Jj-ovB"/>
+                        <outlet property="messagesTable" destination="6n3-gD-zSu" id="A2q-DI-Pcn"/>
+                        <segue destination="5kB-Vi-aSK" kind="show" identifier="ShowNotFound" id="8mg-f9-d48"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-59.420289855072468" y="99.776785714285708"/>
+        </scene>
+        <!--Not Found View Controller-->
+        <scene sceneID="XBh-Rt-xOi">
+            <objects>
+                <viewController id="5kB-Vi-aSK" customClass="NotFoundViewController" customModule="Hunger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7bC-Io-tc5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1w-qc-g34">
+                                <rect key="frame" x="133" y="648" width="148" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.11764705882352941" green="0.12549019607843137" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Intentalo nuevamente"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="khb-BI-9gs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SHd-sn-TPM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gaj-N5-sQQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888" y="100"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BackButton" width="49" height="49"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

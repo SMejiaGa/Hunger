@@ -1,0 +1,119 @@
+//
+//  LoginViewController.swift
+//  Hunger
+//
+//  Created by Sebastian Mejia on 2/10/21.
+//
+
+import UIKit
+
+enum AppRoutes {
+    enum Login: String {
+        case help = "showHelp"
+        case register = "showRegister"
+        case list = "ShowDetailList"
+    }
+}
+/// Esto no es una buena practica deberia utilizar un navigationController, pero como usos segues, lo manejo asi
+class Router {
+    private weak var viewController: UIViewController?
+    
+    init(viewController: UIViewController) {
+        self.viewController = viewController
+    }
+    
+    func route(destination: AppRoutes.Login) {
+        viewController?.performSegue(withIdentifier: destination.rawValue, sender: nil)
+    }
+}
+
+class LoginViewController: UIViewController {
+    // MARK: - UI Referencies
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var backButton: UIButton!
+    @IBOutlet private weak var helpText: UILabel!
+    @IBOutlet private weak var registerText: UILabel!
+    
+    // MARK: - Properties
+    private let helpSegueId = "showHelp"
+    private let registerSegueId = "showRegister"
+    private let detailSegueId =  "ShowDetailList"
+    private let registerHighlightText =  "QUIERO REGISTRARME"
+    private let helpHighlightText =  "AYUDA"
+    private var router: Router?
+    
+    // MARK: - ViewController life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupHelpText()
+        //setupGestureToHelpText()
+        setupRegisterText()
+        //setupGestureToRegisterText()
+        setupRouter()
+    }
+    
+    // MARK: - IBActions
+    @IBAction private func loginButton() {
+        performLogin()
+    }
+    
+    @objc private func helpButton() {
+        performSegue(withIdentifier: helpSegueId, sender: nil)
+    }
+    
+    @objc private func registerButton() {
+        router?.route(destination: .register)
+    }
+    
+    @IBAction private func backAction() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - Private methods
+    private func performLogin() {
+        if FormsUtils.isValidEmail(emailTextField.text ?? "") && passwordTextField != nil {
+            performSegue(withIdentifier: detailSegueId, sender: nil)
+        } else {
+            showMessage(alertMessage: Lang.Login.invalidEmailMessage)
+        }
+    }
+    
+    private func setupRouter() {
+        router = Router(viewController: self)
+    }
+    
+    private func setupHelpText() {
+        TextUtils.highlightTextInLabel(
+            textToSetup: helpText,
+            textToHighlight: helpHighlightText,
+            color: .green,
+            font: .boldDefaulSize
+        )
+    }
+    
+    private func setupGestureToHelpText() {
+        TextUtils.setupTapGesture(
+            target: self,
+            textToSetup: helpText,
+            onTapAction: #selector(helpButton)
+        )
+    }
+    
+    private func setupRegisterText() {
+        TextUtils.highlightTextInLabel(
+            textToSetup: registerText,
+            textToHighlight: registerHighlightText,
+            color: .blue,
+            font: .boldDefaulSize
+        )
+    }
+    
+    private func setupGestureToRegisterText() {
+        TextUtils.setupTapGesture(
+            target: self,
+            textToSetup: registerText,
+            onTapAction: #selector(registerButton)
+        )
+    }
+}

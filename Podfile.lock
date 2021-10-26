@@ -1,0 +1,16 @@
+PODS:
+  - Dodo (13.0.0)
+
+DEPENDENCIES:
+  - Dodo (~> 13.0)
+
+SPEC REPOS:
+  trunk:
+    - Dodo
+
+SPEC CHECKSUMS:
+  Dodo: e13a732c6f95b48fbf7001d483c0f4ee967a78dd
+
+PODFILE CHECKSUM: 4cf4794a507d803f8cb08310ed4d2b6080b87165
+
+COCOAPODS: 1.11.2
