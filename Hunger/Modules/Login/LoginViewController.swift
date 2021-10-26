@@ -46,10 +46,10 @@ class LoginViewController: UIViewController {
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupHelpText()
+        //setupHelpText()
         //setupGestureToHelpText()
-        setupRegisterText()
-        //setupGestureToRegisterText()
+       // setupRegisterText()
+        setupGestureToRegisterText()
         setupRouter()
     }
     
@@ -58,11 +58,11 @@ class LoginViewController: UIViewController {
         performLogin()
     }
     
-    @objc private func helpButton() {
+    @objc private func helpButton(_ gesture: UITapGestureRecognizer) {
         performSegue(withIdentifier: helpSegueId, sender: nil)
     }
     
-    @objc private func registerButton() {
+    @objc func registerButtonAction(_ gesture: UITapGestureRecognizer) {
         router?.route(destination: .register)
     }
     
@@ -113,7 +113,7 @@ class LoginViewController: UIViewController {
         TextUtils.setupTapGesture(
             target: self,
             textToSetup: registerText,
-            onTapAction: #selector(registerButton)
+            onTapAction: #selector(registerButtonAction)
         )
     }
 }

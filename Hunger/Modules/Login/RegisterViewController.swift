@@ -25,7 +25,7 @@ class RegisterViewController: UIViewController {
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupRegisterText()
+        //setupRegisterText()
         setupGestureToRegisterText()
     }
     

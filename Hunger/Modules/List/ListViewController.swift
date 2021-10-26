@@ -9,7 +9,7 @@ import UIKit
 
 class ListViewController: UIViewController {
     
-    // MARK: -Properties
+    // MARK: - Properties
     private let customCellView = UINib(nibName: "CustomTableViewCell",
                                        bundle: nil)
     private var bussines = ListBussines()
@@ -18,12 +18,12 @@ class ListViewController: UIViewController {
     private let descriptionToHighlightA = "buena comida"
     private let descriptionToHighlightB = "precio justo"
     
-    // MARK: -IBOutlets
+    // MARK: - IBOutlets
     @IBOutlet weak var messagesTable: UITableView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
     @IBOutlet weak var descriptionText: UILabel!
     
-    //MARK -ViewController life cycle
+    // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -31,7 +31,7 @@ class ListViewController: UIViewController {
         //setupDescriptionText()
     }
     
-    // MARK: -Private methods
+    // MARK: - Private methods
     private func fetchData() {
         bussines.fetchMessages(onFinished: {
             DispatchQueue.main.async {
