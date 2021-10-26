@@ -37,7 +37,6 @@
 		0BA602B82723C6970041F3C6 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA602B72723C6970041F3C6 /* AppFont.swift */; };
 		0BA602BE27248D130041F3C6 /* Source_Code_Pro in Resources */ = {isa = PBXBuildFile; fileRef = 0BA602BD27248D130041F3C6 /* Source_Code_Pro */; };
 		0BB820E52707E96400CE720D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB820E42707E96400CE720D /* AppDelegate.swift */; };
-		0BB820E72707E96400CE720D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB820E62707E96400CE720D /* SceneDelegate.swift */; };
 		0BB820EE2707E96500CE720D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB820ED2707E96500CE720D /* Assets.xcassets */; };
 		0BB820F12707E96500CE720D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB820EF2707E96500CE720D /* LaunchScreen.storyboard */; };
 		0BE591E627082C3900E9BF32 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591E527082C3900E9BF32 /* LoginViewController.swift */; };
@@ -86,7 +85,6 @@
 		0BA602BD27248D130041F3C6 /* Source_Code_Pro */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Source_Code_Pro; sourceTree = "<group>"; };
 		0BB820E12707E96400CE720D /* Hunger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hunger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB820E42707E96400CE720D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0BB820E62707E96400CE720D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0BB820ED2707E96500CE720D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BB820F02707E96500CE720D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BB820F22707E96500CE720D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				0BB820E42707E96400CE720D /* AppDelegate.swift */,
-				0BB820E62707E96400CE720D /* SceneDelegate.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -360,7 +357,7 @@
 			);
 			mainGroup = 0BB820D82707E96400CE720D;
 			packageReferences = (
-				0BA6028A2720C2840041F3C6 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
+				0BA6028A2720C2840041F3C6 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 0BB820E22707E96400CE720D /* Products */;
 			projectDirPath = "";
@@ -462,7 +459,6 @@
 				0BA60284271E7AEE0041F3C6 /* Lang.swift in Sources */,
 				0BA602752712520A0041F3C6 /* Message.swift in Sources */,
 				0BB820E52707E96400CE720D /* AppDelegate.swift in Sources */,
-				0BB820E72707E96400CE720D /* SceneDelegate.swift in Sources */,
 				0BA6028F27211BCE0041F3C6 /* RoundTextField.swift in Sources */,
 				0BA60289271F79260041F3C6 /* ListBussines.swift in Sources */,
 				0BE591F327095BD900E9BF32 /* Webservice.swift in Sources */,
@@ -614,6 +610,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7VFT2XCBF2;
 				INFOPLIST_FILE = Hunger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -621,7 +618,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = monthDev.Hunger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -634,6 +631,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7VFT2XCBF2;
 				INFOPLIST_FILE = Hunger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -641,7 +639,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = monthDev.Hunger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -669,7 +667,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0BA6028A2720C2840041F3C6 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		0BA6028A2720C2840041F3C6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -682,7 +680,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		0BA6028B2720C2840041F3C6 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0BA6028A2720C2840041F3C6 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = 0BA6028A2720C2840041F3C6 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
