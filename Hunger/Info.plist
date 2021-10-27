@@ -48,6 +48,10 @@
 		<string>SourceCodePro-Regular.ttf</string>
 		<string>SourceCodePro-SemiBold.ttf</string>
 		<string>SourceCodePro-SemiBoldItalic.ttf</string>
+        <string>PTSerif-Italic.ttf</string>
+        <string>PTSerif-BoldItalic.ttf</string>
+        <string>PTSerif-Bold.ttf</string>
+        <string>PTSerif-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>

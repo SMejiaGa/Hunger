@@ -11,6 +11,7 @@ import UIKit
 enum AppFont {
     case bold(size: CGFloat)
     case source(size: CGFloat)
+    case serif(size: CGFloat)
     
     /// Default size = 17
     case boldDefaulSize
@@ -18,6 +19,7 @@ enum AppFont {
     var defaultSize: CGFloat { 17 }
     var boldFontName: String { "SourceSansPro-Bold" }
     var sourceFontName: String { "SourceCodePro" }
+    var serifFontName: String { "PTSerif-Italic" }
     
     var value: UIFont? {
         switch self {
@@ -27,6 +29,8 @@ enum AppFont {
             return UIFont(name: boldFontName, size: defaultSize)
         case .source(let size):
             return UIFont(name: sourceFontName, size: size)
+        case .serif(let size):
+            return UIFont(name: serifFontName, size: size)
         }
     }
 }
