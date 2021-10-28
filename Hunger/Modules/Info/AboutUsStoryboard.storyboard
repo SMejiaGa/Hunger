@@ -48,12 +48,12 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxY-BG-3Pt">
                                 <rect key="frame" x="25" y="163" width="325" height="407.5"/>
-                                <mutableString key="text">Somos la guía para comer rico y barato en tu ciudad, para calmar tu hambre a un precio justo. 
+                                <string key="text">Somos la guía para comer rico y barato en tu ciudad, para calmar tu hambre a un precio justo. 
 
 Necesitas un restaurante cerca a tu oficina, casa o donde estés, que sea rico y a buen precio ¡Con Hambre?! Podrás con un solo toque encontrar cientos de restaurantes caseros, conocer su menú del día para desayunar o almorzar y quedar lleno y feliz. 
 Los  precios  de los lugares que indicamos es el costo promedio de la tu ciudad, lo que significa que encontrarás lugares aún más económicos e igual de sabrosos.
 
-Trabajamos diariamente para crecer y tener más restaurantes en nuestra app y así brindarte la mejor comida al precio justo.</mutableString>
+Trabajamos diariamente para crecer y tener más restaurantes en nuestra app y así brindarte la mejor comida al precio justo.</string>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>

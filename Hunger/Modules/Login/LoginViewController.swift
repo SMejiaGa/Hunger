@@ -46,9 +46,9 @@ class LoginViewController: UIViewController {
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setupHelpText()
-        //setupGestureToHelpText()
-       // setupRegisterText()
+        setupHelpText()
+        setupGestureToHelpText()
+        setupRegisterText()
         setupGestureToRegisterText()
         setupRouter()
     }

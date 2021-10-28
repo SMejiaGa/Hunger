@@ -12,20 +12,18 @@ class RegisterViewController: UIViewController {
     
     // MARK: -UI References
     @IBOutlet private weak var namesTextField: UITextField!
-
     @IBOutlet private weak var registeredEmailTextField: UITextField!
-    
     @IBOutlet private weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var alreadyHaveAnAccount: UILabel!
+    
     // MARK: - Properties
     private let detailSegueId = "ShowDetailList"
     private let highlightText = "INGRESAR"
-
+    
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setupRegisterText()
+        setupRegisterText()
         setupGestureToRegisterText()
     }
     
@@ -34,7 +32,7 @@ class RegisterViewController: UIViewController {
         performRegister()
     }
     
-    @objc private func sendToLogin() {
+    @objc private func sendToLogin(_ gesture: UITapGestureRecognizer) {
         navigationController?.popViewController(animated: true)
     }
     
@@ -43,11 +41,14 @@ class RegisterViewController: UIViewController {
     }
     // MARK: - Private methods
     private func performRegister(){
-        if FormsUtils.isValidEmail(registeredEmailTextField.text ?? "") && passwordTextField.text?.count ?? 0 > 3{
+        let isValidPasswordLengh = passwordTextField.text?.count ?? 0 > 3
+        
+        if FormsUtils.isValidEmail(registeredEmailTextField.text ?? ""), isValidPasswordLengh {
             performSegue(withIdentifier: detailSegueId, sender: nil)
-        }else{
-            showMessage(alertMessage: Lang.Register.alertMeesage)
+            return
         }
+        
+        showMessage(alertMessage: Lang.Register.alertMeesage)
     }
     
     private func setupRegisterText() {
@@ -60,6 +61,10 @@ class RegisterViewController: UIViewController {
     }
     
     private func setupGestureToRegisterText() {
-       // TextUtils.setupTapGesture(target: self, textToSetup: alreadyHaveAnAccount, onTapAction: )
+        TextUtils.setupTapGesture(
+            target: self,
+            textToSetup: alreadyHaveAnAccount,
+            onTapAction: #selector(sendToLogin)
+        )
     }
 }

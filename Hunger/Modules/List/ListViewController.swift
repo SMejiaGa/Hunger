@@ -17,6 +17,7 @@ class ListViewController: UIViewController {
     private let cellReuseIdentifier = "myCell"
     private let descriptionToHighlightA = "buena comida"
     private let descriptionToHighlightB = "precio justo"
+    private let highlightTextSize: CGFloat = 19
     
     // MARK: - IBOutlets
     @IBOutlet weak var messagesTable: UITableView!
@@ -28,7 +29,7 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         fetchData()
         setupTableView()
-        //setupDescriptionText()
+        setupDescriptionText()
     }
     
     // MARK: - IBActions
@@ -57,18 +58,10 @@ class ListViewController: UIViewController {
     }
     
     private func setupDescriptionText() {
-        TextUtils.highlightTextInLabel(
-            textToSetup: descriptionText,
-            textToHighlight: descriptionToHighlightA,
-            color: .blue,
-            font: .bold(size: CGFloat(19))
-        )
-        TextUtils.highlightTextInLabel(
-            textToSetup: descriptionText,
-            textToHighlight: descriptionToHighlightB,
-            color: .blue,
-            font: .bold(size: CGFloat(19))
-        )
+        TextUtils.highlightTexts(in: descriptionText, config: [
+            (descriptionToHighlightA, .blue, .bold(size: highlightTextSize)),
+            (descriptionToHighlightB, .blue, .bold(size: highlightTextSize))
+        ])
     }
 }
 

@@ -25,7 +25,6 @@
 		0BA602A827211EE20041F3C6 /* SourceSansPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BA6029B27211EE20041F3C6 /* SourceSansPro-LightItalic.ttf */; };
 		0BA602A927211EE20041F3C6 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BA6029C27211EE20041F3C6 /* SourceSansPro-Light.ttf */; };
 		0BA602AA27211EE20041F3C6 /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BA6029D27211EE20041F3C6 /* SourceSansPro-Black.ttf */; };
-		0BA602AB27211EE20041F3C6 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0BA6029E27211EE20041F3C6 /* OFL.txt */; };
 		0BA602AC27211EE20041F3C6 /* SourceSansPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BA6029F27211EE20041F3C6 /* SourceSansPro-ExtraLight.ttf */; };
 		0BA602AD27211EE20041F3C6 /* SourceSansPro-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BA602A027211EE20041F3C6 /* SourceSansPro-BoldItalic.ttf */; };
 		0BA602AE27211EE20041F3C6 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BA602A127211EE20041F3C6 /* SourceSansPro-SemiBold.ttf */; };
@@ -52,7 +51,6 @@
 		0BEE127B2729DF8E00AA31F6 /* PTSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE12762729DF8E00AA31F6 /* PTSerif-Italic.ttf */; };
 		0BEE127C2729DF8E00AA31F6 /* PTSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE12772729DF8E00AA31F6 /* PTSerif-BoldItalic.ttf */; };
 		0BEE127D2729DF8E00AA31F6 /* PTSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE12782729DF8E00AA31F6 /* PTSerif-Bold.ttf */; };
-		0BEE127E2729DF8E00AA31F6 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE12792729DF8E00AA31F6 /* OFL.txt */; };
 		0BEE127F2729DF8E00AA31F6 /* PTSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE127A2729DF8E00AA31F6 /* PTSerif-Regular.ttf */; };
 		0BEE12902729DFA000AA31F6 /* SourceCodePro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE12812729DFA000AA31F6 /* SourceCodePro-LightItalic.ttf */; };
 		0BEE12912729DFA000AA31F6 /* SourceCodePro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE12822729DFA000AA31F6 /* SourceCodePro-SemiBold.ttf */; };
@@ -66,7 +64,6 @@
 		0BEE12992729DFA000AA31F6 /* SourceCodePro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE128A2729DFA000AA31F6 /* SourceCodePro-ExtraLight.ttf */; };
 		0BEE129A2729DFA000AA31F6 /* SourceCodePro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE128B2729DFA000AA31F6 /* SourceCodePro-Regular.ttf */; };
 		0BEE129B2729DFA000AA31F6 /* SourceCodePro-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE128C2729DFA000AA31F6 /* SourceCodePro-ExtraLightItalic.ttf */; };
-		0BEE129C2729DFA000AA31F6 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE128D2729DFA000AA31F6 /* OFL.txt */; };
 		0BEE129D2729DFA000AA31F6 /* SourceCodePro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE128E2729DFA000AA31F6 /* SourceCodePro-Italic.ttf */; };
 		0BEE129E2729DFA000AA31F6 /* SourceCodePro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE128F2729DFA000AA31F6 /* SourceCodePro-Bold.ttf */; };
 		0BEE12A02729E19500AA31F6 /* AboutUsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE129F2729E19500AA31F6 /* AboutUsStoryboard.storyboard */; };
@@ -91,7 +88,6 @@
 		0BA6029B27211EE20041F3C6 /* SourceSansPro-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-LightItalic.ttf"; sourceTree = "<group>"; };
 		0BA6029C27211EE20041F3C6 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
 		0BA6029D27211EE20041F3C6 /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
-		0BA6029E27211EE20041F3C6 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		0BA6029F27211EE20041F3C6 /* SourceSansPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLight.ttf"; sourceTree = "<group>"; };
 		0BA602A027211EE20041F3C6 /* SourceSansPro-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BoldItalic.ttf"; sourceTree = "<group>"; };
 		0BA602A127211EE20041F3C6 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -120,7 +116,6 @@
 		0BEE12762729DF8E00AA31F6 /* PTSerif-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-Italic.ttf"; sourceTree = "<group>"; };
 		0BEE12772729DF8E00AA31F6 /* PTSerif-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
 		0BEE12782729DF8E00AA31F6 /* PTSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-Bold.ttf"; sourceTree = "<group>"; };
-		0BEE12792729DF8E00AA31F6 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		0BEE127A2729DF8E00AA31F6 /* PTSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-Regular.ttf"; sourceTree = "<group>"; };
 		0BEE12812729DFA000AA31F6 /* SourceCodePro-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-LightItalic.ttf"; sourceTree = "<group>"; };
 		0BEE12822729DFA000AA31F6 /* SourceCodePro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -134,7 +129,6 @@
 		0BEE128A2729DFA000AA31F6 /* SourceCodePro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-ExtraLight.ttf"; sourceTree = "<group>"; };
 		0BEE128B2729DFA000AA31F6 /* SourceCodePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.ttf"; sourceTree = "<group>"; };
 		0BEE128C2729DFA000AA31F6 /* SourceCodePro-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		0BEE128D2729DFA000AA31F6 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		0BEE128E2729DFA000AA31F6 /* SourceCodePro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Italic.ttf"; sourceTree = "<group>"; };
 		0BEE128F2729DFA000AA31F6 /* SourceCodePro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Bold.ttf"; sourceTree = "<group>"; };
 		0BEE129F2729E19500AA31F6 /* AboutUsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutUsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -204,7 +198,6 @@
 				0BA6029B27211EE20041F3C6 /* SourceSansPro-LightItalic.ttf */,
 				0BA6029C27211EE20041F3C6 /* SourceSansPro-Light.ttf */,
 				0BA6029D27211EE20041F3C6 /* SourceSansPro-Black.ttf */,
-				0BA6029E27211EE20041F3C6 /* OFL.txt */,
 				0BA6029F27211EE20041F3C6 /* SourceSansPro-ExtraLight.ttf */,
 				0BA602A027211EE20041F3C6 /* SourceSansPro-BoldItalic.ttf */,
 				0BA602A127211EE20041F3C6 /* SourceSansPro-SemiBold.ttf */,
@@ -336,7 +329,6 @@
 				0BEE12762729DF8E00AA31F6 /* PTSerif-Italic.ttf */,
 				0BEE12772729DF8E00AA31F6 /* PTSerif-BoldItalic.ttf */,
 				0BEE12782729DF8E00AA31F6 /* PTSerif-Bold.ttf */,
-				0BEE12792729DF8E00AA31F6 /* OFL.txt */,
 				0BEE127A2729DF8E00AA31F6 /* PTSerif-Regular.ttf */,
 			);
 			path = PT_Serif;
@@ -357,7 +349,6 @@
 				0BEE128A2729DFA000AA31F6 /* SourceCodePro-ExtraLight.ttf */,
 				0BEE128B2729DFA000AA31F6 /* SourceCodePro-Regular.ttf */,
 				0BEE128C2729DFA000AA31F6 /* SourceCodePro-ExtraLightItalic.ttf */,
-				0BEE128D2729DFA000AA31F6 /* OFL.txt */,
 				0BEE128E2729DFA000AA31F6 /* SourceCodePro-Italic.ttf */,
 				0BEE128F2729DFA000AA31F6 /* SourceCodePro-Bold.ttf */,
 			);
@@ -448,14 +439,12 @@
 			files = (
 				0BA602AC27211EE20041F3C6 /* SourceSansPro-ExtraLight.ttf in Resources */,
 				0BEE12952729DFA000AA31F6 /* SourceCodePro-Light.ttf in Resources */,
-				0BA602AB27211EE20041F3C6 /* OFL.txt in Resources */,
 				0BE591FC270A13AF00E9BF32 /* DetailListStoryboard.storyboard in Resources */,
 				0BA602AD27211EE20041F3C6 /* SourceSansPro-BoldItalic.ttf in Resources */,
 				0BE59206270A1E4000E9BF32 /* Main.storyboard in Resources */,
 				0BEE129E2729DFA000AA31F6 /* SourceCodePro-Bold.ttf in Resources */,
 				0BEE127C2729DF8E00AA31F6 /* PTSerif-BoldItalic.ttf in Resources */,
 				0BEE12922729DFA000AA31F6 /* SourceCodePro-Medium.ttf in Resources */,
-				0BEE127E2729DF8E00AA31F6 /* OFL.txt in Resources */,
 				0BA602AA27211EE20041F3C6 /* SourceSansPro-Black.ttf in Resources */,
 				0BA602A527211EE20041F3C6 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
 				0BA602A927211EE20041F3C6 /* SourceSansPro-Light.ttf in Resources */,
@@ -474,7 +463,6 @@
 				0BEE127F2729DF8E00AA31F6 /* PTSerif-Regular.ttf in Resources */,
 				0BEE12992729DFA000AA31F6 /* SourceCodePro-ExtraLight.ttf in Resources */,
 				0BEE12932729DFA000AA31F6 /* SourceCodePro-SemiBoldItalic.ttf in Resources */,
-				0BEE129C2729DFA000AA31F6 /* OFL.txt in Resources */,
 				0BEE12972729DFA000AA31F6 /* SourceCodePro-BoldItalic.ttf in Resources */,
 				0BA602A727211EE20041F3C6 /* SourceSansPro-Bold.ttf in Resources */,
 				0BEE12942729DFA000AA31F6 /* SourceCodePro-MediumItalic.ttf in Resources */,
