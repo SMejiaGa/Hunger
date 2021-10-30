@@ -8,10 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0B5FCFE7272B5581006BA48F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5FCFE6272B5581006BA48F /* Main.storyboard */; };
+		0B5FCFE9272B5CFA006BA48F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FCFE8272B5CFA006BA48F /* User.swift */; };
+		0B5FCFEB272B5D72006BA48F /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FCFEA272B5D72006BA48F /* UserResponse.swift */; };
+		0B5FCFED272B6540006BA48F /* LoginBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FCFEC272B6540006BA48F /* LoginBussines.swift */; };
+		0B5FCFEF272B654B006BA48F /* RegisterBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FCFEE272B654B006BA48F /* RegisterBussines.swift */; };
+		0B8B61CC272B687A00C8BE29 /* SimpleKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 0B8B61CB272B687A00C8BE29 /* SimpleKeyboard */; };
+		0B8B61CE272D052600C8BE29 /* RecoveryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61CD272D052600C8BE29 /* RecoveryResponse.swift */; };
+		0B8B61D0272D060C00C8BE29 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61CF272D060C00C8BE29 /* Email.swift */; };
 		0BA602722710176E0041F3C6 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA602702710176E0041F3C6 /* CustomTableViewCell.swift */; };
 		0BA602732710176E0041F3C6 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BA602712710176E0041F3C6 /* CustomTableViewCell.xib */; };
-		0BA602752712520A0041F3C6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA602742712520A0041F3C6 /* Message.swift */; };
-		0BA60279271257CA0041F3C6 /* ResponseMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA60278271257CA0041F3C6 /* ResponseMessage.swift */; };
+		0BA602752712520A0041F3C6 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA602742712520A0041F3C6 /* Restaurant.swift */; };
+		0BA60279271257CA0041F3C6 /* RestaurantResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA60278271257CA0041F3C6 /* RestaurantResponse.swift */; };
 		0BA6027D271E723E0041F3C6 /* FormsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA6027C271E723E0041F3C6 /* FormsUtils.swift */; };
 		0BA60282271E77E60041F3C6 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA60281271E77E60041F3C6 /* UIViewController+Extensions.swift */; };
 		0BA60284271E7AEE0041F3C6 /* Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA60283271E7AEE0041F3C6 /* Lang.swift */; };
@@ -72,10 +79,16 @@
 
 /* Begin PBXFileReference section */
 		0B5FCFE6272B5581006BA48F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0B5FCFE8272B5CFA006BA48F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0B5FCFEA272B5D72006BA48F /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		0B5FCFEC272B6540006BA48F /* LoginBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBussines.swift; sourceTree = "<group>"; };
+		0B5FCFEE272B654B006BA48F /* RegisterBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBussines.swift; sourceTree = "<group>"; };
+		0B8B61CD272D052600C8BE29 /* RecoveryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryResponse.swift; sourceTree = "<group>"; };
+		0B8B61CF272D060C00C8BE29 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		0BA602702710176E0041F3C6 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		0BA602712710176E0041F3C6 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
-		0BA602742712520A0041F3C6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		0BA60278271257CA0041F3C6 /* ResponseMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseMessage.swift; sourceTree = "<group>"; };
+		0BA602742712520A0041F3C6 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		0BA60278271257CA0041F3C6 /* RestaurantResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantResponse.swift; sourceTree = "<group>"; };
 		0BA6027C271E723E0041F3C6 /* FormsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsUtils.swift; sourceTree = "<group>"; };
 		0BA60281271E77E60041F3C6 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		0BA60283271E7AEE0041F3C6 /* Lang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lang.swift; sourceTree = "<group>"; };
@@ -142,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B8B61CC272B687A00C8BE29 /* SimpleKeyboard in Frameworks */,
 				0BA6028C2720C2840041F3C6 /* Alamofire in Frameworks */,
 				4685B34498F51E93595371C7 /* Pods_Hunger.framework in Frameworks */,
 			);
@@ -289,6 +303,8 @@
 				0BE591E727082C5C00E9BF32 /* RecoveryViewController.swift */,
 				0BE591E92708313000E9BF32 /* RegisterViewController.swift */,
 				0BE591FD270A15E300E9BF32 /* MainViewController.swift */,
+				0B5FCFEC272B6540006BA48F /* LoginBussines.swift */,
+				0B5FCFEE272B654B006BA48F /* RegisterBussines.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -317,8 +333,12 @@
 		0BE591F127095B4900E9BF32 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0BA602742712520A0041F3C6 /* Message.swift */,
-				0BA60278271257CA0041F3C6 /* ResponseMessage.swift */,
+				0BA602742712520A0041F3C6 /* Restaurant.swift */,
+				0BA60278271257CA0041F3C6 /* RestaurantResponse.swift */,
+				0B5FCFE8272B5CFA006BA48F /* User.swift */,
+				0B5FCFEA272B5D72006BA48F /* UserResponse.swift */,
+				0B8B61CD272D052600C8BE29 /* RecoveryResponse.swift */,
+				0B8B61CF272D060C00C8BE29 /* Email.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -392,6 +412,7 @@
 			name = Hunger;
 			packageProductDependencies = (
 				0BA6028B2720C2840041F3C6 /* Alamofire */,
+				0B8B61CB272B687A00C8BE29 /* SimpleKeyboard */,
 			);
 			productName = Hunger;
 			productReference = 0BB820E12707E96400CE720D /* Hunger.app */;
@@ -422,6 +443,7 @@
 			mainGroup = 0BB820D82707E96400CE720D;
 			packageReferences = (
 				0BA6028A2720C2840041F3C6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				0B8B61CA272B687A00C8BE29 /* XCRemoteSwiftPackageReference "SimpleKeyboard" */,
 			);
 			productRefGroup = 0BB820E22707E96400CE720D /* Products */;
 			projectDirPath = "";
@@ -529,25 +551,31 @@
 				0BE591EE27095A6F00E9BF32 /* AboutUsViewController.swift in Sources */,
 				0BE591E827082C5C00E9BF32 /* RecoveryViewController.swift in Sources */,
 				0BE591E627082C3900E9BF32 /* LoginViewController.swift in Sources */,
+				0B8B61D0272D060C00C8BE29 /* Email.swift in Sources */,
 				0BE591FE270A15E300E9BF32 /* MainViewController.swift in Sources */,
 				0BA60282271E77E60041F3C6 /* UIViewController+Extensions.swift in Sources */,
 				0BA602B62723C6720041F3C6 /* AppColor.swift in Sources */,
 				0BA602B4272353BA0041F3C6 /* TextUtils.swift in Sources */,
 				0BA602B82723C6970041F3C6 /* AppFont.swift in Sources */,
 				0BE591EA2708313000E9BF32 /* RegisterViewController.swift in Sources */,
+				0B5FCFEF272B654B006BA48F /* RegisterBussines.swift in Sources */,
+				0B5FCFEB272B5D72006BA48F /* UserResponse.swift in Sources */,
 				0BE591F027095A7D00E9BF32 /* NotFoundViewController.swift in Sources */,
 				0BA60284271E7AEE0041F3C6 /* Lang.swift in Sources */,
-				0BA602752712520A0041F3C6 /* Message.swift in Sources */,
+				0BA602752712520A0041F3C6 /* Restaurant.swift in Sources */,
 				0BB820E52707E96400CE720D /* AppDelegate.swift in Sources */,
 				0BA6028F27211BCE0041F3C6 /* RoundTextField.swift in Sources */,
 				0BA60289271F79260041F3C6 /* ListBussines.swift in Sources */,
+				0B5FCFED272B6540006BA48F /* LoginBussines.swift in Sources */,
 				0BE591F327095BD900E9BF32 /* Webservice.swift in Sources */,
 				0BA6027D271E723E0041F3C6 /* FormsUtils.swift in Sources */,
 				0BE591EC2708316900E9BF32 /* ListViewController.swift in Sources */,
-				0BA60279271257CA0041F3C6 /* ResponseMessage.swift in Sources */,
+				0BA60279271257CA0041F3C6 /* RestaurantResponse.swift in Sources */,
+				0B5FCFE9272B5CFA006BA48F /* User.swift in Sources */,
 				0BE591F527095BEF00E9BF32 /* EndPoints.swift in Sources */,
 				0BA602B2272120ED0041F3C6 /* HButton.swift in Sources */,
 				0BA602722710176E0041F3C6 /* CustomTableViewCell.swift in Sources */,
+				0B8B61CE272D052600C8BE29 /* RecoveryResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +775,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0B8B61CA272B687A00C8BE29 /* XCRemoteSwiftPackageReference "SimpleKeyboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mejiagarcia/SimpleKeyboard.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
+			};
+		};
 		0BA6028A2720C2840041F3C6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -758,6 +794,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0B8B61CB272B687A00C8BE29 /* SimpleKeyboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B8B61CA272B687A00C8BE29 /* XCRemoteSwiftPackageReference "SimpleKeyboard" */;
+			productName = SimpleKeyboard;
+		};
 		0BA6028B2720C2840041F3C6 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0BA6028A2720C2840041F3C6 /* XCRemoteSwiftPackageReference "Alamofire" */;

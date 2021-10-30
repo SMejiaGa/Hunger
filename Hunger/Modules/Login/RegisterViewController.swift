@@ -7,6 +7,7 @@
 
 import UIKit
 import Dodo
+import SimpleKeyboard
 
 class RegisterViewController: UIViewController {
     
@@ -19,10 +20,12 @@ class RegisterViewController: UIViewController {
     // MARK: - Properties
     private let detailSegueId = "ShowDetailList"
     private let highlightText = "INGRESAR"
+    private let registerBussines = RegisterBussines()
     
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        supportFlexibleLayout()
         setupRegisterText()
         setupGestureToRegisterText()
     }
@@ -41,14 +44,26 @@ class RegisterViewController: UIViewController {
     }
     // MARK: - Private methods
     private func performRegister(){
-        let isValidPasswordLengh = passwordTextField.text?.count ?? 0 > 3
+        let passwordToRegister = passwordTextField.text ?? ""
+        let isValidPasswordLengh = passwordToRegister.count > 3
+        let emailToRegister = registeredEmailTextField.text ?? ""
         
-        if FormsUtils.isValidEmail(registeredEmailTextField.text ?? ""), isValidPasswordLengh {
-            performSegue(withIdentifier: detailSegueId, sender: nil)
-            return
+        if FormsUtils.isValidEmail(emailToRegister), isValidPasswordLengh {
+            registerBussines.postRegister(
+                email: emailToRegister,
+                password: passwordToRegister,
+                onFinished: { succesFromService in
+                DispatchQueue.main.async {
+                    if succesFromService == true {
+                        self.performSegue(withIdentifier: self.detailSegueId, sender: nil)
+                    } else {
+                        self.showMessage(alertMessage: Lang.Register.errorMessage)
+                    }
+                }
+            })
+        } else {
+            self.showMessage(alertMessage: Lang.Register.alertMessage)
         }
-        
-        showMessage(alertMessage: Lang.Register.alertMeesage)
     }
     
     private func setupRegisterText() {

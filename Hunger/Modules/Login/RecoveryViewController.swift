@@ -15,6 +15,7 @@ class RecoveryViewController: UIViewController {
     
     //MARK: - Properties
     private let facebookHighlightText = "FACEBOOK"
+    private let webService = WebService()
     
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
@@ -37,9 +38,16 @@ class RecoveryViewController: UIViewController {
     }
     
     //MARK: - Private methods
+    private func recoverEmail(email: String) {
+        var emailToRecover = Email(email: email)
+        webService.postRecovery(email: emailToRecover) { messageFromWeb in
+            self.showMessage(alertMessage: messageFromWeb)
+        }
+    }
+    
     private func checkEmail(){
         if recoveryTextField.text != nil{
-            showMessage(alertMessage: Lang.Recovery.alertMessage)
+            recoverEmail(email: recoveryTextField.text ?? "")
         }else{
             showMessage(alertMessage: Lang.Recovery.errorMessage)
         }

@@ -8,16 +8,23 @@
 import Foundation
 
 enum Endpoints {
-    case getMessages
-    case postMessage
+    case getRestaurants
+    case postLoginUser
+    case postResigterUser
+    case postRecovery
     
     var url: String {
         switch self {
-        case .getMessages:
-            return "/message"
+        case .getRestaurants:
+            return "/restaurants"
             
-        case .postMessage:
-            return "/message"
+        case .postLoginUser:
+            return "/login"
+        
+        case .postResigterUser:
+            return "/register"
+        case .postRecovery:
+            return "/recovery"
         }
     }
 }

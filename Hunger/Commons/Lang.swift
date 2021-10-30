@@ -14,6 +14,7 @@ struct Lang {
     
     struct Login {
         static let invalidEmailMessage = "invalid email"
+        static let invalidLogIn = "Incorrect, please try again"
     }
     
     struct Recovery {
@@ -22,6 +23,9 @@ struct Lang {
     }
     
     struct Register {
-        static let alertMeesage = "debe registrar un email valido y su contrasenia debe ser mayor a 3 caracteres"
+        static let alertMessage = "debe registrar un email valido y su contraseña debe ser mayor a 3 caracteres"
+        static let errorMessage = "El email registrado ya se encuentra asociado a una cuenta"
+        static let succesMessage = "Bienvenido a hungry!"
+        
     }
 }

@@ -40,10 +40,14 @@ class ListViewController: UIViewController {
     
     // MARK: - Private methods
     private func fetchData() {
-        bussines.fetchMessages(onFinished: {
-            DispatchQueue.main.async {
-                self.messagesTable.reloadData()
-                self.loader.stopAnimating()
+        bussines.fetchRestaurants(onFinished: { errorExist in
+            if errorExist {
+                self.performSegue(withIdentifier: "ShowNotFound", sender: nil)
+            } else {
+                DispatchQueue.main.async {
+                    self.messagesTable.reloadData()
+                    self.loader.stopAnimating()
+                }
             }
         })
     }
@@ -68,12 +72,12 @@ class ListViewController: UIViewController {
 // MARK: - UITableViewDataSource & UITableViewDelegate
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bussines.messageCarrier.count
+        return bussines.restaurantCarrier.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? CustomTableViewCell {
-            cell.configCell(user: bussines.messageCarrier[indexPath.row].user,message: bussines.messageCarrier[indexPath.row].message)
+            cell.configCell(distance: bussines.restaurantCarrier[indexPath.row].distance,restaurantName: bussines.restaurantCarrier[indexPath.row].name , isAvailable: bussines.restaurantCarrier[indexPath.row].isAvaliable)
             return cell
         }
         return UITableViewCell()

@@ -9,6 +9,15 @@
           "revision": "d120af1e8638c7da36c8481fd61a66c0c08dc4fc",
           "version": "5.4.4"
         }
+      },
+      {
+        "package": "SimpleKeyboard",
+        "repositoryURL": "https://github.com/mejiagarcia/SimpleKeyboard.git",
+        "state": {
+          "branch": null,
+          "revision": "57f6e568045107234f9d3dc9d3c5fbd0cb316326",
+          "version": "0.0.2"
+        }
       }
     ]
   },

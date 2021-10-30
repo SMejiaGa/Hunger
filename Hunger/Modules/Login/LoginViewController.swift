@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
     private let detailSegueId =  "ShowDetailList"
     private let registerHighlightText =  "QUIERO REGISTRARME"
     private let helpHighlightText =  "AYUDA"
+    private let loginBussines = LoginBussines()
     private var router: Router?
     
     // MARK: - ViewController life cycle
@@ -72,8 +73,22 @@ class LoginViewController: UIViewController {
     
     // MARK: - Private methods
     private func performLogin() {
-        if FormsUtils.isValidEmail(emailTextField.text ?? "") && passwordTextField != nil {
-            performSegue(withIdentifier: detailSegueId, sender: nil)
+        let userEmail = emailTextField.text ?? ""
+        let userPassword = passwordTextField.text ?? ""
+        
+        if FormsUtils.isValidEmail(userEmail) && !userPassword.isEmpty {
+            loginBussines.postLogin(
+                email: userEmail,
+                password: userPassword,
+                onFinishedBussines: { succesFromService in
+                DispatchQueue.main.async {
+                    if succesFromService == true {
+                        self.performSegue(withIdentifier: self.detailSegueId, sender: nil)
+                    } else {
+                        self.showMessage(alertMessage: Lang.Login.invalidLogIn)
+                    }
+                }
+            })
         } else {
             showMessage(alertMessage: Lang.Login.invalidEmailMessage)
         }

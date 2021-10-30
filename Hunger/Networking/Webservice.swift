@@ -6,40 +6,72 @@
 //
 
 import Foundation
+import Alamofire
 
 final class WebService {
     
     //MARK: -Properties
-    private let serverEndpoint = "https://apinodejsmonty.herokuapp.com"
+    private let serverEndpoint = "https://hunger-swift-api.herokuapp.com/api/v1"
     
-    func fetchMessages(
-        onFinished: @escaping ([Message]) ->Void
-    ) {
-        guard let urlMessage = URL(string: "\(serverEndpoint)\(Endpoints.getMessages.url)") else {
-            return
+    func getRestaurants(onFinished: @escaping ([Restaurant], Bool) -> Void) {
+        var errorExist: Bool = false
+        let restaurantURL = "\(serverEndpoint)\(Endpoints.getRestaurants.url)"
+        AF.request(restaurantURL).responseDecodable{ (res: DataResponse<[Restaurant], AFError>) in
+            if res.error != nil{
+                errorExist = true
+            }
+            let responseFromService = res.value ?? []
+            onFinished(responseFromService, errorExist)
         }
-        URLSession.shared.dataTask(
-            with: urlMessage,
-            completionHandler: { data, response, error in
-                
-                if error != nil {
-                    guard let httpResponse = response as? HTTPURLResponse,
-                          (200...299).contains(httpResponse.statusCode) else {
-                        print(error)
-                        return
-                    }
-                    return
-                }
-                guard let dataFromService = data else{
-                    return
-                }
-                do{
-                    let info = try JSONDecoder().decode(MessageResponse.self, from: dataFromService)
-                    onFinished(info.body)
-                }catch let errorCatch{
-                    print(errorCatch)
-                }
-            }).resume()
+    }
+    
+    func postLogin(
+        user: User,
+        onFinished: @escaping (Bool) -> Void
+    ) {
+        let loginURL =  "\(serverEndpoint)\(Endpoints.postLoginUser.url)"
+        
+        AF.request(
+            loginURL,
+            method: .post,
+            parameters: user,
+            headers: nil
+        ).responseDecodable { (res: DataResponse<UserResponse, AFError>) in
+            onFinished(res.value?.sucess == true)
+        }
+    }
+    
+    
+    func postRegister(
+        user: User,
+        onFinished: @escaping (Bool) -> Void
+    ) {
+        let registerURL =  "\(serverEndpoint)\(Endpoints.postResigterUser.url)"
+        
+        AF.request(
+            registerURL,
+            method: .post,
+            parameters: user,
+            headers: nil
+        ).responseDecodable { (res: DataResponse<UserResponse, AFError>) in
+            onFinished(res.value?.sucess == true)
+        }
+    }
+    func postRecovery(
+        email: Email,
+        onFinished: @escaping (String) -> Void
+    ) {
+        let registerURL =  "\(serverEndpoint)\(Endpoints.postRecovery.url)"
+        
+        AF.request(
+            registerURL,
+            method: .post,
+            parameters: email,
+            headers: nil
+        ).responseDecodable { (res: DataResponse<RecoveryResponse, AFError>) in
+            onFinished(res.value?.message ?? "")
+        }
+        
     }
 }
 

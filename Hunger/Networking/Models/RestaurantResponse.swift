@@ -7,7 +7,6 @@
 
 import Foundation
 
-struct MessageResponse: Codable {
-    let error: String?
-    let body: [Message]
+struct RestaurantResponse: Codable {
+    let list: [Restaurant]
 }
