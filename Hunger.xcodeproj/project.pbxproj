@@ -15,6 +15,7 @@
 		0B8B61CC272B687A00C8BE29 /* SimpleKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 0B8B61CB272B687A00C8BE29 /* SimpleKeyboard */; };
 		0B8B61CE272D052600C8BE29 /* RecoveryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61CD272D052600C8BE29 /* RecoveryResponse.swift */; };
 		0B8B61D0272D060C00C8BE29 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61CF272D060C00C8BE29 /* Email.swift */; };
+		0B8B61D2273064D500C8BE29 /* RecoveryBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61D1273064D500C8BE29 /* RecoveryBussines.swift */; };
 		0BA602722710176E0041F3C6 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA602702710176E0041F3C6 /* CustomTableViewCell.swift */; };
 		0BA602732710176E0041F3C6 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BA602712710176E0041F3C6 /* CustomTableViewCell.xib */; };
 		0BA602752712520A0041F3C6 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA602742712520A0041F3C6 /* Restaurant.swift */; };
@@ -85,6 +86,7 @@
 		0B5FCFEE272B654B006BA48F /* RegisterBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBussines.swift; sourceTree = "<group>"; };
 		0B8B61CD272D052600C8BE29 /* RecoveryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryResponse.swift; sourceTree = "<group>"; };
 		0B8B61CF272D060C00C8BE29 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
+		0B8B61D1273064D500C8BE29 /* RecoveryBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryBussines.swift; sourceTree = "<group>"; };
 		0BA602702710176E0041F3C6 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		0BA602712710176E0041F3C6 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		0BA602742712520A0041F3C6 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				0BE591FD270A15E300E9BF32 /* MainViewController.swift */,
 				0B5FCFEC272B6540006BA48F /* LoginBussines.swift */,
 				0B5FCFEE272B654B006BA48F /* RegisterBussines.swift */,
+				0B8B61D1273064D500C8BE29 /* RecoveryBussines.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				0BA602B62723C6720041F3C6 /* AppColor.swift in Sources */,
 				0BA602B4272353BA0041F3C6 /* TextUtils.swift in Sources */,
 				0BA602B82723C6970041F3C6 /* AppFont.swift in Sources */,
+				0B8B61D2273064D500C8BE29 /* RecoveryBussines.swift in Sources */,
 				0BE591EA2708313000E9BF32 /* RegisterViewController.swift in Sources */,
 				0B5FCFEF272B654B006BA48F /* RegisterBussines.swift in Sources */,
 				0B5FCFEB272B5D72006BA48F /* UserResponse.swift in Sources */,
