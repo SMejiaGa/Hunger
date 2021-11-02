@@ -8,14 +8,14 @@
 import Foundation
 
 class RegisterBussines {
-    let webService = WebService()
+    let registerService = RegisterService()
     
     func postRegister(
         email: String,
         password: String,
         onFinished: @escaping (Bool) ->Void) {
         let loginReq = User(email: email, password: password)
-            webService.postRegister(
+            registerService.postRegister(
                 user: loginReq,
                 onFinished: { isSucces in
             if isSucces {

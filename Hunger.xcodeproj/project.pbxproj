@@ -19,6 +19,10 @@
 		0B8B61D82730C5DD00C8BE29 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8B61D72730C5DD00C8BE29 /* Login.storyboard */; };
 		0B8B61DC2730C66400C8BE29 /* Recovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8B61DB2730C66400C8BE29 /* Recovery.storyboard */; };
 		0B8B61DE2730C6E300C8BE29 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8B61DD2730C6E300C8BE29 /* Register.storyboard */; };
+		0B8B61E12731D19D00C8BE29 /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61E02731D19D00C8BE29 /* RestaurantService.swift */; };
+		0B8B61E32731D1D400C8BE29 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61E22731D1D400C8BE29 /* LoginService.swift */; };
+		0B8B61E52731D1F300C8BE29 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61E42731D1F300C8BE29 /* RegisterService.swift */; };
+		0B8B61E72731D1FF00C8BE29 /* RecoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61E62731D1FF00C8BE29 /* RecoveryService.swift */; };
 		0BA602722710176E0041F3C6 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA602702710176E0041F3C6 /* CustomTableViewCell.swift */; };
 		0BA602732710176E0041F3C6 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BA602712710176E0041F3C6 /* CustomTableViewCell.xib */; };
 		0BA602752712520A0041F3C6 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA602742712520A0041F3C6 /* Restaurant.swift */; };
@@ -55,7 +59,6 @@
 		0BE591EC2708316900E9BF32 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591EB2708316900E9BF32 /* ListViewController.swift */; };
 		0BE591EE27095A6F00E9BF32 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591ED27095A6F00E9BF32 /* AboutUsViewController.swift */; };
 		0BE591F027095A7D00E9BF32 /* NotFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591EF27095A7D00E9BF32 /* NotFoundViewController.swift */; };
-		0BE591F327095BD900E9BF32 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591F227095BD900E9BF32 /* Webservice.swift */; };
 		0BE591F527095BEF00E9BF32 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591F427095BEF00E9BF32 /* EndPoints.swift */; };
 		0BE591FC270A13AF00E9BF32 /* DetailListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE591FB270A13AF00E9BF32 /* DetailListStoryboard.storyboard */; };
 		0BE591FE270A15E300E9BF32 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591FD270A15E300E9BF32 /* MainViewController.swift */; };
@@ -93,6 +96,10 @@
 		0B8B61D72730C5DD00C8BE29 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		0B8B61DB2730C66400C8BE29 /* Recovery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recovery.storyboard; sourceTree = "<group>"; };
 		0B8B61DD2730C6E300C8BE29 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		0B8B61E02731D19D00C8BE29 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
+		0B8B61E22731D1D400C8BE29 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		0B8B61E42731D1F300C8BE29 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		0B8B61E62731D1FF00C8BE29 /* RecoveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryService.swift; sourceTree = "<group>"; };
 		0BA602702710176E0041F3C6 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		0BA602712710176E0041F3C6 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		0BA602742712520A0041F3C6 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
@@ -130,7 +137,6 @@
 		0BE591EB2708316900E9BF32 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		0BE591ED27095A6F00E9BF32 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		0BE591EF27095A7D00E9BF32 /* NotFoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundViewController.swift; sourceTree = "<group>"; };
-		0BE591F227095BD900E9BF32 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		0BE591F427095BEF00E9BF32 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		0BE591FB270A13AF00E9BF32 /* DetailListStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailListStoryboard.storyboard; sourceTree = "<group>"; };
 		0BE591FD270A15E300E9BF32 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +214,17 @@
 				0B8B61DD2730C6E300C8BE29 /* Register.storyboard */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		0B8B61DF2731D0F700C8BE29 /* WebDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				0B8B61E02731D19D00C8BE29 /* RestaurantService.swift */,
+				0B8B61E22731D1D400C8BE29 /* LoginService.swift */,
+				0B8B61E42731D1F300C8BE29 /* RegisterService.swift */,
+				0B8B61E62731D1FF00C8BE29 /* RecoveryService.swift */,
+			);
+			path = WebDelegate;
 			sourceTree = "<group>";
 		};
 		0BA6027A2714A1DA0041F3C6 /* ListCustomCells */ = {
@@ -324,8 +341,8 @@
 		0BE591E027080C5A00E9BF32 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				0B8B61DF2731D0F700C8BE29 /* WebDelegate */,
 				0BE591F127095B4900E9BF32 /* Models */,
-				0BE591F227095BD900E9BF32 /* Webservice.swift */,
 				0BE591F427095BEF00E9BF32 /* EndPoints.swift */,
 			);
 			path = Networking;
@@ -599,6 +616,7 @@
 				0BE591E827082C5C00E9BF32 /* RecoveryViewController.swift in Sources */,
 				0BE591E627082C3900E9BF32 /* LoginViewController.swift in Sources */,
 				0B8B61D0272D060C00C8BE29 /* Email.swift in Sources */,
+				0B8B61E12731D19D00C8BE29 /* RestaurantService.swift in Sources */,
 				0BE591FE270A15E300E9BF32 /* MainViewController.swift in Sources */,
 				0BA60282271E77E60041F3C6 /* UIViewController+Extensions.swift in Sources */,
 				0BA602B62723C6720041F3C6 /* AppColor.swift in Sources */,
@@ -611,12 +629,14 @@
 				0BE591F027095A7D00E9BF32 /* NotFoundViewController.swift in Sources */,
 				0BA60284271E7AEE0041F3C6 /* Lang.swift in Sources */,
 				0BA602752712520A0041F3C6 /* Restaurant.swift in Sources */,
+				0B8B61E52731D1F300C8BE29 /* RegisterService.swift in Sources */,
 				0BB820E52707E96400CE720D /* AppDelegate.swift in Sources */,
 				0BA6028F27211BCE0041F3C6 /* RoundTextField.swift in Sources */,
 				0BA60289271F79260041F3C6 /* ListBussines.swift in Sources */,
 				0B5FCFED272B6540006BA48F /* LoginBussines.swift in Sources */,
-				0BE591F327095BD900E9BF32 /* Webservice.swift in Sources */,
+				0B8B61E32731D1D400C8BE29 /* LoginService.swift in Sources */,
 				0BA6027D271E723E0041F3C6 /* FormsUtils.swift in Sources */,
+				0B8B61E72731D1FF00C8BE29 /* RecoveryService.swift in Sources */,
 				0BE591EC2708316900E9BF32 /* ListViewController.swift in Sources */,
 				0BA60279271257CA0041F3C6 /* RestaurantResponse.swift in Sources */,
 				0B5FCFE9272B5CFA006BA48F /* User.swift in Sources */,

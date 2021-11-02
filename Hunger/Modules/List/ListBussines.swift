@@ -11,12 +11,12 @@ class ListBussines {
     
     // MARK: -Properties
     private(set) var restaurantCarrier = [Restaurant]()
-    private let webService = WebService()
+    private let restaurantService = RestaurantService()
     
     // MARK: -Private methods
     
     func fetchRestaurants(onFinished: @escaping (Bool) ->Void){
-        webService.getRestaurants(onFinished: { restaurantsData, receivedError in
+        restaurantService.getRestaurants(onFinished: { restaurantsData, receivedError in
             self.restaurantCarrier = restaurantsData
             onFinished(receivedError)
         })

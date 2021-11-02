@@ -9,7 +9,7 @@ import Foundation
 
 class LoginBussines {
     // hacer constructor
-    private let webService = WebService()
+    private let loginService = LoginService()
     
     func postLogin(
         email: String,
@@ -17,7 +17,7 @@ class LoginBussines {
         onFinishedBussines: @escaping (Bool) ->Void)
     {
         let loginReq = User(email: email, password: password)
-        webService.postLogin(
+        loginService.postLogin(
             user: loginReq,
             onFinished: { isSucces in
                 onFinishedBussines(isSucces)

@@ -28,3 +28,8 @@ enum Endpoints {
         }
     }
 }
+
+/*struct urlToRequest {
+    let serverEndpoint = "https://hunger-swift-api.herokuapp.com/api/v1"
+    let endpoint: Endpoints
+}*/

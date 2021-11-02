@@ -55,6 +55,9 @@
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="BackButton"/>
+                                <connections>
+                                    <action selector="backAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KdA-GW-LPx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INGRESAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Py-tw-NY8">
                                 <rect key="frame" x="147" y="27.5" width="81.5" height="20.5"/>
@@ -113,6 +116,9 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Vamos a comer"/>
+                                        <connections>
+                                            <action selector="loginButton" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HY7-xk-esH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
