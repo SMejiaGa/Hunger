@@ -16,6 +16,9 @@
 		0B8B61CE272D052600C8BE29 /* RecoveryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61CD272D052600C8BE29 /* RecoveryResponse.swift */; };
 		0B8B61D0272D060C00C8BE29 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61CF272D060C00C8BE29 /* Email.swift */; };
 		0B8B61D2273064D500C8BE29 /* RecoveryBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61D1273064D500C8BE29 /* RecoveryBussines.swift */; };
+		0B8B61D82730C5DD00C8BE29 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8B61D72730C5DD00C8BE29 /* Login.storyboard */; };
+		0B8B61DC2730C66400C8BE29 /* Recovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8B61DB2730C66400C8BE29 /* Recovery.storyboard */; };
+		0B8B61DE2730C6E300C8BE29 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8B61DD2730C6E300C8BE29 /* Register.storyboard */; };
 		0BA602722710176E0041F3C6 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA602702710176E0041F3C6 /* CustomTableViewCell.swift */; };
 		0BA602732710176E0041F3C6 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BA602712710176E0041F3C6 /* CustomTableViewCell.xib */; };
 		0BA602752712520A0041F3C6 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA602742712520A0041F3C6 /* Restaurant.swift */; };
@@ -87,6 +90,9 @@
 		0B8B61CD272D052600C8BE29 /* RecoveryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryResponse.swift; sourceTree = "<group>"; };
 		0B8B61CF272D060C00C8BE29 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		0B8B61D1273064D500C8BE29 /* RecoveryBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryBussines.swift; sourceTree = "<group>"; };
+		0B8B61D72730C5DD00C8BE29 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		0B8B61DB2730C66400C8BE29 /* Recovery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recovery.storyboard; sourceTree = "<group>"; };
+		0B8B61DD2730C6E300C8BE29 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		0BA602702710176E0041F3C6 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		0BA602712710176E0041F3C6 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		0BA602742712520A0041F3C6 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
@@ -166,13 +172,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0BA6027A2714A1DA0041F3C6 /* CustomCells */ = {
+		0B8B61D32730B65100C8BE29 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				0BA6027A2714A1DA0041F3C6 /* ListCustomCells */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		0B8B61D42730C3C300C8BE29 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0BE591E527082C3900E9BF32 /* LoginViewController.swift */,
+				0B5FCFEC272B6540006BA48F /* LoginBussines.swift */,
+				0B8B61D72730C5DD00C8BE29 /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		0B8B61D52730C3E600C8BE29 /* Recovery */ = {
+			isa = PBXGroup;
+			children = (
+				0BE591E727082C5C00E9BF32 /* RecoveryViewController.swift */,
+				0B8B61D1273064D500C8BE29 /* RecoveryBussines.swift */,
+				0B8B61DB2730C66400C8BE29 /* Recovery.storyboard */,
+			);
+			path = Recovery;
+			sourceTree = "<group>";
+		};
+		0B8B61D62730C3F800C8BE29 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				0BE591E92708313000E9BF32 /* RegisterViewController.swift */,
+				0B5FCFEE272B654B006BA48F /* RegisterBussines.swift */,
+				0B8B61DD2730C6E300C8BE29 /* Register.storyboard */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		0BA6027A2714A1DA0041F3C6 /* ListCustomCells */ = {
 			isa = PBXGroup;
 			children = (
 				0BA602702710176E0041F3C6 /* CustomTableViewCell.swift */,
 				0BA602712710176E0041F3C6 /* CustomTableViewCell.xib */,
 			);
-			path = CustomCells;
+			path = ListCustomCells;
 			sourceTree = "<group>";
 		};
 		0BA60280271E77A50041F3C6 /* Extensions */ = {
@@ -292,24 +336,21 @@
 			children = (
 				0BE591E427082A6900E9BF32 /* List */,
 				0BE591E327082A6200E9BF32 /* Info */,
-				0BE591E227082A5C00E9BF32 /* Login */,
+				0BE591E227082A5C00E9BF32 /* Main */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		0BE591E227082A5C00E9BF32 /* Login */ = {
+		0BE591E227082A5C00E9BF32 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0B8B61D62730C3F800C8BE29 /* Register */,
+				0B8B61D52730C3E600C8BE29 /* Recovery */,
+				0B8B61D42730C3C300C8BE29 /* Login */,
 				0B5FCFE6272B5581006BA48F /* Main.storyboard */,
-				0BE591E527082C3900E9BF32 /* LoginViewController.swift */,
-				0BE591E727082C5C00E9BF32 /* RecoveryViewController.swift */,
-				0BE591E92708313000E9BF32 /* RegisterViewController.swift */,
 				0BE591FD270A15E300E9BF32 /* MainViewController.swift */,
-				0B5FCFEC272B6540006BA48F /* LoginBussines.swift */,
-				0B5FCFEE272B654B006BA48F /* RegisterBussines.swift */,
-				0B8B61D1273064D500C8BE29 /* RecoveryBussines.swift */,
 			);
-			path = Login;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		0BE591E327082A6200E9BF32 /* Info */ = {
@@ -324,7 +365,7 @@
 		0BE591E427082A6900E9BF32 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				0BA6027A2714A1DA0041F3C6 /* CustomCells */,
+				0B8B61D32730B65100C8BE29 /* CustomCells */,
 				0BE591EB2708316900E9BF32 /* ListViewController.swift */,
 				0BE591FB270A13AF00E9BF32 /* DetailListStoryboard.storyboard */,
 				0BE591EF27095A7D00E9BF32 /* NotFoundViewController.swift */,
@@ -464,10 +505,12 @@
 			files = (
 				0BA602AC27211EE20041F3C6 /* SourceSansPro-ExtraLight.ttf in Resources */,
 				0BEE12952729DFA000AA31F6 /* SourceCodePro-Light.ttf in Resources */,
+				0B8B61DE2730C6E300C8BE29 /* Register.storyboard in Resources */,
 				0BE591FC270A13AF00E9BF32 /* DetailListStoryboard.storyboard in Resources */,
 				0BA602AD27211EE20041F3C6 /* SourceSansPro-BoldItalic.ttf in Resources */,
 				0BEE129E2729DFA000AA31F6 /* SourceCodePro-Bold.ttf in Resources */,
 				0BEE127C2729DF8E00AA31F6 /* PTSerif-BoldItalic.ttf in Resources */,
+				0B8B61D82730C5DD00C8BE29 /* Login.storyboard in Resources */,
 				0BEE12922729DFA000AA31F6 /* SourceCodePro-Medium.ttf in Resources */,
 				0BA602AA27211EE20041F3C6 /* SourceSansPro-Black.ttf in Resources */,
 				0BA602A527211EE20041F3C6 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
@@ -484,6 +527,7 @@
 				0BA602A827211EE20041F3C6 /* SourceSansPro-LightItalic.ttf in Resources */,
 				0BB820EE2707E96500CE720D /* Assets.xcassets in Resources */,
 				0BEE12962729DFA000AA31F6 /* SourceCodePro-BlackItalic.ttf in Resources */,
+				0B8B61DC2730C66400C8BE29 /* Recovery.storyboard in Resources */,
 				0BEE12A02729E19500AA31F6 /* AboutUsStoryboard.storyboard in Resources */,
 				0BEE127F2729DF8E00AA31F6 /* PTSerif-Regular.ttf in Resources */,
 				0BEE12992729DFA000AA31F6 /* SourceCodePro-ExtraLight.ttf in Resources */,
