@@ -18,11 +18,7 @@ class RegisterBussines {
             registerService.postRegister(
                 user: loginReq,
                 onFinished: { isSucces in
-            if isSucces {
                 onFinished(isSucces)
-            } else {
-                onFinished(false)
-            }
         })
     }
 }
