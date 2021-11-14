@@ -13,23 +13,25 @@ enum Endpoints {
     case postResigterUser
     case postRecovery
     
+    var base: String {
+        "https://hunger-swift-api.herokuapp.com/api/v1"
+    }
+    
     var url: String {
         switch self {
         case .getRestaurants:
-            return "/restaurants"
+            return "\(base)/restaurants"
             
         case .postLoginUser:
-            return "/login"
+            return "\(base)/login"
         
         case .postResigterUser:
-            return "/register"
+            return "\(base)/register"
+            
         case .postRecovery:
-            return "/recovery"
+            return "\(base)/recovery"
+        
+            
         }
     }
 }
-
-/*struct urlToRequest {
-    let serverEndpoint = "https://hunger-swift-api.herokuapp.com/api/v1"
-    let endpoint: Endpoints
-}*/

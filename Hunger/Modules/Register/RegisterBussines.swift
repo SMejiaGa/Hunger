@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RegisterBussines {
+final class RegisterBussines {
     let registerService = RegisterService()
     
     func postRegister(

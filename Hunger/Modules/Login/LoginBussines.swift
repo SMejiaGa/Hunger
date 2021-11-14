@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LoginBussines {
+final class LoginBussines {
     // hacer constructor
     private let loginService = LoginService()
     

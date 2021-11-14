@@ -1,5 +1,5 @@
 //
-//  LoginService.swift
+//  RegisterService.swift
 //  Hunger
 //
 //  Created by Sebastian Mejia on 2/11/21.
@@ -8,18 +8,15 @@
 import Foundation
 import Alamofire
 
-class LoginService {
+final class RegisterService {
     
-    private let serverEndpoint = "https://hunger-swift-api.herokuapp.com/api/v1"
-    
-    func postLogin(
+    func postRegister(
         user: User,
         onFinished: @escaping (Bool) -> Void
     ) {
-        let loginURL =  "\(serverEndpoint)\(Endpoints.postLoginUser.url)"
-        
+    
         AF.request(
-            loginURL,
+            Endpoints.postResigterUser.url,
             method: .post,
             parameters: user,
             headers: nil

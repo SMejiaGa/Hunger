@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ListBussines {
+final class ListBussines {
     
     // MARK: -Properties
     private(set) var restaurantCarrier = [Restaurant]()

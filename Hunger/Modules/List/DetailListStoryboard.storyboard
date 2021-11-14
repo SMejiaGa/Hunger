@@ -139,6 +139,9 @@
                                 </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Intentalo nuevamente"/>
+                                <connections>
+                                    <action selector="reloadButton:" destination="5kB-Vi-aSK" eventType="touchUpInside" id="GNa-pF-h8T"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="khb-BI-9gs"/>

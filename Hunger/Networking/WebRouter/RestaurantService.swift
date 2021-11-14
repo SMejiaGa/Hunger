@@ -8,20 +8,24 @@
 import Foundation
 import Alamofire
 
-class RestaurantService {
+typealias RestaurantServiceResult = ([Restaurant], Bool) -> Void
+
+final class RestaurantService {
     
-    private let serverEndpoint = "https://hunger-swift-api.herokuapp.com/api/v1"
-    
-    func getRestaurants(onFinished: @escaping ([Restaurant], Bool) -> Void) {
+    func getRestaurants(onFinished: @escaping RestaurantServiceResult) {
+        
         var errorExist: Bool = false
    
-        let restaurantURL = "\(serverEndpoint)\(Endpoints.getRestaurants.url)"
-        AF.request(restaurantURL).responseDecodable{ (res: DataResponse<[Restaurant], AFError>) in
+        AF.request(Endpoints.getRestaurants.url).responseDecodable{ (res: DataResponse<[Restaurant], AFError>) in
             if res.error != nil{
                 errorExist = true
             }
             let responseFromService = res.value ?? []
             onFinished(responseFromService, errorExist)
         }
+    }
+    
+    func getRestaurantDetails(){
+        
     }
 }

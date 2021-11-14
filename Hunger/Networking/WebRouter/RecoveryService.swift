@@ -8,18 +8,15 @@
 import Foundation
 import Alamofire
 
-class RecoveryService {
-    
-    private let serverEndpoint = "https://hunger-swift-api.herokuapp.com/api/v1"
+final class RecoveryService {
     
     func postRecovery(
         email: Email,
         onFinished: @escaping (String) -> Void
     ) {
-        let registerURL =  "\(serverEndpoint)\(Endpoints.postRecovery.url)"
-        
+       
         AF.request(
-            registerURL,
+            Endpoints.postRecovery.url,
             method: .post,
             parameters: email,
             headers: nil
