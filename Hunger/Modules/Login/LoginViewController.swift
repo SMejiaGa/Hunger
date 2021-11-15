@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SimpleKeyboard
 
 enum AppRoutes {
     enum Login: String {
@@ -47,6 +48,7 @@ class LoginViewController: UIViewController {
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        supportFlexibleLayout()
         setupHelpText()
         setupGestureToHelpText()
         setupRegisterText()

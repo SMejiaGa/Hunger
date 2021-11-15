@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SimpleKeyboard
 
 class RecoveryViewController: UIViewController {
     
@@ -20,6 +21,7 @@ class RecoveryViewController: UIViewController {
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        supportFlexibleLayout()
         setupFacebookText()
         setupGestureToHelpText()
     }

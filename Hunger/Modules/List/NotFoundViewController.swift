@@ -9,6 +9,11 @@ import UIKit
 
 class NotFoundViewController: UIViewController {
 
+
+    @IBAction func reloadButton(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
