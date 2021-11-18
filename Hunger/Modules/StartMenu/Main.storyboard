@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="1017" y="99"/>
         </scene>
-        <!--DetailListStoryboard-->
+        <!--MapStoryboard-->
         <scene sceneID="MlP-cf-coS">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetailListStoryboard" id="sV4-V0-q8d" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MapStoryboard" id="sV4-V0-q8d" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="K9Y-Tc-Ymd"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ja-GI-7YC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

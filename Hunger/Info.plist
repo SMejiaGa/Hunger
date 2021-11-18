@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>A Hunger le gustaria conocer tu ubicación :)</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Hunger esta usando tu ubicacion :)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -48,10 +52,10 @@
 		<string>SourceCodePro-Regular.ttf</string>
 		<string>SourceCodePro-SemiBold.ttf</string>
 		<string>SourceCodePro-SemiBoldItalic.ttf</string>
-        <string>PTSerif-Italic.ttf</string>
-        <string>PTSerif-BoldItalic.ttf</string>
-        <string>PTSerif-Bold.ttf</string>
-        <string>PTSerif-Regular.ttf</string>
+		<string>PTSerif-Italic.ttf</string>
+		<string>PTSerif-BoldItalic.ttf</string>
+		<string>PTSerif-Bold.ttf</string>
+		<string>PTSerif-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
