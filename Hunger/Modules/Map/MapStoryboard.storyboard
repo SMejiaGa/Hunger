@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ysf-mv-2i9">
-                                <rect key="frame" x="0.0" y="117.5" width="414" height="744.5"/>
+                                <rect key="frame" x="0.0" y="117.5" width="414" height="778.5"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -52,7 +52,7 @@
                             <constraint firstItem="kQH-Rs-mFa" firstAttribute="centerY" secondItem="fOo-AA-S8b" secondAttribute="centerY" id="4N9-9E-Ccg"/>
                             <constraint firstItem="Ysf-mv-2i9" firstAttribute="top" secondItem="kQH-Rs-mFa" secondAttribute="bottom" constant="25" id="Gtc-40-MEg"/>
                             <constraint firstItem="Ysf-mv-2i9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Q8Z-0l-Lz9"/>
-                            <constraint firstAttribute="bottom" secondItem="Ysf-mv-2i9" secondAttribute="bottom" constant="34" id="Yc2-Fe-vhe"/>
+                            <constraint firstAttribute="bottom" secondItem="Ysf-mv-2i9" secondAttribute="bottom" id="Yc2-Fe-vhe"/>
                             <constraint firstItem="kQH-Rs-mFa" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="bDy-YX-kMU"/>
                             <constraint firstItem="fOo-AA-S8b" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="rLa-z8-sby"/>
                         </constraints>

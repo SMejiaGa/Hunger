@@ -18,12 +18,15 @@ class ListViewController: UIViewController {
     private let descriptionToHighlightA = "buena comida"
     private let descriptionToHighlightB = "precio justo"
     private let highlightTextSize: CGFloat = 19
+    private var slideMenuActive = false
     
     // MARK: - IBOutlets
     @IBOutlet weak var messagesTable: UITableView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
     @IBOutlet weak var descriptionText: UILabel!
     
+    @IBOutlet weak var viewTrailing: NSLayoutConstraint!
+    @IBOutlet weak var viewLeading: NSLayoutConstraint!
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,25 @@ class ListViewController: UIViewController {
     
     @IBAction func backButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    @IBAction func SlideButton(_ sender: Any) {
+        if !slideMenuActive {
+        
+            viewLeading.constant = -150
+            viewTrailing.constant = -150
+            
+            slideMenuActive = true
+        } else {
+          
+            viewLeading.constant = 0
+            viewTrailing.constant = 0
+            
+            slideMenuActive = false
+        }
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn) {
+            self.view.layoutIfNeeded()
+        } 
+
     }
     
     // MARK: - Private methods
@@ -77,7 +99,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? CustomTableViewCell {
-            cell.configCell(distance: bussines.restaurantCarrier[indexPath.row].distance,restaurantName: bussines.restaurantCarrier[indexPath.row].name , isAvailable: bussines.restaurantCarrier[indexPath.row].isAvaliable)
+            cell.configCell(distance: bussines.restaurantCarrier[indexPath.row].distance,restaurantName: bussines.restaurantCarrier[indexPath.row].name , isAvailable: bussines.restaurantCarrier[indexPath.row].isAvailable)
             return cell
         }
         return UITableViewCell()

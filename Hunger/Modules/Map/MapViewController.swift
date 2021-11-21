@@ -14,7 +14,6 @@ class MapViewController: UIViewController {
 
     var initialLocation = CLLocation()
     let locationManager = CLLocationManager()
-    let pin = MKPointAnnotation()
     let bussines = MapBussines()
     let messageFromError = "Error, intenta de nuevo mas tarde"
 
@@ -48,12 +47,10 @@ class MapViewController: UIViewController {
     }
     
     private func addPointersToMap(){
-      //  var actualPins: [MKPointAnnotation]
         for resLocation in self.bussines.pinsCarrier{
+            let pin = MKPointAnnotation()
             pin.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(resLocation.location.latitude), longitude: CLLocationDegrees(resLocation.location.longitude))
-            //actualPins.insert(pin, at: actualPins.count)
             mapView.addAnnotation(pin)
-            //mapView.showAnnotations(mapView.annotations, animated: true)
         }
         
         mapView.showAnnotations(mapView.annotations, animated: true)

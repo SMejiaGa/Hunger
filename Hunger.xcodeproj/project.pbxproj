@@ -57,7 +57,6 @@
 		0BDEE54F2741D16F00C1A67C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDEE54E2741D16F00C1A67C /* MapViewController.swift */; };
 		0BDEE5512741D1E700C1A67C /* MapBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDEE5502741D1E700C1A67C /* MapBussines.swift */; };
 		0BDEE5532741D1F500C1A67C /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDEE5522741D1F500C1A67C /* MapService.swift */; };
-		0BDEE5552744C37400C1A67C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDEE5542744C37400C1A67C /* LocationManager.swift */; };
 		0BE591E627082C3900E9BF32 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591E527082C3900E9BF32 /* LoginViewController.swift */; };
 		0BE591E827082C5C00E9BF32 /* RecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591E727082C5C00E9BF32 /* RecoveryViewController.swift */; };
 		0BE591EA2708313000E9BF32 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591E92708313000E9BF32 /* RegisterViewController.swift */; };
@@ -140,7 +139,6 @@
 		0BDEE54E2741D16F00C1A67C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0BDEE5502741D1E700C1A67C /* MapBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBussines.swift; sourceTree = "<group>"; };
 		0BDEE5522741D1F500C1A67C /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
-		0BDEE5542744C37400C1A67C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		0BE591E527082C3900E9BF32 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0BE591E727082C5C00E9BF32 /* RecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryViewController.swift; sourceTree = "<group>"; };
 		0BE591E92708313000E9BF32 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -347,7 +345,6 @@
 				0BA60283271E7AEE0041F3C6 /* Lang.swift */,
 				0BA602B3272353BA0041F3C6 /* TextUtils.swift */,
 				0BA602B52723C6720041F3C6 /* AppColor.swift */,
-				0BDEE5542744C37400C1A67C /* LocationManager.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -671,7 +668,6 @@
 				0BA602722710176E0041F3C6 /* CustomTableViewCell.swift in Sources */,
 				0B8B61CE272D052600C8BE29 /* RecoveryResponse.swift in Sources */,
 				0BDEE54F2741D16F00C1A67C /* MapViewController.swift in Sources */,
-				0BDEE5552744C37400C1A67C /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@ import Alamofire
 typealias MapPointerServiceResult = ([MapPointer], Bool) -> Void
 
 final class MapService{
+    
     func getRestaurantsLocation(onFinished: @escaping MapPointerServiceResult) {
         
         var errorExist: Bool = false
