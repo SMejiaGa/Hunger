@@ -8,30 +8,21 @@
 import UIKit
 import MapKit
 import CoreLocation
-import SwiftUI
 
 class MapViewController: UIViewController {
 
-    var initialLocation = CLLocation()
-    let locationManager = CLLocationManager()
     let bussines = MapBussines()
     let messageFromError = "Error, intenta de nuevo mas tarde"
 
     @IBOutlet weak var mapView: MKMapView!
-    @IBAction func backButton(_ sender: Any) {
+    @IBAction func backButton() {
         navigationController?.popViewController(animated: true)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
-
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-        }
+        bussines.locationPermissions()
         mapView.userTrackingMode = .follow
         fetchPins()
     }

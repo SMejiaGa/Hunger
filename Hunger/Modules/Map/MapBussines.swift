@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import CoreLocation
 
 final class MapBussines{
-     var pinsCarrier = [MapPointer]()
+    let locationManager = CLLocationManager()
+    private(set) var pinsCarrier = [RestaurantLocation]()
     private let restaurantLocationService = MapService()
     
     func fetchLocations(onFinished: @escaping (Bool) ->Void){
@@ -16,5 +18,15 @@ final class MapBussines{
             self.pinsCarrier = locationData
             onFinished(receivedError)
         })
+    }
+    
+    func locationPermissions() {
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
 }

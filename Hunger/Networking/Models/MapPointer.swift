@@ -12,7 +12,7 @@ struct Location: Codable{
     let longitude: Float
 }
 
-struct MapPointer: Codable{
+struct RestaurantLocation: Codable{
     let name: String
     let location: Location
 }

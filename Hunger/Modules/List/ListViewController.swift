@@ -25,8 +25,8 @@ class ListViewController: UIViewController {
     @IBOutlet weak var loader: UIActivityIndicatorView!
     @IBOutlet weak var descriptionText: UILabel!
     
-    @IBOutlet weak var viewTrailing: NSLayoutConstraint!
-    @IBOutlet weak var viewLeading: NSLayoutConstraint!
+    @IBOutlet private weak var viewTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var viewLeadingConstraint: NSLayoutConstraint!
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,20 +37,20 @@ class ListViewController: UIViewController {
     
     // MARK: - IBActions
     
-    @IBAction func backButton(_ sender: Any) {
+    @IBAction func backButton() {
         navigationController?.popViewController(animated: true)
     }
-    @IBAction func SlideButton(_ sender: Any) {
+    @IBAction func SlideButton() {
         if !slideMenuActive {
         
-            viewLeading.constant = -150
-            viewTrailing.constant = -150
+            viewLeadingConstraint.constant = -150
+            viewTrailingConstraint.constant = -150
             
             slideMenuActive = true
         } else {
           
-            viewLeading.constant = 0
-            viewTrailing.constant = 0
+            viewLeadingConstraint.constant = 0
+            viewTrailingConstraint.constant = 0
             
             slideMenuActive = false
         }

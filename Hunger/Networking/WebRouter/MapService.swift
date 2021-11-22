@@ -8,20 +8,16 @@
 import Foundation
 import Alamofire
 
-typealias MapPointerServiceResult = ([MapPointer], Bool) -> Void
+typealias MapPointerServiceResult = ([RestaurantLocation], Bool) -> Void
 
-final class MapService{
+final class MapService {
     
     func getRestaurantsLocation(onFinished: @escaping MapPointerServiceResult) {
         
-        var errorExist: Bool = false
-   
-        AF.request(Endpoints.getRestaurantLocations.url).responseDecodable{ (res: DataResponse<[MapPointer], AFError>) in
-            if res.error != nil{
-                errorExist = true
-            }
+        AF.request(Endpoints.getRestaurantLocations.url).responseDecodable{ (res: DataResponse<[RestaurantLocation], AFError>) in
+            
             let responseFromService = res.value ?? []
-            onFinished(responseFromService, errorExist)
+            onFinished(responseFromService, res.error != nil)
         }
     }
 }
