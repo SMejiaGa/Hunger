@@ -16,8 +16,8 @@ final class RestaurantService {
         
         var errorExist: Bool = false
    
-        AF.request(Endpoints.getRestaurants.url).responseDecodable{ (res: DataResponse<[Restaurant], AFError>) in
-            if res.error != nil{
+        AF.request(Endpoints.getRestaurants.url).responseDecodable { (res: DataResponse<[Restaurant], AFError>) in
+            if res.error != nil {
                 errorExist = true
             }
             let responseFromService = res.value ?? []
@@ -25,7 +25,7 @@ final class RestaurantService {
         }
     }
     
-    func getRestaurantDetails(){
+    func getRestaurantDetails() {
         
     }
 }

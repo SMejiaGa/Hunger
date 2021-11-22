@@ -13,7 +13,7 @@ final class RegisterBussines {
     func postRegister(
         email: String,
         password: String,
-        onFinished: @escaping (Bool) ->Void) {
+        onFinished: @escaping (Bool) -> Void) {
         let loginReq = User(email: email, password: password)
             registerService.postRegister(
                 user: loginReq,

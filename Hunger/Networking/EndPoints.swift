@@ -35,7 +35,6 @@ enum Endpoints {
         case .postRecovery:
             return "\(base)/recovery"
         
-            
         }
     }
 }

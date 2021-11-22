@@ -99,7 +99,11 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? CustomTableViewCell {
-            cell.configCell(distance: bussines.restaurantCarrier[indexPath.row].distance,restaurantName: bussines.restaurantCarrier[indexPath.row].name , isAvailable: bussines.restaurantCarrier[indexPath.row].isAvailable)
+            cell.configCell(
+                distance: bussines.restaurantCarrier[indexPath.row].distance,
+                restaurantName: bussines.restaurantCarrier[indexPath.row].name,
+                isAvailable: bussines.restaurantCarrier[indexPath.row].isAvaliable
+            )
             return cell
         }
         return UITableViewCell()

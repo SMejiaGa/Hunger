@@ -9,13 +9,13 @@ import Foundation
 
 final class ListBussines {
     
-    // MARK: -Properties
+    // MARK: - Properties
     private(set) var restaurantCarrier = [Restaurant]()
     private let restaurantService = RestaurantService()
     
-    // MARK: -Private methods
+    // MARK: - Private methods
     
-    func fetchRestaurants(onFinished: @escaping (Bool) ->Void){
+    func fetchRestaurants(onFinished: @escaping (Bool) -> Void) {
         restaurantService.getRestaurants(onFinished: { restaurantsData, receivedError in
             self.restaurantCarrier = restaurantsData
             onFinished(receivedError)
