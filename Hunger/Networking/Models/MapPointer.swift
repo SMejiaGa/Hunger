@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Location{
+struct Location: Codable{
     let latitude: Float
     let longitude: Float
 }
 
-struct MapPointer{
+struct RestaurantLocation: Codable{
     let name: String
     let location: Location
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B5FCFE7272B5581006BA48F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5FCFE6272B5581006BA48F /* Main.storyboard */; };
+		0B5FCFE7272B5581006BA48F /* StartMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5FCFE6272B5581006BA48F /* StartMenu.storyboard */; };
 		0B5FCFE9272B5CFA006BA48F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FCFE8272B5CFA006BA48F /* User.swift */; };
 		0B5FCFEB272B5D72006BA48F /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FCFEA272B5D72006BA48F /* UserResponse.swift */; };
 		0B5FCFED272B6540006BA48F /* LoginBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FCFEC272B6540006BA48F /* LoginBussines.swift */; };
@@ -65,7 +65,7 @@
 		0BE591F027095A7D00E9BF32 /* NotFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591EF27095A7D00E9BF32 /* NotFoundViewController.swift */; };
 		0BE591F527095BEF00E9BF32 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591F427095BEF00E9BF32 /* EndPoints.swift */; };
 		0BE591FC270A13AF00E9BF32 /* DetailListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE591FB270A13AF00E9BF32 /* DetailListStoryboard.storyboard */; };
-		0BE591FE270A15E300E9BF32 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591FD270A15E300E9BF32 /* MainViewController.swift */; };
+		0BE591FE270A15E300E9BF32 /* StartMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591FD270A15E300E9BF32 /* StartMenuViewController.swift */; };
 		0BEE127B2729DF8E00AA31F6 /* PTSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE12762729DF8E00AA31F6 /* PTSerif-Italic.ttf */; };
 		0BEE127C2729DF8E00AA31F6 /* PTSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE12772729DF8E00AA31F6 /* PTSerif-BoldItalic.ttf */; };
 		0BEE127D2729DF8E00AA31F6 /* PTSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE12782729DF8E00AA31F6 /* PTSerif-Bold.ttf */; };
@@ -89,7 +89,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0B5FCFE6272B5581006BA48F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0B5FCFE6272B5581006BA48F /* StartMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StartMenu.storyboard; sourceTree = "<group>"; };
 		0B5FCFE8272B5CFA006BA48F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0B5FCFEA272B5D72006BA48F /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		0B5FCFEC272B6540006BA48F /* LoginBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBussines.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		0BE591EF27095A7D00E9BF32 /* NotFoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundViewController.swift; sourceTree = "<group>"; };
 		0BE591F427095BEF00E9BF32 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		0BE591FB270A13AF00E9BF32 /* DetailListStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailListStoryboard.storyboard; sourceTree = "<group>"; };
-		0BE591FD270A15E300E9BF32 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0BE591FD270A15E300E9BF32 /* StartMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenuViewController.swift; sourceTree = "<group>"; };
 		0BEE12762729DF8E00AA31F6 /* PTSerif-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-Italic.ttf"; sourceTree = "<group>"; };
 		0BEE12772729DF8E00AA31F6 /* PTSerif-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
 		0BEE12782729DF8E00AA31F6 /* PTSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-Bold.ttf"; sourceTree = "<group>"; };
@@ -376,18 +376,18 @@
 				0B8B61D42730C3C300C8BE29 /* Login */,
 				0BE591E427082A6900E9BF32 /* List */,
 				0BE591E327082A6200E9BF32 /* Info */,
-				0BE591E227082A5C00E9BF32 /* Main */,
+				0BE591E227082A5C00E9BF32 /* StartMenu */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		0BE591E227082A5C00E9BF32 /* Main */ = {
+		0BE591E227082A5C00E9BF32 /* StartMenu */ = {
 			isa = PBXGroup;
 			children = (
-				0B5FCFE6272B5581006BA48F /* Main.storyboard */,
-				0BE591FD270A15E300E9BF32 /* MainViewController.swift */,
+				0B5FCFE6272B5581006BA48F /* StartMenu.storyboard */,
+				0BE591FD270A15E300E9BF32 /* StartMenuViewController.swift */,
 			);
-			path = Main;
+			path = StartMenu;
 			sourceTree = "<group>";
 		};
 		0BE591E327082A6200E9BF32 /* Info */ = {
@@ -558,7 +558,7 @@
 				0BA602A427211EE20041F3C6 /* SourceSansPro-BlackItalic.ttf in Resources */,
 				0BEE127D2729DF8E00AA31F6 /* PTSerif-Bold.ttf in Resources */,
 				0BA602732710176E0041F3C6 /* CustomTableViewCell.xib in Resources */,
-				0B5FCFE7272B5581006BA48F /* Main.storyboard in Resources */,
+				0B5FCFE7272B5581006BA48F /* StartMenu.storyboard in Resources */,
 				0BA602AE27211EE20041F3C6 /* SourceSansPro-SemiBold.ttf in Resources */,
 				0BEE12902729DFA000AA31F6 /* SourceCodePro-LightItalic.ttf in Resources */,
 				0BB820F12707E96500CE720D /* LaunchScreen.storyboard in Resources */,
@@ -638,7 +638,7 @@
 				0BE591E627082C3900E9BF32 /* LoginViewController.swift in Sources */,
 				0B8B61D0272D060C00C8BE29 /* Email.swift in Sources */,
 				0B8B61E12731D19D00C8BE29 /* RestaurantService.swift in Sources */,
-				0BE591FE270A15E300E9BF32 /* MainViewController.swift in Sources */,
+				0BE591FE270A15E300E9BF32 /* StartMenuViewController.swift in Sources */,
 				0BA60282271E77E60041F3C6 /* UIViewController+Extensions.swift in Sources */,
 				0BA602B62723C6720041F3C6 /* AppColor.swift in Sources */,
 				0BDEE5512741D1E700C1A67C /* MapBussines.swift in Sources */,

@@ -11,7 +11,7 @@ class NotFoundViewController: UIViewController {
 
 
     @IBAction func reloadButton(_ sender: Any) {
-        
+        dismiss(animated: true)
     }
     
     override func viewDidLoad() {

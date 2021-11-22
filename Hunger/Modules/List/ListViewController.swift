@@ -18,12 +18,15 @@ class ListViewController: UIViewController {
     private let descriptionToHighlightA = "buena comida"
     private let descriptionToHighlightB = "precio justo"
     private let highlightTextSize: CGFloat = 19
+    private var slideMenuActive = false
     
     // MARK: - IBOutlets
     @IBOutlet weak var messagesTable: UITableView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
     @IBOutlet weak var descriptionText: UILabel!
     
+    @IBOutlet private weak var viewTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var viewLeadingConstraint: NSLayoutConstraint!
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +37,27 @@ class ListViewController: UIViewController {
     
     // MARK: - IBActions
     
-    @IBAction func backButton(_ sender: Any) {
+    @IBAction func backButton() {
         navigationController?.popViewController(animated: true)
+    }
+    @IBAction func SlideButton() {
+        if !slideMenuActive {
+        
+            viewLeadingConstraint.constant = -150
+            viewTrailingConstraint.constant = -150
+            
+            slideMenuActive = true
+        } else {
+          
+            viewLeadingConstraint.constant = 0
+            viewTrailingConstraint.constant = 0
+            
+            slideMenuActive = false
+        }
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn) {
+            self.view.layoutIfNeeded()
+        } 
+
     }
     
     // MARK: - Private methods
@@ -77,7 +99,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? CustomTableViewCell {
-            cell.configCell(distance: bussines.restaurantCarrier[indexPath.row].distance,restaurantName: bussines.restaurantCarrier[indexPath.row].name , isAvailable: bussines.restaurantCarrier[indexPath.row].isAvaliable)
+            cell.configCell(distance: bussines.restaurantCarrier[indexPath.row].distance,restaurantName: bussines.restaurantCarrier[indexPath.row].name , isAvailable: bussines.restaurantCarrier[indexPath.row].isAvailable)
             return cell
         }
         return UITableViewCell()
