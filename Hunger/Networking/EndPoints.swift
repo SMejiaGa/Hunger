@@ -13,6 +13,7 @@ enum Endpoints {
     case postResigterUser
     case postRecovery
     case getRestaurantLocations
+    case getRestaurantDetail
     
     var base: String {
         "https://hunger-swift-api.herokuapp.com/api/v1"
@@ -25,6 +26,9 @@ enum Endpoints {
             
         case.getRestaurantLocations:
             return "\(base)/restaurants/locations"
+        
+        case.getRestaurantDetail:
+            return "\(base)/restaurants/detail/"
             
         case .postLoginUser:
             return "\(base)/login"

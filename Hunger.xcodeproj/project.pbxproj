@@ -53,7 +53,6 @@
 		0BB723A0274C6B6A00898D36 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB7239F274C6B6A00898D36 /* RestaurantDetailViewController.swift */; };
 		0BB723A2274C6B8100898D36 /* DetailBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB723A1274C6B8100898D36 /* DetailBussines.swift */; };
 		0BB723A4274C6B9400898D36 /* RestaurantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB723A3274C6B9400898D36 /* RestaurantDetail.swift */; };
-		0BB723A6274C6BA700898D36 /* RestaurantDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB723A5274C6BA700898D36 /* RestaurantDetailService.swift */; };
 		0BB820E52707E96400CE720D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB820E42707E96400CE720D /* AppDelegate.swift */; };
 		0BB820EE2707E96500CE720D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB820ED2707E96500CE720D /* Assets.xcassets */; };
 		0BB820F12707E96500CE720D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB820EF2707E96500CE720D /* LaunchScreen.storyboard */; };
@@ -138,7 +137,6 @@
 		0BB7239F274C6B6A00898D36 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		0BB723A1274C6B8100898D36 /* DetailBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBussines.swift; sourceTree = "<group>"; };
 		0BB723A3274C6B9400898D36 /* RestaurantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetail.swift; sourceTree = "<group>"; };
-		0BB723A5274C6BA700898D36 /* RestaurantDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailService.swift; sourceTree = "<group>"; };
 		0BB820E12707E96400CE720D /* Hunger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hunger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB820E42707E96400CE720D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BB820ED2707E96500CE720D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 				0B8B61E42731D1F300C8BE29 /* RegisterService.swift */,
 				0B8B61E62731D1FF00C8BE29 /* RecoveryService.swift */,
 				0BDEE5522741D1F500C1A67C /* MapService.swift */,
-				0BB723A5274C6BA700898D36 /* RestaurantDetailService.swift */,
 			);
 			path = WebRouter;
 			sourceTree = "<group>";
@@ -688,7 +685,6 @@
 				0BDEE5512741D1E700C1A67C /* MapBussines.swift in Sources */,
 				0BA602B4272353BA0041F3C6 /* TextUtils.swift in Sources */,
 				0BA602B82723C6970041F3C6 /* AppFont.swift in Sources */,
-				0BB723A6274C6BA700898D36 /* RestaurantDetailService.swift in Sources */,
 				0B8B61D2273064D500C8BE29 /* RecoveryBussines.swift in Sources */,
 				0BE591EA2708313000E9BF32 /* RegisterViewController.swift in Sources */,
 				0B5FCFEF272B654B006BA48F /* RegisterBussines.swift in Sources */,

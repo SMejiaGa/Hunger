@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RestaurantDetail {
+struct RestaurantDetail: Codable {
     let adress: String
     let commentsCount: Int
     let id: Int
