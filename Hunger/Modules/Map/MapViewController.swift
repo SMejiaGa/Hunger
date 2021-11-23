@@ -19,7 +19,6 @@ class MapViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         bussines.locationPermissions()
@@ -27,20 +26,27 @@ class MapViewController: UIViewController {
         fetchPins()
     }
     
-    private func fetchPins(){
+    private func fetchPins() {
         bussines.fetchLocations { errorExist in
-            if errorExist{
-                self.showMessage(alertMessage: self.messageFromError)
-            }  else {
+            if errorExist {
+                self.showMessage(
+                    alertMessage: self.messageFromError
+                )
+            } else {
                 self.addPointersToMap()
             }
         }
     }
     
-    private func addPointersToMap(){
-        for resLocation in self.bussines.pinsCarrier{
+    private func addPointersToMap() {
+        for resLocation in self.bussines.pinsCarrier {
             let pin = MKPointAnnotation()
-            pin.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(resLocation.location.latitude), longitude: CLLocationDegrees(resLocation.location.longitude))
+            pin.coordinate = CLLocationCoordinate2D(
+                latitude: CLLocationDegrees(
+                    resLocation.location.latitude
+                ),
+                longitude: CLLocationDegrees(resLocation.location.longitude)
+            )
             mapView.addAnnotation(pin)
         }
         
@@ -61,7 +67,3 @@ private extension MKMapView {
     setRegion(coordinateRegion, animated: true)
   }
 }
-
-
-
-

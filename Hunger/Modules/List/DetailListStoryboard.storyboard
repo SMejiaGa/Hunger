@@ -77,7 +77,7 @@
                                     <navigationItem id="Nk1-Ih-CAx">
                                         <barButtonItem key="rightBarButtonItem" image="SideBarIcon" id="HTo-Qy-0Yu">
                                             <connections>
-                                                <action selector="SlideButton" destination="Y6W-OH-hqX" id="vuT-Vb-sh0"/>
+                                                <action selector="slideButton" destination="Y6W-OH-hqX" id="lnC-YM-Qre"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

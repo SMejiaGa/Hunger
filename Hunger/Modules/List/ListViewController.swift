@@ -40,7 +40,7 @@ class ListViewController: UIViewController {
     @IBAction func backButton() {
         navigationController?.popViewController(animated: true)
     }
-    @IBAction func SlideButton() {
+    @IBAction func slideButton() {
         if !slideMenuActive {
         
             viewLeadingConstraint.constant = -150
@@ -102,7 +102,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             cell.configCell(
                 distance: bussines.restaurantCarrier[indexPath.row].distance,
                 restaurantName: bussines.restaurantCarrier[indexPath.row].name,
-                isAvailable: bussines.restaurantCarrier[indexPath.row].isAvaliable
+                isAvailable: bussines.restaurantCarrier[indexPath.row].isAvailable
             )
             return cell
         }
