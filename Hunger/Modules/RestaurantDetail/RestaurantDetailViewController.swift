@@ -11,24 +11,22 @@ class RestaurantDetailViewController: UIViewController {
     
     var onClickCell = 1
     private var bussines = DetailBussines()
-    let shareText = "Ven a conocer este nuevo restaurante!"
+    private var shareText = "Ven a conocer este nuevo restaurante:"
     
     // MARK: - IBOutlets
     @IBOutlet private weak var restaurantRatingLabel: UILabel!
     @IBOutlet private weak var restaurantAdressLabel: UILabel!
+    @IBOutlet weak var restaurantIsOpenLabel: UILabel!
     @IBOutlet private weak var restaurantIsFav: UIImageView!
     @IBOutlet private weak var restaurantNameLabel: UILabel!
     @IBOutlet private weak var restaurantIsOpen: UIImageView!
     @IBOutlet private weak var restaurantCommentsLabel: UILabel!
     @IBOutlet weak var loader: UIActivityIndicatorView!
-    @IBOutlet weak var star1Icon: UIImageView!
-    @IBOutlet weak var star2Icon: UIImageView!
-    @IBOutlet weak var star3Icon: UIImageView!
-    @IBOutlet weak var star4Icon: UIImageView!
-    @IBOutlet weak var star5Icon: UIImageView!
+    @IBOutlet var starsImages: [UIImageView]!
     // MARK: - IBActions
+    
     @IBAction func backButton() {
-        navigationController?.dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func shareButton() {
@@ -52,14 +50,21 @@ class RestaurantDetailViewController: UIViewController {
                 print("something went wrong")
             } else {
                 DispatchQueue.main.async {
+                    self.shareText += " \(detailData.name)!\n -Queda en: \(detailData.address) "
                     self.loader.stopAnimating()
-                    self.restaurantRatingLabel.text = "\(detailData.rating?.average ?? 0)" 
-                    self.restaurantCommentsLabel.text = "\(detailData.commentsCount)"
-                    self.restaurantAdressLabel.text = "\(detailData.adress)"
+                    self.restaurantRatingLabel.text = "\(String(format: "%.1f", detailData.rating?.average ?? 0))/10"
+                    self.restaurantCommentsLabel.text = "\(detailData.commentsCount) COMENTARIOS"
+                    self.restaurantAdressLabel.text = "\(detailData.address)"
                     self.restaurantNameLabel.text = "\(detailData.name)"
-                    self.restaurantAdressLabel.text = "\(detailData.adress)"
                     if detailData.isFavorite {
                         self.restaurantIsFav.image = UIImage(named: "favIconOnIcon")
+                    }
+                    if detailData.isOpen {
+                        self.restaurantIsOpenLabel.text = "ABIERTO"
+                        self.restaurantIsOpen.image = UIImage(named: "availableIcon")
+                    } else {
+                        self.restaurantIsOpenLabel.text = "CERRADO"
+                        self.restaurantIsOpen.image = UIImage(named: "unavailableIcon")
                     }
                     self.lightStars(actualStars: detailData.stars)
                 }
@@ -68,20 +73,8 @@ class RestaurantDetailViewController: UIViewController {
     }
     
     private func lightStars(actualStars: Int) {
-        if actualStars >= 1 {
-            star1Icon.image = UIImage(named: "starIcon")
-            if actualStars >= 2 {
-                star2Icon.image = UIImage(named: "starIcon")
-                if actualStars >= 3 {
-                    star3Icon.image = UIImage(named: "starIcon")
-                    if actualStars >= 4 {
-                        star4Icon.image = UIImage(named: "starIcon")
-                        if actualStars >= 5 {
-                            star5Icon.image = UIImage(named: "starIcon")
-                        }
-                    }
-                }
-            }
+        for star in 0...actualStars {
+            starsImages[star].image = UIImage(named: "starIcon")
         }
     }
 
