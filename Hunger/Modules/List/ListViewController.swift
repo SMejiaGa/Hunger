@@ -13,6 +13,7 @@ class ListViewController: UIViewController {
     private let customCellView = UINib(nibName: "CustomTableViewCell",
                                        bundle: nil)
     private var bussines = ListBussines()
+    private var detailBussines = DetailBussines()
     private let cellIdentifier = "CustomTableViewCell"
     private let cellReuseIdentifier = "myCell"
     private let descriptionToHighlightA = "buena comida"
@@ -107,6 +108,14 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        detailBussines.findRestaurant = bussines.restaurantCarrier[indexPath.row].id
+        if !bussines.restaurantCarrier[indexPath.row].isAvailable {
+           performSegue(withIdentifier: "performDetailCheck", sender: nil)
+        }
+                
     }
     
 }

@@ -130,6 +130,7 @@
                         <outlet property="viewLeadingConstraint" destination="fpq-ud-05j" id="Sh2-oZ-fNe"/>
                         <outlet property="viewTrailingConstraint" destination="X3O-PQ-wi4" id="DUY-XD-ek1"/>
                         <segue destination="5kB-Vi-aSK" kind="show" identifier="ShowNotFound" id="8mg-f9-d48"/>
+                        <segue destination="snn-NU-vSR" kind="show" identifier="performDetailCheck" id="MST-iC-CJ5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -144,7 +145,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ts1-is-8Kv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-60" y="554"/>
+            <point key="canvasLocation" x="-107" y="552"/>
+        </scene>
+        <!--RestaurantDetail-->
+        <scene sceneID="u5E-oz-UiG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RestaurantDetail" id="snn-NU-vSR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="O5i-Ou-rec"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Omg-Ic-Ish" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133" y="552"/>
         </scene>
         <!--Not Found View Controller-->
         <scene sceneID="XBh-Rt-xOi">

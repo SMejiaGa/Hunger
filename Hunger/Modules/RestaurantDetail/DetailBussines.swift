@@ -10,7 +10,7 @@ import Foundation
 final class DetailBussines {
     
     // MARK: - Properties
-    var findRestaurant = 0
+    var findRestaurant = 1
     private let restaurantService = RestaurantService()
     
     // MARK: - Private methods

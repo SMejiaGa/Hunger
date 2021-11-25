@@ -15,4 +15,9 @@ struct RestaurantDetail: Codable {
     let stars: Int
     let isOpen: Bool
     let name: String
+    let rating: Rating?
+}
+struct Rating: Codable {
+    let max: Int
+    let average: Float
 }
