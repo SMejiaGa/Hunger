@@ -9,7 +9,6 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
-    private let detailBussines = DetailBussines()
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var rNameLabel: UILabel!
     @IBOutlet weak var cellView: UIView!

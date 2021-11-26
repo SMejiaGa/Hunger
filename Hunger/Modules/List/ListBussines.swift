@@ -10,7 +10,6 @@ import Foundation
 final class ListBussines {
     
     // MARK: - Properties
-    var selectDetail: Int!
     private(set) var restaurantCarrier = [Restaurant]()
     private let restaurantService = RestaurantService()
     
