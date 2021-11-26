@@ -112,10 +112,10 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !bussines.restaurantCarrier[indexPath.row].isAvailable {
+            // bussines.selectDetail = bussines.restaurantCarrier[indexPath.row].id
             detailBussines.findRestaurant = bussines.restaurantCarrier[indexPath.row].id
-           performSegue(withIdentifier: "performDetailCheck", sender: nil)
+            performSegue(withIdentifier: "performDetailCheck", sender: nil)
         }
-                
     }
     
 }

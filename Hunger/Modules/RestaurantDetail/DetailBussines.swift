@@ -10,7 +10,7 @@ import Foundation
 final class DetailBussines {
     
     // MARK: - Properties
-    var findRestaurant = 0
+    var findRestaurant: Int!
     private let restaurantService = RestaurantService()
     
     // MARK: - Private methods
@@ -18,6 +18,6 @@ final class DetailBussines {
     func fetchDetails(onFinished: @escaping (RestaurantDetail, Bool) -> Void) {
         restaurantService.getRestaurantDetail(onFinished: { detailData, receivedError in
             onFinished(detailData, receivedError)
-        }, getDetail: findRestaurant)
+        }, getDetail: 0)
     }
 }

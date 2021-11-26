@@ -10,6 +10,7 @@ import Foundation
 final class ListBussines {
     
     // MARK: - Properties
+    var selectDetail: Int!
     private(set) var restaurantCarrier = [Restaurant]()
     private let restaurantService = RestaurantService()
     
@@ -21,4 +22,10 @@ final class ListBussines {
             onFinished(receivedError)
         })
     }
+    
+    /*func fetchDetails(onFinished: @escaping (RestaurantDetail, Bool) -> Void) {
+        restaurantService.getRestaurantDetail(onFinished: { detailData, receivedError in
+            onFinished(detailData, receivedError)
+        }, getDetail: selectDetail)
+    }*/
 }
