@@ -28,4 +28,8 @@ struct Lang {
         static let succesMessage = "Bienvenido a hungry!"
         
     }
+    
+    struct ErrorMessages {
+        static let tryAgainLaterError = "Ocurrio un error, Intentalo de nuevo mas tarde"
+    }
 }

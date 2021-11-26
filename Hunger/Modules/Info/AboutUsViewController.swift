@@ -16,7 +16,7 @@ class AboutUsViewController: UIViewController {
     @IBOutlet private weak var legalTextView: UITextView!
     
     // MARK: - IBActions
-    @IBAction func backButton(_ sender: Any) {
+    @IBAction private func backButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     // MARK: - ViewController LifeCycle
@@ -29,7 +29,7 @@ class AboutUsViewController: UIViewController {
     private func fetchLegal() {
         legalBussines.fetchLegal { legalData, errorExist in
             if errorExist {
-                print("Something went wrong")
+                self.showMessage(alertMessage: Lang.ErrorMessages.tryAgainLaterError)
             } else {
                 DispatchQueue.main.async {
                     self.loader.stopAnimating()

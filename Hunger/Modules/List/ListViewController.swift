@@ -40,24 +40,20 @@ class ListViewController: UIViewController {
     @IBAction func backButton() {
         navigationController?.popViewController(animated: true)
     }
-    @IBAction func slideButton() {
-        if !slideMenuActive {
+    
+    @IBAction func showAlertButton() {
+        let alert = UIAlertController(title: "Elige una opcion", message: "", preferredStyle: .actionSheet)
         
-            viewLeadingConstraint.constant = -150
-            viewTrailingConstraint.constant = -150
-            
-            slideMenuActive = true
-        } else {
-          
-            viewLeadingConstraint.constant = 0
-            viewTrailingConstraint.constant = 0
-            
-            slideMenuActive = false
-        }
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn) {
-            self.view.layoutIfNeeded()
-        } 
-
+        alert.addAction(UIAlertAction(title: "Mostrar mapa", style: .default, handler: { _ in
+            self.performSegue(withIdentifier: "showMapSegue", sender: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Legal", style: .default, handler: { _ in
+            self.performSegue(withIdentifier: "showLegalSegue", sender: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: {_ in
+            }))
+        self.present(alert, animated: true, completion: {
+        })
     }
     
     // MARK: - Private methods

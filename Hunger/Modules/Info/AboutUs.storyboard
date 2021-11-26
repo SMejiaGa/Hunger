@@ -63,7 +63,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="legalText" destination="Rgs-Ce-mV3" id="dnk-qr-41h"/>
+                        <outlet property="legalTextView" destination="Rgs-Ce-mV3" id="7v1-tG-ySK"/>
                         <outlet property="loader" destination="QMx-MC-rTM" id="Hga-8G-adO"/>
                     </connections>
                 </viewController>

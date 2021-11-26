@@ -35,7 +35,7 @@
                                     <navigationItem id="Nk1-Ih-CAx">
                                         <barButtonItem key="rightBarButtonItem" image="SideBarIcon" id="HTo-Qy-0Yu">
                                             <connections>
-                                                <action selector="slideButton" destination="Y6W-OH-hqX" id="QOD-Ct-XEI"/>
+                                                <action selector="showAlertButton" destination="Y6W-OH-hqX" id="6wS-bi-9fX"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -118,21 +118,13 @@
                         <outlet property="viewLeadingConstraint" destination="fpq-ud-05j" id="Sh2-oZ-fNe"/>
                         <outlet property="viewTrailingConstraint" destination="X3O-PQ-wi4" id="DUY-XD-ek1"/>
                         <segue destination="5kB-Vi-aSK" kind="show" identifier="ShowNotFound" id="8mg-f9-d48"/>
+                        <segue destination="qSG-xE-iNL" kind="show" identifier="showMapSegue" id="iP4-Xe-FNl"/>
+                        <segue destination="pIh-Ib-HAJ" kind="show" identifier="showLegalSegue" id="8Kx-sF-I07"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-60" y="99.400299850074973"/>
-        </scene>
-        <!--AboutUs-->
-        <scene sceneID="wqt-XV-20a">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ch5-K0-1tY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewControllerPlaceholder storyboardName="AboutUs" id="5RZ-G9-cTq" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="KZW-k0-8fd"/>
-                </viewControllerPlaceholder>
-            </objects>
-            <point key="canvasLocation" x="218" y="553"/>
         </scene>
         <!--MapStoryboard-->
         <scene sceneID="eQz-X4-4E2">
@@ -142,7 +134,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ts1-is-8Kv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-107" y="553"/>
+            <point key="canvasLocation" x="-259" y="552"/>
+        </scene>
+        <!--AboutUs-->
+        <scene sceneID="QLa-zd-GzZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AboutUs" id="pIh-Ib-HAJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="f5p-Tv-eZd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gGO-G3-ZQN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="551"/>
         </scene>
         <!--Not Found View Controller-->
         <scene sceneID="XBh-Rt-xOi">
