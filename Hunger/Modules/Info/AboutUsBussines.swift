@@ -9,11 +9,11 @@ import Foundation
 
 final class AboutUsBussines {
  
-    private let legalService = AboutUsService()
+    private let aboutUsService = AboutUsService()
     
-    func fetchLegal(onFinished: @escaping (LegalResponse, Bool) -> Void) {
-        legalService.getLegal(onFinished: { legalData, receivedError in
-            onFinished(legalData, receivedError)
+    func fetchAboutUs(onFinished: @escaping (AboutUsResponse, Bool) -> Void) {
+        aboutUsService.getAboutUs(onFinished: { aboutUsData, receivedError in
+            onFinished(aboutUsData, receivedError)
         })
     }
 }

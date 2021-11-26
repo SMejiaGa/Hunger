@@ -119,7 +119,7 @@
                         <outlet property="viewTrailingConstraint" destination="X3O-PQ-wi4" id="DUY-XD-ek1"/>
                         <segue destination="5kB-Vi-aSK" kind="show" identifier="ShowNotFound" id="8mg-f9-d48"/>
                         <segue destination="qSG-xE-iNL" kind="show" identifier="showMapSegue" id="iP4-Xe-FNl"/>
-                        <segue destination="pIh-Ib-HAJ" kind="show" identifier="showLegalSegue" id="8Kx-sF-I07"/>
+                        <segue destination="pIh-Ib-HAJ" kind="show" identifier="showAboutUsSegue" id="8Kx-sF-I07"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

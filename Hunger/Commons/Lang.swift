@@ -29,6 +29,13 @@ struct Lang {
         
     }
     
+    struct List{
+        static let chooseAnOptionMessage = "Elige una opcion"
+        static let showMapLabelMessage = "Mostrar mapa"
+        static let aboutUsMessage = "Sobre nosotros"
+        static let cancelMessage = "Cancelar"
+    }
+    
     struct ErrorMessages {
         static let tryAgainLaterError = "Ocurrio un error, Intentalo de nuevo mas tarde"
     }

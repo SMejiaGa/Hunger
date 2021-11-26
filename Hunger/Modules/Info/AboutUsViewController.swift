@@ -9,31 +9,31 @@ import UIKit
 
 class AboutUsViewController: UIViewController {
     // MARK: - Properties
-    private let legalBussines = AboutUsBussines()
+    private let aboutUsBussines = AboutUsBussines()
 
     // MARK: - IBOutlets
     @IBOutlet private weak var loader: UIActivityIndicatorView!
-    @IBOutlet private weak var legalTextView: UITextView!
+    @IBOutlet private weak var aboutUsTextView: UITextView!
     
     // MARK: - IBActions
-    @IBAction private func backButton(_ sender: Any) {
+    @IBAction private func backButton() {
         navigationController?.popViewController(animated: true)
     }
     // MARK: - ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchLegal()
+        fetchAboutUs()
     }
     
     // MARK: - Private Functions
-    private func fetchLegal() {
-        legalBussines.fetchLegal { legalData, errorExist in
+    private func fetchAboutUs() {
+        aboutUsBussines.fetchAboutUs { aboutUsData, errorExist in
             if errorExist {
                 self.showMessage(alertMessage: Lang.ErrorMessages.tryAgainLaterError)
             } else {
                 DispatchQueue.main.async {
                     self.loader.stopAnimating()
-                    self.legalTextView.attributedText = legalData.text.htmlToAttributedString
+                    self.aboutUsTextView.attributedText = aboutUsData.text.htmlToAttributedString
                 }
             }
         }

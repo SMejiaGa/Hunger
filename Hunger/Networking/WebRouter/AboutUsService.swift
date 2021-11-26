@@ -1,5 +1,5 @@
 //
-//  LegalService.swift
+//  AboutUsService.swift
 //  Hunger
 //
 //  Created by Sebastian Mejia on 24/11/21.
@@ -8,20 +8,15 @@
 import Foundation
 import Alamofire
 
-typealias LegalResult = (LegalResponse, Bool) -> Void
+typealias AboutUsResult = (AboutUsResponse, Bool) -> Void
 
 final class AboutUsService {
     
-    func getLegal(onFinished: @escaping LegalResult) {
-        
-        var errorExist: Bool = false
+    func getAboutUs(onFinished: @escaping AboutUsResult) {
    
-        AF.request(Endpoints.getLegalText.url).responseDecodable { (res: DataResponse<LegalResponse, AFError>) in
-            if res.error != nil {
-                errorExist = true
-            }
+        AF.request(Endpoints.getAboutUsText.url).responseDecodable { (res: DataResponse<AboutUsResponse, AFError>) in
             if let responseFromService = res.value {
-                onFinished(responseFromService, errorExist)
+                onFinished(responseFromService, (res.error != nil))
             }
         }
     }
@@ -34,7 +29,8 @@ extension String {
                 data: data,
                 options: [.documentType: NSAttributedString.DocumentType.html,
                           .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
-        } catch {
+        } catch let error{
+            print(error)
             return nil
         }
     }

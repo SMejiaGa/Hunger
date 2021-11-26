@@ -19,6 +19,9 @@ class ListViewController: UIViewController {
     private let descriptionToHighlightB = "precio justo"
     private let highlightTextSize: CGFloat = 19
     private var slideMenuActive = false
+    private let showMapSegue = "showMapSegue"
+    private let aboutUsSegue = "showAboutUsSegue"
+    private let notFoundSegue = "ShowNotFound"
     
     // MARK: - IBOutlets
     @IBOutlet weak var messagesTable: UITableView!
@@ -37,20 +40,20 @@ class ListViewController: UIViewController {
     
     // MARK: - IBActions
     
-    @IBAction func backButton() {
+    @IBAction private func backButton() {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func showAlertButton() {
-        let alert = UIAlertController(title: "Elige una opcion", message: "", preferredStyle: .actionSheet)
+    @IBAction private func showAlertButton() {
+        let alert = UIAlertController(title: Lang.List.chooseAnOptionMessage, message: "", preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Mostrar mapa", style: .default, handler: { _ in
-            self.performSegue(withIdentifier: "showMapSegue", sender: nil)
+        alert.addAction(UIAlertAction(title: Lang.List.showMapLabelMessage, style: .default, handler: { _ in
+            self.performSegue(withIdentifier: self.showMapSegue, sender: nil)
         }))
-        alert.addAction(UIAlertAction(title: "Legal", style: .default, handler: { _ in
-            self.performSegue(withIdentifier: "showLegalSegue", sender: nil)
+        alert.addAction(UIAlertAction(title: Lang.List.aboutUsMessage, style: .default, handler: { _ in
+            self.performSegue(withIdentifier: self.aboutUsSegue, sender: nil)
         }))
-        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: {_ in
+        alert.addAction(UIAlertAction(title: Lang.List.cancelMessage, style: .cancel, handler: {_ in
             }))
         self.present(alert, animated: true, completion: {
         })
@@ -60,7 +63,7 @@ class ListViewController: UIViewController {
     private func fetchData() {
         bussines.fetchRestaurants(onFinished: { errorExist in
             if errorExist {
-                self.performSegue(withIdentifier: "ShowNotFound", sender: nil)
+                self.performSegue(withIdentifier: self.notFoundSegue, sender: nil)
             } else {
                 DispatchQueue.main.async {
                     self.messagesTable.reloadData()
