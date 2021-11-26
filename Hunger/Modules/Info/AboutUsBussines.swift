@@ -9,7 +9,7 @@ import Foundation
 
 final class AboutUsBussines {
  
-    let legalService = AboutUsService()
+    private let legalService = AboutUsService()
     
     func fetchLegal(onFinished: @escaping (LegalResponse, Bool) -> Void) {
         legalService.getLegal(onFinished: { legalData, receivedError in

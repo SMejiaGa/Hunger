@@ -8,17 +8,24 @@
 import UIKit
 
 class AboutUsViewController: UIViewController {
-    
+    // MARK: - Properties
     private let legalBussines = AboutUsBussines()
 
-    @IBOutlet weak var loader: UIActivityIndicatorView!
-    @IBOutlet weak var legalText: UILabel!
+    // MARK: - IBOutlets
+    @IBOutlet private weak var loader: UIActivityIndicatorView!
+    @IBOutlet private weak var legalTextView: UITextView!
     
+    // MARK: - IBActions
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    // MARK: - ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchLegal()
     }
     
+    // MARK: - Private Functions
     private func fetchLegal() {
         legalBussines.fetchLegal { legalData, errorExist in
             if errorExist {
@@ -26,7 +33,7 @@ class AboutUsViewController: UIViewController {
             } else {
                 DispatchQueue.main.async {
                     self.loader.stopAnimating()
-                    self.legalText.attributedText = legalData.text.htmlToAttributedString
+                    self.legalTextView.attributedText = legalData.text.htmlToAttributedString
                 }
             }
         }
