@@ -80,13 +80,13 @@
                                         <rect key="frame" x="0.0" y="166" width="384" height="31.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="pinRestaurantDetailIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dLg-vH-x0c">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="31.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="25" height="31.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="e5Z-E6-FQW"/>
+                                                    <constraint firstAttribute="width" constant="25" id="e5Z-E6-FQW"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.12m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEB-W8-5qr">
-                                                <rect key="frame" x="50" y="0.0" width="65" height="31.5"/>
+                                                <rect key="frame" x="25" y="0.0" width="65" height="31.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="65" id="8zN-Wz-mnw"/>
                                                 </constraints>
@@ -95,7 +95,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="DIRECCION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeR-Jh-5pb">
-                                                <rect key="frame" x="115" y="0.0" width="269" height="31.5"/>
+                                                <rect key="frame" x="90" y="0.0" width="294" height="31.5"/>
                                                 <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -208,19 +208,19 @@
                     </view>
                     <connections>
                         <outlet property="loader" destination="B0L-sY-z0E" id="Kpd-dp-m1D"/>
-                        <outlet property="restaurantAdressLabel" destination="eeR-Jh-5pb" id="VHU-uQ-gZP"/>
+                        <outlet property="restaurantAdressLabel" destination="eeR-Jh-5pb" id="NL6-Ad-UpR"/>
                         <outlet property="restaurantCommentsLabel" destination="QvQ-hU-vdj" id="yp5-Yc-Bp4"/>
-                        <outlet property="restaurantIsFav" destination="Y4M-MQ-K0x" id="vPa-lx-Q7e"/>
-                        <outlet property="restaurantIsOpen" destination="cF0-pp-Ddt" id="iFl-qs-sqX"/>
-                        <outlet property="restaurantIsOpenLabel" destination="MqF-gl-YeQ" id="dMR-Fw-abs"/>
+                        <outlet property="restaurantIsFavImage" destination="Y4M-MQ-K0x" id="m1V-EE-Z7J"/>
+                        <outlet property="restaurantIsOpenImage" destination="cF0-pp-Ddt" id="OnK-pM-ir3"/>
+                        <outlet property="restaurantIsOpenLabel" destination="MqF-gl-YeQ" id="YO2-C5-rf3"/>
                         <outlet property="restaurantNameLabel" destination="aNv-Py-871" id="aLw-rU-7Fh"/>
-                        <outlet property="restaurantRatingLabel" destination="3HD-Ko-DTq" id="ndo-wV-nRp"/>
-                        <outletCollection property="starsImages" destination="SDN-pF-2eV" collectionClass="NSMutableArray" id="gBj-iK-I3F"/>
-                        <outletCollection property="starsImages" destination="xyt-d8-ZDt" collectionClass="NSMutableArray" id="3c0-Xb-gwQ"/>
-                        <outletCollection property="starsImages" destination="cuX-d6-l4A" collectionClass="NSMutableArray" id="Br6-ks-1gI"/>
-                        <outletCollection property="starsImages" destination="JNv-QZ-LsE" collectionClass="NSMutableArray" id="82o-kQ-381"/>
-                        <outletCollection property="starsImages" destination="Oua-O3-RKX" collectionClass="NSMutableArray" id="h16-8V-Tmu"/>
-                        <outletCollection property="starsImages" destination="Oua-O3-RKX" collectionClass="NSMutableArray" id="4ua-oH-5dH"/>
+                        <outlet property="restaurantRatingLabel" destination="3HD-Ko-DTq" id="tEA-n5-NY8"/>
+                        <outletCollection property="starsImagesColection" destination="SDN-pF-2eV" collectionClass="NSMutableArray" id="f2D-Lk-kfG"/>
+                        <outletCollection property="starsImagesColection" destination="xyt-d8-ZDt" collectionClass="NSMutableArray" id="u7c-rM-cMs"/>
+                        <outletCollection property="starsImagesColection" destination="cuX-d6-l4A" collectionClass="NSMutableArray" id="wQM-r0-lEL"/>
+                        <outletCollection property="starsImagesColection" destination="JNv-QZ-LsE" collectionClass="NSMutableArray" id="ffu-Re-9Og"/>
+                        <outletCollection property="starsImagesColection" destination="Oua-O3-RKX" collectionClass="NSMutableArray" id="9d9-LE-dGB"/>
+                        <outletCollection property="starsImagesColection" destination="Oua-O3-RKX" collectionClass="NSMutableArray" id="aP0-GQ-P2x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

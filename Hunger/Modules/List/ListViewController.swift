@@ -13,13 +13,16 @@ class ListViewController: UIViewController {
     private let customCellView = UINib(nibName: "CustomTableViewCell",
                                        bundle: nil)
     private var bussines = ListBussines()
-    private var detailBussines = DetailBussines()
+    private var detailViewController = RestaurantDetailViewController()
     private let cellIdentifier = "CustomTableViewCell"
     private let cellReuseIdentifier = "myCell"
     private let descriptionToHighlightA = "buena comida"
     private let descriptionToHighlightB = "precio justo"
+    private let showMapSegue = "showMapSegue"
+    private let detailCheckSegue = "detailCheckSegue"
     private let highlightTextSize: CGFloat = 19
     private var slideMenuActive = false
+    private var restaurantIDToFind: Int?
     
     // MARK: - IBOutlets
     @IBOutlet weak var messagesTable: UITableView!
@@ -41,24 +44,16 @@ class ListViewController: UIViewController {
     @IBAction func backButton() {
         navigationController?.popViewController(animated: true)
     }
-    @IBAction func slideButton() {
-        if !slideMenuActive {
+    @IBAction func showAlertButton() {
+        let alert = UIAlertController(title: "Elige una opcion", message: "", preferredStyle: .actionSheet)
         
-            viewLeadingConstraint.constant = -150
-            viewTrailingConstraint.constant = -150
-            
-            slideMenuActive = true
-        } else {
-          
-            viewLeadingConstraint.constant = 0
-            viewTrailingConstraint.constant = 0
-            
-            slideMenuActive = false
-        }
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn) {
-            self.view.layoutIfNeeded()
-        } 
-
+        alert.addAction(UIAlertAction(title: "Mostrar mapa", style: .default, handler: { _ in
+            self.performSegue(withIdentifier: "showMapSegue", sender: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: {_ in
+            }))
+        self.present(alert, animated: true, completion: {
+        })
     }
     
     // MARK: - Private methods
@@ -90,6 +85,12 @@ class ListViewController: UIViewController {
             (descriptionToHighlightB, .blue, .bold(size: highlightTextSize))
         ])
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is RestaurantDetailViewController {
+            let viewControllerVar = segue.destination as? RestaurantDetailViewController
+            viewControllerVar?.restaurantToFindID = restaurantIDToFind
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource & UITableViewDelegate
@@ -112,9 +113,8 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !bussines.restaurantCarrier[indexPath.row].isAvailable {
-            // bussines.selectDetail = bussines.restaurantCarrier[indexPath.row].id
-            detailBussines.findRestaurant = bussines.restaurantCarrier[indexPath.row].id
-            performSegue(withIdentifier: "performDetailCheck", sender: nil)
+            restaurantIDToFind = bussines.restaurantCarrier[indexPath.row].id
+            performSegue(withIdentifier: detailCheckSegue, sender: nil)
         }
     }
     

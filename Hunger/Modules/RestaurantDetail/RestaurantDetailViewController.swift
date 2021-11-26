@@ -9,20 +9,21 @@ import UIKit
 
 class RestaurantDetailViewController: UIViewController {
     
-    var onClickCell = 1
+    // MARK: - Properties
+    var restaurantToFindID: Int?
     private var bussines = DetailBussines()
     private var shareText = "Ven a conocer este nuevo restaurante:"
     
     // MARK: - IBOutlets
     @IBOutlet private weak var restaurantRatingLabel: UILabel!
     @IBOutlet private weak var restaurantAdressLabel: UILabel!
-    @IBOutlet weak var restaurantIsOpenLabel: UILabel!
-    @IBOutlet private weak var restaurantIsFav: UIImageView!
+    @IBOutlet private weak var restaurantIsOpenLabel: UILabel!
+    @IBOutlet private weak var restaurantIsFavImage: UIImageView!
     @IBOutlet private weak var restaurantNameLabel: UILabel!
-    @IBOutlet private weak var restaurantIsOpen: UIImageView!
+    @IBOutlet private weak var restaurantIsOpenImage: UIImageView!
     @IBOutlet private weak var restaurantCommentsLabel: UILabel!
-    @IBOutlet weak var loader: UIActivityIndicatorView!
-    @IBOutlet var starsImages: [UIImageView]!
+    @IBOutlet private weak var loader: UIActivityIndicatorView!
+    @IBOutlet private var starsImagesColection: [UIImageView]!
     // MARK: - IBActions
     
     @IBAction func backButton() {
@@ -45,7 +46,7 @@ class RestaurantDetailViewController: UIViewController {
     // MARK: - Private functions
     
     private func fetchRestaurant() {
-        bussines.fetchDetails(onFinished: { detailData, errorIn in
+        bussines.fetchDetails(restaurantToFindID: restaurantToFindID, onFinished: { detailData, errorIn in
             if errorIn {
                 print("something went wrong")
             } else {
@@ -57,14 +58,14 @@ class RestaurantDetailViewController: UIViewController {
                     self.restaurantAdressLabel.text = "\(detailData.address)"
                     self.restaurantNameLabel.text = "\(detailData.name)"
                     if detailData.isFavorite {
-                        self.restaurantIsFav.image = UIImage(named: "favIconOnIcon")
+                        self.restaurantIsFavImage.image = UIImage(named: "favIconOnIcon")
                     }
                     if detailData.isOpen {
                         self.restaurantIsOpenLabel.text = "ABIERTO"
-                        self.restaurantIsOpen.image = UIImage(named: "availableIcon")
+                        self.restaurantIsOpenImage.image = UIImage(named: "availableIcon")
                     } else {
                         self.restaurantIsOpenLabel.text = "CERRADO"
-                        self.restaurantIsOpen.image = UIImage(named: "unavailableIcon")
+                        self.restaurantIsOpenImage.image = UIImage(named: "unavailableIcon")
                     }
                     self.lightStars(actualStars: detailData.stars)
                 }
@@ -74,7 +75,7 @@ class RestaurantDetailViewController: UIViewController {
     
     private func lightStars(actualStars: Int) {
         for star in 0...actualStars {
-            starsImages[star].image = UIImage(named: "starIcon")
+            starsImagesColection[star].image = UIImage(named: "starIcon")
         }
     }
 

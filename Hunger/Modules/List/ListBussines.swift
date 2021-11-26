@@ -23,9 +23,4 @@ final class ListBussines {
         })
     }
     
-    /*func fetchDetails(onFinished: @escaping (RestaurantDetail, Bool) -> Void) {
-        restaurantService.getRestaurantDetail(onFinished: { detailData, receivedError in
-            onFinished(detailData, receivedError)
-        }, getDetail: selectDetail)
-    }*/
 }
