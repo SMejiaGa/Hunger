@@ -24,8 +24,4 @@ final class RestaurantService {
             onFinished(responseFromService, errorExist)
         }
     }
-    
-    func getRestaurantDetails() {
-        
-    }
 }

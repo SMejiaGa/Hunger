@@ -19,6 +19,9 @@ class ListViewController: UIViewController {
     private let descriptionToHighlightB = "precio justo"
     private let highlightTextSize: CGFloat = 19
     private var slideMenuActive = false
+    private let showMapSegue = "showMapSegue"
+    private let aboutUsSegue = "showAboutUsSegue"
+    private let notFoundSegue = "ShowNotFound"
     
     // MARK: - IBOutlets
     @IBOutlet weak var messagesTable: UITableView!
@@ -37,34 +40,30 @@ class ListViewController: UIViewController {
     
     // MARK: - IBActions
     
-    @IBAction func backButton() {
+    @IBAction private func backButton() {
         navigationController?.popViewController(animated: true)
     }
-    @IBAction func SlideButton() {
-        if !slideMenuActive {
+    
+    @IBAction private func showAlertButton() {
+        let alert = UIAlertController(title: Lang.List.chooseAnOptionMessage, message: "", preferredStyle: .actionSheet)
         
-            viewLeadingConstraint.constant = -150
-            viewTrailingConstraint.constant = -150
-            
-            slideMenuActive = true
-        } else {
-          
-            viewLeadingConstraint.constant = 0
-            viewTrailingConstraint.constant = 0
-            
-            slideMenuActive = false
-        }
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn) {
-            self.view.layoutIfNeeded()
-        } 
-
+        alert.addAction(UIAlertAction(title: Lang.List.showMapLabelMessage, style: .default, handler: { _ in
+            self.performSegue(withIdentifier: self.showMapSegue, sender: nil)
+        }))
+        alert.addAction(UIAlertAction(title: Lang.List.aboutUsMessage, style: .default, handler: { _ in
+            self.performSegue(withIdentifier: self.aboutUsSegue, sender: nil)
+        }))
+        alert.addAction(UIAlertAction(title: Lang.List.cancelMessage, style: .cancel, handler: {_ in
+            }))
+        self.present(alert, animated: true, completion: {
+        })
     }
     
     // MARK: - Private methods
     private func fetchData() {
         bussines.fetchRestaurants(onFinished: { errorExist in
             if errorExist {
-                self.performSegue(withIdentifier: "ShowNotFound", sender: nil)
+                self.performSegue(withIdentifier: self.notFoundSegue, sender: nil)
             } else {
                 DispatchQueue.main.async {
                     self.messagesTable.reloadData()
@@ -102,7 +101,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             cell.configCell(
                 distance: bussines.restaurantCarrier[indexPath.row].distance,
                 restaurantName: bussines.restaurantCarrier[indexPath.row].name,
-                isAvailable: bussines.restaurantCarrier[indexPath.row].isAvaliable
+                isAvailable: bussines.restaurantCarrier[indexPath.row].isAvailable
             )
             return cell
         }
