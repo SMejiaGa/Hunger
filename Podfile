@@ -7,4 +7,5 @@ target 'Hunger' do
 
   # Pods for Hunger
   pod 'Dodo', '~> 13.0'
+  pod 'SwiftLint'
 end

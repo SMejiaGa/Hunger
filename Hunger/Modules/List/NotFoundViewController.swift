@@ -9,7 +9,6 @@ import UIKit
 
 class NotFoundViewController: UIViewController {
 
-
     @IBAction func reloadButton(_ sender: Any) {
         dismiss(animated: true)
     }

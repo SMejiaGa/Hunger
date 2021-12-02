@@ -19,7 +19,7 @@ class CustomTableViewCell: UITableViewCell {
         self.cellView.layer.cornerRadius = 8
     }
     
-    func configCell(distance: Int, restaurantName: String, isAvailable: Bool){
+    func configCell(distance: Int, restaurantName: String, isAvailable: Bool) {
         self.distanceLabel.text = "\(distance)m"
         self.rNameLabel.text = restaurantName
         self.availableButton.isHidden = isAvailable

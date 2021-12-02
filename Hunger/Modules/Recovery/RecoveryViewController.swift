@@ -10,11 +10,11 @@ import SimpleKeyboard
 
 class RecoveryViewController: UIViewController {
     
-    //MARK: - IBoutlets
+    // MARK: - IBoutlets
     @IBOutlet private weak var recoveryTextField: UITextField!
     @IBOutlet weak var facebookLoginText: UILabel!
     
-    //MARK: - Properties
+    // MARK: - Properties
     private let facebookHighlightText = "FACEBOOK"
     private let recoveryBussines = RecoveryBussines()
     
@@ -26,7 +26,7 @@ class RecoveryViewController: UIViewController {
         setupGestureToHelpText()
     }
     
-    //MARK: - IBActions
+    // MARK: - IBActions
     @IBAction private func submitButton() {
         checkEmail()
     }
@@ -39,7 +39,7 @@ class RecoveryViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    //MARK: - Private methods
+    // MARK: - Private methods
     private func recoverEmail(email: String) {
         recoveryBussines.postRecovery(
             emailFromUser: email,
@@ -48,10 +48,10 @@ class RecoveryViewController: UIViewController {
         })
     }
     
-    private func checkEmail(){
-        if recoveryTextField.text != nil{
+    private func checkEmail() {
+        if recoveryTextField.text != nil {
             recoverEmail(email: recoveryTextField.text ?? "")
-        }else{
+        } else {
             showMessage(alertMessage: Lang.Recovery.errorMessage)
         }
     }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Email: Codable{
+struct Email: Codable {
    let email: String
 }

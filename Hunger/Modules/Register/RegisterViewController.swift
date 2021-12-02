@@ -11,7 +11,7 @@ import SimpleKeyboard
 
 class RegisterViewController: UIViewController {
     
-    // MARK: -UI References
+    // MARK: - UI References
     @IBOutlet private weak var namesTextField: UITextField!
     @IBOutlet private weak var registeredEmailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
@@ -43,7 +43,7 @@ class RegisterViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     // MARK: - Private methods
-    private func performRegister(){
+    private func performRegister() {
         let passwordToRegister = passwordTextField.text ?? ""
         let isValidPasswordLengh = passwordToRegister.count > 3
         let emailToRegister = registeredEmailTextField.text ?? ""
