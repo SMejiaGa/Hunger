@@ -11,11 +11,11 @@ import CoreLocation
 
 class MapViewController: UIViewController {
 
-    let bussines = MapBussines()
-    let messageFromError = "Error, intenta de nuevo mas tarde"
+    private let bussines = MapBussines()
+    private let messageFromError = "Error, intenta de nuevo mas tarde"
 
-    @IBOutlet weak var mapView: MKMapView!
-    @IBAction func backButton() {
+    @IBOutlet private weak var mapView: MKMapView!
+    @IBAction private func backButton() {
         navigationController?.popViewController(animated: true)
     }
     

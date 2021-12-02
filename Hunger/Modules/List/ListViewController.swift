@@ -12,7 +12,8 @@ class ListViewController: UIViewController {
     // MARK: - Properties
     private let customCellView = UINib(nibName: "CustomTableViewCell",
                                        bundle: nil)
-    private var bussines = ListBussines()
+    private let bussines = ListBussines()
+    private let detailBussines = DetailBussines()
     private var detailViewController = RestaurantDetailViewController()
     private let cellIdentifier = "CustomTableViewCell"
     private let cellReuseIdentifier = "myCell"
@@ -85,14 +86,16 @@ class ListViewController: UIViewController {
             (descriptionToHighlightB, .blue, .bold(size: highlightTextSize))
         ])
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is RestaurantDetailViewController {
-            let viewControllerVar = segue.destination as? RestaurantDetailViewController
-            viewControllerVar?.restaurantToFindID = restaurantIDToFind
-        }
-    }
+    /**
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         if segue.destination is RestaurantDetailViewController {
+             let viewControllerVar = segue.destination as? RestaurantDetailViewController
+             viewControllerVar?.restaurantToFindID = restaurantIDToFind
+         }
+     }
+     */
+   
 }
-
 // MARK: - UITableViewDataSource & UITableViewDelegate
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -113,7 +116,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !bussines.restaurantCarrier[indexPath.row].isAvailable {
-            restaurantIDToFind = bussines.restaurantCarrier[indexPath.row].id
+            detailBussines.updateRestaurantId(id: bussines.restaurantCarrier[indexPath.row].id)
             performSegue(withIdentifier: detailCheckSegue, sender: nil)
         }
     }

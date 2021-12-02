@@ -28,4 +28,13 @@ struct Lang {
         static let succesMessage = "Bienvenido a hungry!"
         
     }
+    
+    struct DetailView {
+        static let shareMessage = "Ven a conocer este nuevo restaurante:"
+    }
+    
+    struct Error {
+        static let commonError = "A sucedido un error, intentalo nuevamente"
+    }
+    
 }

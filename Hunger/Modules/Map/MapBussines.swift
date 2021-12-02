@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 
 final class MapBussines {
-    let locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
     private(set) var pinsCarrier = [RestaurantLocation]()
     private let restaurantLocationService = MapService()
     

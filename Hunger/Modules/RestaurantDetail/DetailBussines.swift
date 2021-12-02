@@ -10,19 +10,23 @@ import Foundation
 final class DetailBussines {
     
     // MARK: - Properties
-//    var restaurantToFindID: Int? = 1
     private let restaurantService = RestaurantService()
-    
+    private var restaurantID: Int?
+   
     // MARK: - Private methods
     
-    func fetchDetails(restaurantToFindID: Int?, onFinished: @escaping (RestaurantDetail, Bool) -> Void) {
-        guard let restaurantToFindID = restaurantToFindID else {
-            print("Something went wrong")
+    func fetchDetails(onFinished: @escaping (RestaurantDetail, Bool) -> Void) {
+        
+        guard let restaurantFound = restaurantID else {
+            print(Lang.Error.commonError)
             return
         }
-
         restaurantService.getRestaurantDetail(onFinished: { detailData, receivedError in
             onFinished(detailData, receivedError)
-        }, getDetail: restaurantToFindID)
+        }, getDetail: restaurantFound)
+    }
+    
+    func updateRestaurantId(id: Int?) {
+        restaurantID = id
     }
 }
