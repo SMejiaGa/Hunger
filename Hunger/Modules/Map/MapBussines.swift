@@ -8,12 +8,12 @@
 import Foundation
 import CoreLocation
 
-final class MapBussines{
-    let locationManager = CLLocationManager()
+final class MapBussines {
+    private let locationManager = CLLocationManager()
     private(set) var pinsCarrier = [RestaurantLocation]()
     private let restaurantLocationService = MapService()
     
-    func fetchLocations(onFinished: @escaping (Bool) ->Void){
+    func fetchLocations(onFinished: @escaping (Bool) -> Void) {
         restaurantLocationService.getRestaurantsLocation(onFinished: { locationData, receivedError in
             self.pinsCarrier = locationData
             onFinished(receivedError)

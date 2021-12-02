@@ -12,7 +12,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var rNameLabel: UILabel!
     @IBOutlet weak var cellView: UIView!
-    @IBOutlet weak var availableButton: UIButton!
+    @IBOutlet weak var isAvailableButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +22,6 @@ class CustomTableViewCell: UITableViewCell {
     func configCell(distance: Int, restaurantName: String, isAvailable: Bool) {
         self.distanceLabel.text = "\(distance)m"
         self.rNameLabel.text = restaurantName
-        self.availableButton.isHidden = isAvailable
+        self.isAvailableButton.isHidden = isAvailable
     }
 }

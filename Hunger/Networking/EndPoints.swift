@@ -13,6 +13,7 @@ enum Endpoints {
     case postResigterUser
     case postRecovery
     case getRestaurantLocations
+    case getRestaurantDetail
     
     case getAboutUsText
     
@@ -27,6 +28,9 @@ enum Endpoints {
             
         case.getRestaurantLocations:
             return "\(base)/restaurants/locations"
+        
+        case.getRestaurantDetail:
+            return "\(base)/restaurants/detail/"
             
         case .postLoginUser:
             return "\(base)/login"

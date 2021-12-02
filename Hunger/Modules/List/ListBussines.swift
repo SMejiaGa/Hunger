@@ -12,6 +12,7 @@ final class ListBussines {
     // MARK: - Properties
     private(set) var restaurantCarrier = [Restaurant]()
     private let restaurantService = RestaurantService()
+    var selectedRestaurantID: Int?
     
     // MARK: - Private methods
     
@@ -21,4 +22,5 @@ final class ListBussines {
             onFinished(receivedError)
         })
     }
+    
 }

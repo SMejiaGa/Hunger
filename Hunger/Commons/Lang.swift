@@ -29,14 +29,18 @@ struct Lang {
         
     }
     
+    struct DetailView {
+        static let shareMessage = "Ven a conocer este nuevo restaurante:"
+    }
+    
+    struct Error {
+        static let commonError = "A sucedido un error, intentalo nuevamente"
+    }
+  
     struct List{
         static let chooseAnOptionMessage = "Elige una opcion"
         static let showMapLabelMessage = "Mostrar mapa"
         static let aboutUsMessage = "Sobre nosotros"
         static let cancelMessage = "Cancelar"
-    }
-    
-    struct ErrorMessages {
-        static let tryAgainLaterError = "Ocurrio un error, Intentalo de nuevo mas tarde"
     }
 }

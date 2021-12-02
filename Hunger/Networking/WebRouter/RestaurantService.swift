@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 typealias RestaurantServiceResult = ([Restaurant], Bool) -> Void
+typealias RestaurantDetailResult = (RestaurantDetail, Bool) -> Void
 
 final class RestaurantService {
     
@@ -22,6 +23,21 @@ final class RestaurantService {
             }
             let responseFromService = res.value ?? []
             onFinished(responseFromService, errorExist)
+        }
+    }
+    
+    func getRestaurantDetail(onFinished: @escaping RestaurantDetailResult, getDetail: Int) {
+        
+        var errorExist: Bool = false
+   
+        AF.request("\(Endpoints.getRestaurantDetail.url)\(getDetail)").responseDecodable { (res: DataResponse< RestaurantDetail, AFError>) in
+            if res.error != nil {
+                errorExist = true
+            }
+            if let responseFromService = res.value {
+                onFinished(responseFromService, errorExist)
+            }
+            
         }
     }
 }

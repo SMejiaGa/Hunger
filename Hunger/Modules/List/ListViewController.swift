@@ -12,13 +12,17 @@ class ListViewController: UIViewController {
     // MARK: - Properties
     private let customCellView = UINib(nibName: "CustomTableViewCell",
                                        bundle: nil)
-    private var bussines = ListBussines()
+    private let bussines = ListBussines()
+    private var detailViewController = RestaurantDetailViewController()
     private let cellIdentifier = "CustomTableViewCell"
     private let cellReuseIdentifier = "myCell"
     private let descriptionToHighlightA = "buena comida"
     private let descriptionToHighlightB = "precio justo"
+    private let showMapSegue = "showMapSegue"
+    private let detailCheckSegue = "detailCheckSegue"
     private let highlightTextSize: CGFloat = 19
     private var slideMenuActive = false
+    private var restaurantIDToFind: Int?
     private let showMapSegue = "showMapSegue"
     private let aboutUsSegue = "showAboutUsSegue"
     private let notFoundSegue = "ShowNotFound"
@@ -43,24 +47,16 @@ class ListViewController: UIViewController {
     @IBAction private func backButton() {
         navigationController?.popViewController(animated: true)
     }
-    @IBAction func SlideButton() {
-        if !slideMenuActive {
+    @IBAction func showAlertButton() {
+        let alert = UIAlertController(title: "Elige una opcion", message: "", preferredStyle: .actionSheet)
         
-            viewLeadingConstraint.constant = -150
-            viewTrailingConstraint.constant = -150
-            
-            slideMenuActive = true
-        } else {
-          
-            viewLeadingConstraint.constant = 0
-            viewTrailingConstraint.constant = 0
-            
-            slideMenuActive = false
-        }
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn) {
-            self.view.layoutIfNeeded()
-        } 
-
+        alert.addAction(UIAlertAction(title: "Mostrar mapa", style: .default, handler: { _ in
+            self.performSegue(withIdentifier: "showMapSegue", sender: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: {_ in
+            }))
+        self.present(alert, animated: true, completion: {
+        })
     }
     
     @IBAction private func showAlertButton() {
@@ -107,8 +103,19 @@ class ListViewController: UIViewController {
             (descriptionToHighlightB, .blue, .bold(size: highlightTextSize))
         ])
     }
+    
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         if segue.destination is RestaurantDetailViewController {
+             let viewControllerVar = segue.destination as? RestaurantDetailViewController
+             guard let selectedID = bussines.selectedRestaurantID else {
+                 print(Lang.Error.commonError)
+                 return
+             }
+             viewControllerVar?.bussines = DetailBussines(restaurantId: selectedID)
+         }
+     }
+     
 }
-
 // MARK: - UITableViewDataSource & UITableViewDelegate
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -126,4 +133,12 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if !bussines.restaurantCarrier[indexPath.row].isAvailable {
+            bussines.selectedRestaurantID = bussines.restaurantCarrier[indexPath.row].id
+            performSegue(withIdentifier: detailCheckSegue, sender: nil)
+        }
+    }
+    
 }

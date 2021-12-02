@@ -61,7 +61,6 @@ class RecoveryViewController: UIViewController {
     }
     
     private func setupGestureToHelpText() {
-       // TextUtils.setupTapGesture(target: <#T##Any#>, textToSetup: <#T##UILabel#>, onTapAction: <#T##Selector#>)
         facebookLoginText.isUserInteractionEnabled = true
         facebookLoginText.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(facebookLoginButton)))
     }

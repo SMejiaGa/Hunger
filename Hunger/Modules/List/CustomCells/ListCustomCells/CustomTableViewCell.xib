@@ -55,9 +55,6 @@
                             <constraint firstAttribute="height" constant="12" id="SDw-ly-ZvJ"/>
                         </constraints>
                         <state key="normal" image="NextForList"/>
-                        <connections>
-                            <action selector="availableButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gvm-uE-WWE"/>
-                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -73,9 +70,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="availableButton" destination="uxk-Po-mC6" id="mZy-Gd-MwV"/>
-                <outlet property="cellView" destination="lza-1y-zyG" id="Qax-FX-5kv"/>
+                <outlet property="cellView" destination="lza-1y-zyG" id="Efd-gr-4vR"/>
                 <outlet property="distanceLabel" destination="6jL-OV-e2t" id="388-oV-U8s"/>
+                <outlet property="isAvailableButton" destination="uxk-Po-mC6" id="CJU-4V-1q4"/>
                 <outlet property="rNameLabel" destination="Ycw-H9-Kxa" id="QhN-DJ-ypD"/>
             </connections>
             <point key="canvasLocation" x="152.17391304347828" y="-18.080357142857142"/>
