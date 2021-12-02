@@ -10,7 +10,7 @@ import UIKit
 class RestaurantDetailViewController: UIViewController {
     
     // MARK: - Properties
-    private var bussines = DetailBussines()
+    var bussines: DetailBussines?
     private var shareText = Lang.DetailView.shareMessage
     private var restaurantIsOpenText = "ABIERTO"
     private var restaurantIsClosedText = "CERRADO"
@@ -41,15 +41,20 @@ class RestaurantDetailViewController: UIViewController {
     // MARK: - ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         fetchRestaurant()
     }
     
     // MARK: - Private functions
     
     private func fetchRestaurant() {
-        bussines.fetchDetails(onFinished: { detailData, errorIn in
+        bussines?.fetchDetails(onFinished: { detailData, errorIn in
             if errorIn {
-                print(Lang.Error.commonError)
+                self.showMessage(alertMessage: Lang.Error.commonError)
             } else {
                 DispatchQueue.main.async {
                     self.shareText += " \(detailData.name)!\n -Queda en: \(detailData.address) "

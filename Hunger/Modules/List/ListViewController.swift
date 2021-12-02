@@ -13,7 +13,6 @@ class ListViewController: UIViewController {
     private let customCellView = UINib(nibName: "CustomTableViewCell",
                                        bundle: nil)
     private let bussines = ListBussines()
-    private let detailBussines = DetailBussines()
     private var detailViewController = RestaurantDetailViewController()
     private let cellIdentifier = "CustomTableViewCell"
     private let cellReuseIdentifier = "myCell"
@@ -86,15 +85,18 @@ class ListViewController: UIViewController {
             (descriptionToHighlightB, .blue, .bold(size: highlightTextSize))
         ])
     }
-    /**
+    
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          if segue.destination is RestaurantDetailViewController {
              let viewControllerVar = segue.destination as? RestaurantDetailViewController
-             viewControllerVar?.restaurantToFindID = restaurantIDToFind
+             guard let selectedID = bussines.selectedRestaurantID else {
+                 print(Lang.Error.commonError)
+                 return
+             }
+             viewControllerVar?.bussines = DetailBussines(restaurantId: selectedID)
          }
      }
-     */
-   
+     
 }
 // MARK: - UITableViewDataSource & UITableViewDelegate
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
@@ -116,7 +118,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !bussines.restaurantCarrier[indexPath.row].isAvailable {
-            detailBussines.updateRestaurantId(id: bussines.restaurantCarrier[indexPath.row].id)
+            bussines.selectedRestaurantID = bussines.restaurantCarrier[indexPath.row].id
             performSegue(withIdentifier: detailCheckSegue, sender: nil)
         }
     }
