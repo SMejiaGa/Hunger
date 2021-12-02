@@ -36,5 +36,11 @@ struct Lang {
     struct Error {
         static let commonError = "A sucedido un error, intentalo nuevamente"
     }
-    
+  
+    struct List{
+        static let chooseAnOptionMessage = "Elige una opcion"
+        static let showMapLabelMessage = "Mostrar mapa"
+        static let aboutUsMessage = "Sobre nosotros"
+        static let cancelMessage = "Cancelar"
+    }
 }

@@ -56,6 +56,9 @@
 		0BD0208F2759222800C651D0 /* RestaurantDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BD0208C2759222800C651D0 /* RestaurantDetail.storyboard */; };
 		0BD020902759222800C651D0 /* DetailBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0208D2759222800C651D0 /* DetailBussines.swift */; };
 		0BD020912759222800C651D0 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0208E2759222800C651D0 /* RestaurantDetailViewController.swift */; };
+		0BD68C6F274F3E0600545F5C /* LegalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD68C6E274F3E0600545F5C /* LegalResponse.swift */; };
+		0BD68C71274F3E9600545F5C /* AboutUsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD68C70274F3E9600545F5C /* AboutUsService.swift */; };
+		0BD68C73274F493700545F5C /* AboutUsBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD68C72274F493700545F5C /* AboutUsBussines.swift */; };
 		0BDEE54A2741CE4F00C1A67C /* MapPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDEE5492741CE4F00C1A67C /* MapPointer.swift */; };
 		0BDEE54D2741D14800C1A67C /* MapStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BDEE54C2741D14800C1A67C /* MapStoryboard.storyboard */; };
 		0BDEE54F2741D16F00C1A67C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDEE54E2741D16F00C1A67C /* MapViewController.swift */; };
@@ -88,7 +91,7 @@
 		0BEE129B2729DFA000AA31F6 /* SourceCodePro-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE128C2729DFA000AA31F6 /* SourceCodePro-ExtraLightItalic.ttf */; };
 		0BEE129D2729DFA000AA31F6 /* SourceCodePro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE128E2729DFA000AA31F6 /* SourceCodePro-Italic.ttf */; };
 		0BEE129E2729DFA000AA31F6 /* SourceCodePro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE128F2729DFA000AA31F6 /* SourceCodePro-Bold.ttf */; };
-		0BEE12A02729E19500AA31F6 /* AboutUsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE129F2729E19500AA31F6 /* AboutUsStoryboard.storyboard */; };
+		0BEE12A02729E19500AA31F6 /* AboutUs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE129F2729E19500AA31F6 /* AboutUs.storyboard */; };
 		4685B34498F51E93595371C7 /* Pods_Hunger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2569EE41654616EAFD613CF /* Pods_Hunger.framework */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +145,9 @@
 		0BD0208C2759222800C651D0 /* RestaurantDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RestaurantDetail.storyboard; sourceTree = "<group>"; };
 		0BD0208D2759222800C651D0 /* DetailBussines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBussines.swift; sourceTree = "<group>"; };
 		0BD0208E2759222800C651D0 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		0BD68C6E274F3E0600545F5C /* LegalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalResponse.swift; sourceTree = "<group>"; };
+		0BD68C70274F3E9600545F5C /* AboutUsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsService.swift; sourceTree = "<group>"; };
+		0BD68C72274F493700545F5C /* AboutUsBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsBussines.swift; sourceTree = "<group>"; };
 		0BDEE5492741CE4F00C1A67C /* MapPointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPointer.swift; sourceTree = "<group>"; };
 		0BDEE54C2741D14800C1A67C /* MapStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapStoryboard.storyboard; sourceTree = "<group>"; };
 		0BDEE54E2741D16F00C1A67C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +180,7 @@
 		0BEE128C2729DFA000AA31F6 /* SourceCodePro-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		0BEE128E2729DFA000AA31F6 /* SourceCodePro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Italic.ttf"; sourceTree = "<group>"; };
 		0BEE128F2729DFA000AA31F6 /* SourceCodePro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Bold.ttf"; sourceTree = "<group>"; };
-		0BEE129F2729E19500AA31F6 /* AboutUsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutUsStoryboard.storyboard; sourceTree = "<group>"; };
+		0BEE129F2729E19500AA31F6 /* AboutUs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutUs.storyboard; sourceTree = "<group>"; };
 		37E4DFBB35F2DD5B0609B2E7 /* Pods-Hunger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger.debug.xcconfig"; path = "Target Support Files/Pods-Hunger/Pods-Hunger.debug.xcconfig"; sourceTree = "<group>"; };
 		8C9CC60E99653EC8DCB44990 /* Pods-Hunger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hunger.release.xcconfig"; path = "Target Support Files/Pods-Hunger/Pods-Hunger.release.xcconfig"; sourceTree = "<group>"; };
 		B2569EE41654616EAFD613CF /* Pods_Hunger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hunger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,6 +246,7 @@
 				0B8B61E42731D1F300C8BE29 /* RegisterService.swift */,
 				0B8B61E62731D1FF00C8BE29 /* RecoveryService.swift */,
 				0BDEE5522741D1F500C1A67C /* MapService.swift */,
+				0BD68C70274F3E9600545F5C /* AboutUsService.swift */,
 			);
 			path = WebRouter;
 			sourceTree = "<group>";
@@ -413,7 +420,8 @@
 			isa = PBXGroup;
 			children = (
 				0BE591ED27095A6F00E9BF32 /* AboutUsViewController.swift */,
-				0BEE129F2729E19500AA31F6 /* AboutUsStoryboard.storyboard */,
+				0BEE129F2729E19500AA31F6 /* AboutUs.storyboard */,
+				0BD68C72274F493700545F5C /* AboutUsBussines.swift */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -440,6 +448,8 @@
 				0B8B61CF272D060C00C8BE29 /* Email.swift */,
 				0BDEE5492741CE4F00C1A67C /* MapPointer.swift */,
 				0BB723A3274C6B9400898D36 /* RestaurantDetail.swift */,
+				0BD68C6E274F3E0600545F5C /* LegalResponse.swift */,
+
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -588,7 +598,7 @@
 				0BB820EE2707E96500CE720D /* Assets.xcassets in Resources */,
 				0BEE12962729DFA000AA31F6 /* SourceCodePro-BlackItalic.ttf in Resources */,
 				0B8B61DC2730C66400C8BE29 /* Recovery.storyboard in Resources */,
-				0BEE12A02729E19500AA31F6 /* AboutUsStoryboard.storyboard in Resources */,
+				0BEE12A02729E19500AA31F6 /* AboutUs.storyboard in Resources */,
 				0BEE127F2729DF8E00AA31F6 /* PTSerif-Regular.ttf in Resources */,
 				0BEE12992729DFA000AA31F6 /* SourceCodePro-ExtraLight.ttf in Resources */,
 				0BEE12932729DFA000AA31F6 /* SourceCodePro-SemiBoldItalic.ttf in Resources */,
@@ -673,6 +683,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BA60287271E7D700041F3C6 /* RoundButton.swift in Sources */,
+				0BD68C71274F3E9600545F5C /* AboutUsService.swift in Sources */,
 				0BE591EE27095A6F00E9BF32 /* AboutUsViewController.swift in Sources */,
 				0BD020912759222800C651D0 /* RestaurantDetailViewController.swift in Sources */,
 				0BE591E827082C5C00E9BF32 /* RecoveryViewController.swift in Sources */,
@@ -683,6 +694,7 @@
 				0BA60282271E77E60041F3C6 /* UIViewController+Extensions.swift in Sources */,
 				0BA602B62723C6720041F3C6 /* AppColor.swift in Sources */,
 				0BB723A4274C6B9400898D36 /* RestaurantDetail.swift in Sources */,
+				0BD68C73274F493700545F5C /* AboutUsBussines.swift in Sources */,
 				0BDEE5512741D1E700C1A67C /* MapBussines.swift in Sources */,
 				0BA602B4272353BA0041F3C6 /* TextUtils.swift in Sources */,
 				0BA602B82723C6970041F3C6 /* AppFont.swift in Sources */,
@@ -693,6 +705,7 @@
 				0BE591F027095A7D00E9BF32 /* NotFoundViewController.swift in Sources */,
 				0BA60284271E7AEE0041F3C6 /* Lang.swift in Sources */,
 				0BA602752712520A0041F3C6 /* Restaurant.swift in Sources */,
+				0BD68C6F274F3E0600545F5C /* LegalResponse.swift in Sources */,
 				0B8B61E52731D1F300C8BE29 /* RegisterService.swift in Sources */,
 				0BB820E52707E96400CE720D /* AppDelegate.swift in Sources */,
 				0BD020902759222800C651D0 /* DetailBussines.swift in Sources */,
