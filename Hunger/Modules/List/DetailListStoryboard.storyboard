@@ -29,39 +29,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sN9-RD-FUb">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6n3-gD-zSu">
-                                        <rect key="frame" x="0.0" y="129.5" width="375" height="493.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </tableView>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zD6-Ln-dVJ">
-                                        <rect key="frame" x="177.5" y="301.5" width="20" height="20"/>
-                                    </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encuentra los lugares con buena comida a la medida del gusto y precio justo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhT-wX-ref">
-                                        <rect key="frame" x="30" y="23.5" width="321" height="72"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="72" id="y69-GP-Q87"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="19"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="GrayForBG"/>
-                                <constraints>
-                                    <constraint firstItem="mhT-wX-ref" firstAttribute="top" secondItem="sN9-RD-FUb" secondAttribute="top" constant="23.5" id="0BE-GE-2dR"/>
-                                    <constraint firstItem="zD6-Ln-dVJ" firstAttribute="centerY" secondItem="sN9-RD-FUb" secondAttribute="centerY" id="2LV-NC-XYW"/>
-                                    <constraint firstItem="mhT-wX-ref" firstAttribute="leading" secondItem="sN9-RD-FUb" secondAttribute="leading" constant="30" id="A2k-4k-bOV"/>
-                                    <constraint firstItem="6n3-gD-zSu" firstAttribute="leading" secondItem="sN9-RD-FUb" secondAttribute="leading" id="Hdq-xS-pHy"/>
-                                    <constraint firstItem="zD6-Ln-dVJ" firstAttribute="centerX" secondItem="sN9-RD-FUb" secondAttribute="centerX" id="LWe-SD-1qW"/>
-                                    <constraint firstAttribute="trailing" secondItem="6n3-gD-zSu" secondAttribute="trailing" id="Vdd-lA-JxT"/>
-                                    <constraint firstItem="6n3-gD-zSu" firstAttribute="top" secondItem="mhT-wX-ref" secondAttribute="bottom" constant="34" id="ZrL-lX-z6C"/>
-                                    <constraint firstAttribute="bottom" secondItem="6n3-gD-zSu" secondAttribute="bottom" id="b62-oZ-wto"/>
-                                    <constraint firstAttribute="trailing" secondItem="mhT-wX-ref" secondAttribute="trailing" constant="24" id="kXD-TX-wAs"/>
-                                </constraints>
-                            </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMu-nr-f9x">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
@@ -69,7 +36,6 @@
                                         <barButtonItem key="rightBarButtonItem" image="SideBarIcon" id="HTo-Qy-0Yu">
                                             <connections>
                                                 <action selector="showAlertButton" destination="Y6W-OH-hqX" id="95v-W6-spI"/>
-
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -88,25 +54,25 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTAURANTES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9X-Ry-gJz">
-                                <rect key="frame" x="121" y="10" width="133" height="25.5"/>
+                                <rect key="frame" x="121" y="9.5" width="133" height="26"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="20"/>
                                 <color key="textColor" red="0.1176470588" green="0.12549019610000001" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sN9-RD-FUb">
-                                <rect key="frame" x="0.0" y="43" width="375" height="624"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="627"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6n3-gD-zSu">
-                                        <rect key="frame" x="0.0" y="106" width="375" height="517"/>
+                                        <rect key="frame" x="0.0" y="106" width="375" height="521"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zD6-Ln-dVJ">
-                                        <rect key="frame" x="177.5" y="301.5" width="20" height="20"/>
+                                        <rect key="frame" x="177.5" y="303.5" width="20" height="20"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encuentra los lugares con buena comida a la medida del gusto y precio justo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhT-wX-ref">
-                                        <rect key="frame" x="30" y="0.0" width="321" height="72"/>
+                                        <rect key="frame" x="30" y="0.0" width="320" height="72"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="72" id="y69-GP-Q87"/>
+                                            <constraint firstAttribute="height" constant="72" id="SMw-G9-uM3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="19"/>
                                         <nil key="textColor"/>
@@ -115,47 +81,44 @@
                                 </subviews>
                                 <color key="backgroundColor" name="GrayForBG"/>
                                 <constraints>
-                                    <constraint firstItem="mhT-wX-ref" firstAttribute="top" secondItem="sN9-RD-FUb" secondAttribute="top" id="0BE-GE-2dR"/>
-                                    <constraint firstItem="zD6-Ln-dVJ" firstAttribute="centerY" secondItem="sN9-RD-FUb" secondAttribute="centerY" constant="-0.5" id="2LV-NC-XYW"/>
-                                    <constraint firstItem="mhT-wX-ref" firstAttribute="leading" secondItem="sN9-RD-FUb" secondAttribute="leading" constant="30" id="A2k-4k-bOV"/>
-                                    <constraint firstItem="6n3-gD-zSu" firstAttribute="leading" secondItem="sN9-RD-FUb" secondAttribute="leading" id="Hdq-xS-pHy"/>
-                                    <constraint firstItem="zD6-Ln-dVJ" firstAttribute="centerX" secondItem="sN9-RD-FUb" secondAttribute="centerX" id="LWe-SD-1qW"/>
-                                    <constraint firstAttribute="trailing" secondItem="6n3-gD-zSu" secondAttribute="trailing" id="Vdd-lA-JxT"/>
-                                    <constraint firstItem="6n3-gD-zSu" firstAttribute="top" secondItem="mhT-wX-ref" secondAttribute="bottom" constant="34" id="ZrL-lX-z6C"/>
-                                    <constraint firstAttribute="bottom" secondItem="6n3-gD-zSu" secondAttribute="bottom" constant="1" id="b62-oZ-wto"/>
-                                    <constraint firstAttribute="trailing" secondItem="mhT-wX-ref" secondAttribute="trailing" constant="24" id="kXD-TX-wAs"/>
+                                    <constraint firstAttribute="bottom" secondItem="6n3-gD-zSu" secondAttribute="bottom" id="GdF-ia-9sD"/>
+                                    <constraint firstItem="zD6-Ln-dVJ" firstAttribute="centerY" secondItem="sN9-RD-FUb" secondAttribute="centerY" id="KLg-7r-oU3"/>
+                                    <constraint firstItem="mhT-wX-ref" firstAttribute="leading" secondItem="sN9-RD-FUb" secondAttribute="leading" constant="30" id="fds-Od-UW7"/>
+                                    <constraint firstItem="zD6-Ln-dVJ" firstAttribute="centerX" secondItem="sN9-RD-FUb" secondAttribute="centerX" id="jbG-62-V2d"/>
+                                    <constraint firstItem="6n3-gD-zSu" firstAttribute="leading" secondItem="sN9-RD-FUb" secondAttribute="leading" id="rgZ-RE-mxD"/>
+                                    <constraint firstAttribute="trailing" secondItem="6n3-gD-zSu" secondAttribute="trailing" id="ui3-zq-StQ"/>
+                                    <constraint firstItem="6n3-gD-zSu" firstAttribute="top" secondItem="mhT-wX-ref" secondAttribute="bottom" constant="34" id="xtc-YN-CB9"/>
+                                    <constraint firstItem="mhT-wX-ref" firstAttribute="top" secondItem="sN9-RD-FUb" secondAttribute="top" id="yZ2-h8-oJf"/>
+                                    <constraint firstAttribute="trailing" secondItem="mhT-wX-ref" secondAttribute="trailing" constant="25" id="yq5-p0-0ps"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="GrayForBG"/>
                         <constraints>
+                            <constraint firstItem="sN9-RD-FUb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0Bi-L7-zuQ"/>
+                            <constraint firstAttribute="bottom" secondItem="sN9-RD-FUb" secondAttribute="bottom" id="EEQ-OD-5qq"/>
+                            <constraint firstItem="sN9-RD-FUb" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="EPw-fV-218"/>
                             <constraint firstItem="G9X-Ry-gJz" firstAttribute="centerY" secondItem="fkV-8U-rzl" secondAttribute="centerY" id="KDa-hN-Z8V"/>
                             <constraint firstItem="bMu-nr-f9x" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="OmC-r0-asx"/>
-                            <constraint firstItem="sN9-RD-FUb" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="X3O-PQ-wi4"/>
+                            <constraint firstItem="sN9-RD-FUb" firstAttribute="top" secondItem="fkV-8U-rzl" secondAttribute="bottom" id="a2D-Hu-XDj"/>
                             <constraint firstItem="fkV-8U-rzl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="dWz-Yq-CIk"/>
-                            <constraint firstItem="sN9-RD-FUb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fpq-ud-05j"/>
-                            <constraint firstItem="sN9-RD-FUb" firstAttribute="top" secondItem="bMu-nr-f9x" secondAttribute="bottom" constant="-1" id="hg1-08-GeM"/>
                             <constraint firstItem="bMu-nr-f9x" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="lZs-gp-Cud"/>
                             <constraint firstItem="G9X-Ry-gJz" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="nwe-on-HKI"/>
                             <constraint firstItem="bMu-nr-f9x" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="pqU-Ye-JuF"/>
-                            <constraint firstAttribute="bottom" secondItem="sN9-RD-FUb" secondAttribute="bottom" id="rED-Ls-UBa"/>
                             <constraint firstItem="fkV-8U-rzl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="sXl-6Y-QQu"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="descriptionText" destination="mhT-wX-ref" id="2FY-EN-cgO"/>
-                        <outlet property="loader" destination="zD6-Ln-dVJ" id="7hp-Jj-ovB"/>
-                        <outlet property="messagesTable" destination="6n3-gD-zSu" id="A2q-DI-Pcn"/>
-                        <outlet property="viewLeadingConstraint" destination="fpq-ud-05j" id="Sh2-oZ-fNe"/>
-                        <outlet property="viewTrailingConstraint" destination="X3O-PQ-wi4" id="DUY-XD-ek1"/>
+                        <outlet property="descriptionText" destination="mhT-wX-ref" id="04H-9M-PvD"/>
+                        <outlet property="loader" destination="zD6-Ln-dVJ" id="HT8-7N-XOw"/>
+                        <outlet property="restaurantTable" destination="6n3-gD-zSu" id="tBZ-v4-NAU"/>
                         <segue destination="5kB-Vi-aSK" kind="show" identifier="ShowNotFound" id="8mg-f9-d48"/>
                         <segue destination="snn-NU-vSR" kind="show" identifier="detailCheckSegue" id="IE8-Mb-BFu"/>
                         <segue destination="qSG-xE-iNL" kind="show" identifier="showMapSegue" id="OIF-s7-sGN"/>
                         <segue destination="pIh-Ib-HAJ" kind="show" identifier="showAboutUsSegue" id="8Kx-sF-I07"/>
-
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -170,7 +133,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ts1-is-8Kv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-152" y="550"/>
+            <point key="canvasLocation" x="-406" y="555"/>
         </scene>
         <!--RestaurantDetail-->
         <scene sceneID="u5E-oz-UiG">
@@ -180,7 +143,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Omg-Ic-Ish" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="550"/>
+            <point key="canvasLocation" x="-70" y="564"/>
         </scene>
         <!--AboutUs-->
         <scene sceneID="QLa-zd-GzZ">
@@ -190,8 +153,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGO-G3-ZQN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108" y="551"/>
-
+            <point key="canvasLocation" x="233" y="555"/>
         </scene>
         <!--Not Found View Controller-->
         <scene sceneID="XBh-Rt-xOi">
@@ -241,7 +203,7 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Intentalo nuevamente"/>
                                 <connections>
-                                    <action selector="reloadButton:" destination="5kB-Vi-aSK" eventType="touchUpInside" id="GNa-pF-h8T"/>
+                                    <action selector="retryConection" destination="5kB-Vi-aSK" eventType="touchUpInside" id="8u7-cj-Zsb"/>
                                 </connections>
                             </button>
                         </subviews>

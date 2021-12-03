@@ -29,7 +29,7 @@ class AboutUsViewController: UIViewController {
     private func fetchAboutUs() {
         aboutUsBussines.fetchAboutUs { aboutUsData, errorExist in
             if errorExist {
-                self.showMessage(alertMessage: Lang.ErrorMessages.tryAgainLaterError)
+                self.showMessage(alertMessage: Lang.Error.commonError)
             } else {
                 DispatchQueue.main.async {
                     self.loader.stopAnimating()

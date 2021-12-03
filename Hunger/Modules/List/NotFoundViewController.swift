@@ -9,10 +9,9 @@ import UIKit
 
 class NotFoundViewController: UIViewController {
 
-    @IBAction func reloadButton(_ sender: Any) {
+    @IBAction func retryConection() {
         dismiss(animated: true)
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -13,7 +13,7 @@ final class DetailBussines {
     private let restaurantService = RestaurantService()
     private var restaurantID: Int
     
-    init(restaurantId: Int){
+    init(restaurantId: Int) {
         self.restaurantID = restaurantId
     }
    

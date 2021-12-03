@@ -15,8 +15,6 @@ final class MapService {
     func getRestaurantsLocation(onFinished: @escaping MapPointerServiceResult) {
         
         AF.request(Endpoints.getRestaurantLocations.url).responseDecodable { (res: DataResponse<[RestaurantLocation], AFError>) in
-
-            
             let responseFromService = res.value ?? []
             onFinished(responseFromService, res.error != nil)
         }

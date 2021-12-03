@@ -23,17 +23,14 @@ class ListViewController: UIViewController {
     private let highlightTextSize: CGFloat = 19
     private var slideMenuActive = false
     private var restaurantIDToFind: Int?
-    private let showMapSegue = "showMapSegue"
     private let aboutUsSegue = "showAboutUsSegue"
     private let notFoundSegue = "ShowNotFound"
     
     // MARK: - IBOutlets
-    @IBOutlet weak var messagesTable: UITableView!
+    @IBOutlet weak var restaurantTable: UITableView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
     @IBOutlet weak var descriptionText: UILabel!
     
-    @IBOutlet private weak var viewTrailingConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var viewLeadingConstraint: NSLayoutConstraint!
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,18 +44,7 @@ class ListViewController: UIViewController {
     @IBAction private func backButton() {
         navigationController?.popViewController(animated: true)
     }
-    @IBAction func showAlertButton() {
-        let alert = UIAlertController(title: "Elige una opcion", message: "", preferredStyle: .actionSheet)
-        
-        alert.addAction(UIAlertAction(title: "Mostrar mapa", style: .default, handler: { _ in
-            self.performSegue(withIdentifier: "showMapSegue", sender: nil)
-        }))
-        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: {_ in
-            }))
-        self.present(alert, animated: true, completion: {
-        })
-    }
-    
+   
     @IBAction private func showAlertButton() {
         let alert = UIAlertController(title: Lang.List.chooseAnOptionMessage, message: "", preferredStyle: .actionSheet)
         
@@ -81,7 +67,7 @@ class ListViewController: UIViewController {
                 self.performSegue(withIdentifier: self.notFoundSegue, sender: nil)
             } else {
                 DispatchQueue.main.async {
-                    self.messagesTable.reloadData()
+                    self.restaurantTable.reloadData()
                     self.loader.stopAnimating()
                 }
             }
@@ -89,11 +75,11 @@ class ListViewController: UIViewController {
     }
     
     private func setupTableView() {
-        messagesTable.separatorStyle = .none
-        messagesTable.delegate = self
-        messagesTable.dataSource = self
-        messagesTable.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        messagesTable.register(customCellView,
+        restaurantTable.separatorStyle = .none
+        restaurantTable.delegate = self
+        restaurantTable.dataSource = self
+        restaurantTable.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        restaurantTable.register(customCellView,
                                forCellReuseIdentifier: cellIdentifier)
     }
     
