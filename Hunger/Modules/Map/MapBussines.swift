@@ -14,8 +14,9 @@ final class MapBussines {
     private let restaurantLocationService = MapService()
     
     func fetchLocations(onFinished: @escaping (Bool) -> Void) {
-        restaurantLocationService.getRestaurantsLocation(onFinished: { locationData, receivedError in
-            self.pinsCarrier = locationData
+        restaurantLocationService
+            .getRestaurantsLocation(onFinished: {[weak self] locationData, receivedError in
+                self?.pinsCarrier = locationData
             onFinished(receivedError)
         })
     }

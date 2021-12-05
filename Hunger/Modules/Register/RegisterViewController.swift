@@ -47,17 +47,18 @@ class RegisterViewController: UIViewController {
         let passwordToRegister = passwordTextField.text ?? ""
         let isValidPasswordLengh = passwordToRegister.count > 3
         let emailToRegister = registeredEmailTextField.text ?? ""
+        let detailSegueIdCaptured = detailSegueId
         
         if FormsUtils.isValidEmail(emailToRegister), isValidPasswordLengh {
             registerBussines.postRegister(
                 email: emailToRegister,
                 password: passwordToRegister,
                 onFinished: { succesFromService in
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [weak self] in
                     if succesFromService == true {
-                        self.performSegue(withIdentifier: self.detailSegueId, sender: nil)
+                        self?.performSegue(withIdentifier: detailSegueIdCaptured, sender: nil)
                     } else {
-                        self.showMessage(alertMessage: Lang.Register.errorMessage)
+                        self?.showMessage(alertMessage: Lang.Register.errorMessage)
                     }
                 }
             })

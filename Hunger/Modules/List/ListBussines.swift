@@ -17,8 +17,8 @@ final class ListBussines {
     // MARK: - Private methods
     
     func fetchRestaurants(onFinished: @escaping (Bool) -> Void) {
-        restaurantService.getRestaurants(onFinished: { restaurantsData, receivedError in
-            self.restaurantCarrier = restaurantsData
+        restaurantService.getRestaurants(onFinished: {[weak self] restaurantsData, receivedError in
+            self?.restaurantCarrier = restaurantsData
             onFinished(receivedError)
         })
     }

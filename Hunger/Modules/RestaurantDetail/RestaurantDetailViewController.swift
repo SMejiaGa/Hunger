@@ -52,28 +52,28 @@ class RestaurantDetailViewController: UIViewController {
     // MARK: - Private functions
     
     private func fetchRestaurant() {
-        bussines?.fetchDetails(onFinished: { detailData, errorIn in
+        bussines?.fetchDetails(onFinished: { [weak self] detailData, errorIn in
             if errorIn {
-                self.showMessage(alertMessage: Lang.Error.commonError)
+                self?.showMessage(alertMessage: Lang.Error.commonError)
             } else {
-                DispatchQueue.main.async {
-                    self.shareText += " \(detailData.name)!\n -Queda en: \(detailData.address) "
-                    self.loader.stopAnimating()
-                    self.restaurantRatingLabel.text = "\(String(format: "%.1f", detailData.rating?.average ?? 0))/10"
-                    self.restaurantCommentsLabel.text = "\(detailData.commentsCount) COMENTARIOS"
-                    self.restaurantAdressLabel.text = "\(detailData.address)"
-                    self.restaurantNameLabel.text = "\(detailData.name)"
+                DispatchQueue.main.async { [weak self] in
+                    self?.shareText += " \(detailData.name)!\n -Queda en: \(detailData.address) "
+                    self?.loader.stopAnimating()
+                    self?.restaurantRatingLabel.text = "\(String(format: "%.1f", detailData.rating?.average ?? 0))/10"
+                    self?.restaurantCommentsLabel.text = "\(detailData.commentsCount) COMENTARIOS"
+                    self?.restaurantAdressLabel.text = "\(detailData.address)"
+                    self?.restaurantNameLabel.text = "\(detailData.name)"
                     if detailData.isFavorite {
-                        self.restaurantIsFavImage.image = UIImage(named: "favIconOnIcon")
+                        self?.restaurantIsFavImage.image = UIImage(named: "favIconOnIcon")
                     }
                     if detailData.isOpen {
-                        self.restaurantIsOpenLabel.text = self.restaurantIsOpenText
-                        self.restaurantIsOpenImage.image = UIImage(named: "availableIcon")
+                        self?.restaurantIsOpenLabel.text = self?.restaurantIsOpenText
+                        self?.restaurantIsOpenImage.image = UIImage(named: "availableIcon")
                     } else {
-                        self.restaurantIsOpenLabel.text = self.restaurantIsClosedText
-                        self.restaurantIsOpenImage.image = UIImage(named: "unavailableIcon")
+                        self?.restaurantIsOpenLabel.text = self?.restaurantIsClosedText
+                        self?.restaurantIsOpenImage.image = UIImage(named: "unavailableIcon")
                     }
-                    self.lightStars(actualStars: detailData.stars)
+                    self?.lightStars(actualStars: detailData.stars)
                 }
             }
         })
