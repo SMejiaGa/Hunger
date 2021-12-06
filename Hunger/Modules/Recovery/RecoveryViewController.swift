@@ -43,8 +43,8 @@ class RecoveryViewController: UIViewController {
     private func recoverEmail(email: String) {
         recoveryBussines.postRecovery(
             emailFromUser: email,
-            onFinished: { messageFromWeb in
-            self.showMessage(alertMessage: messageFromWeb)
+            onFinished: { [weak self] messageFromWeb in
+            self?.showMessage(alertMessage: messageFromWeb)
         })
     }
     

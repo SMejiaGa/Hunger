@@ -82,7 +82,9 @@ class LoginViewController: UIViewController {
             loginBussines.postLogin(
                 email: userEmail,
                 password: userPassword,
-                onFinishedBussines: { succesFromService in
+                onFinishedBussines: {  [weak self] succesFromService in
+                    guard let self = self else { return }
+                    
                 DispatchQueue.main.async {
                     if succesFromService == true {
                         self.performSegue(withIdentifier: self.detailSegueId, sender: nil)

@@ -52,15 +52,20 @@ class RestaurantDetailViewController: UIViewController {
     // MARK: - Private functions
     
     private func fetchRestaurant() {
-        bussines?.fetchDetails(onFinished: { detailData, errorIn in
+        bussines?.fetchDetails(onFinished: { [weak self] detailData, errorIn in
+            let restaurantName = detailData.name
+            let restaurantAdress = detailData.address
+            let localizedText = " %@! \n -Queda en: %@"
+            let formatedText = String(format: localizedText, "\(restaurantName)", "\(restaurantAdress)")
             if errorIn {
-                self.showMessage(alertMessage: Lang.Error.commonError)
+                self?.showMessage(alertMessage: Lang.Error.commonError)
             } else {
-                DispatchQueue.main.async {
-                    self.shareText += " \(detailData.name)!\n -Queda en: \(detailData.address) "
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    self.shareText += formatedText
                     self.loader.stopAnimating()
                     self.restaurantRatingLabel.text = "\(String(format: "%.1f", detailData.rating?.average ?? 0))/10"
-                    self.restaurantCommentsLabel.text = "\(detailData.commentsCount) COMENTARIOS"
+                    self.restaurantCommentsLabel.text = "\(detailData.commentsCount) \(Lang.DetailView.comentsMessage)"
                     self.restaurantAdressLabel.text = "\(detailData.address)"
                     self.restaurantNameLabel.text = "\(detailData.name)"
                     if detailData.isFavorite {

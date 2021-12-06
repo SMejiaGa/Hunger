@@ -62,7 +62,9 @@ class ListViewController: UIViewController {
     
     // MARK: - Private methods
     private func fetchData() {
-        bussines.fetchRestaurants(onFinished: { errorExist in
+        bussines.fetchRestaurants(onFinished: { [weak self] errorExist in
+            guard let self = self else { return }
+            
             if errorExist {
                 self.performSegue(withIdentifier: self.notFoundSegue, sender: nil)
             } else {

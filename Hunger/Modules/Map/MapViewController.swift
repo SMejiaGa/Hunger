@@ -12,7 +12,6 @@ import CoreLocation
 class MapViewController: UIViewController {
 
     private let bussines = MapBussines()
-    private let messageFromError = "Error, intenta de nuevo mas tarde"
 
     @IBOutlet private weak var mapView: MKMapView!
     @IBAction private func backButton() {
@@ -27,10 +26,12 @@ class MapViewController: UIViewController {
     }
     
     private func fetchPins() {
-        bussines.fetchLocations { errorExist in
+        bussines.fetchLocations { [weak self] errorExist in
+            guard let self = self else { return }
             if errorExist {
+                
                 self.showMessage(
-                    alertMessage: self.messageFromError
+                    alertMessage: Lang.Error.commonError
                 )
             } else {
                 self.addPointersToMap()
