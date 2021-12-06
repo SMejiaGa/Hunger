@@ -63,16 +63,14 @@ class ListViewController: UIViewController {
     // MARK: - Private methods
     private func fetchData() {
         bussines.fetchRestaurants(onFinished: { [weak self] errorExist in
-            guard let notFoundId = self?.notFoundSegue else {
-                return
-            }
+            guard let self = self else { return }
             
             if errorExist {
-                self?.performSegue(withIdentifier: notFoundId, sender: nil)
+                self.performSegue(withIdentifier: self.notFoundSegue, sender: nil)
             } else {
                 DispatchQueue.main.async {
-                    self?.restaurantTable.reloadData()
-                    self?.loader.stopAnimating()
+                    self.restaurantTable.reloadData()
+                    self.loader.stopAnimating()
                 }
             }
         })

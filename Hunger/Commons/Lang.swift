@@ -31,6 +31,7 @@ struct Lang {
     
     struct DetailView {
         static let shareMessage = "Ven a conocer este nuevo restaurante:"
+        static let comentsMessage = "COMENTARIOS"
     }
     
     struct Error {

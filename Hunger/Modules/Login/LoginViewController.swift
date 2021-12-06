@@ -83,14 +83,13 @@ class LoginViewController: UIViewController {
                 email: userEmail,
                 password: userPassword,
                 onFinishedBussines: {  [weak self] succesFromService in
-                    guard let segueId = self?.detailSegueId else {
-                        return
-                    }
+                    guard let self = self else { return }
+                    
                 DispatchQueue.main.async {
                     if succesFromService == true {
-                        self?.performSegue(withIdentifier: segueId, sender: nil)
+                        self.performSegue(withIdentifier: self.detailSegueId, sender: nil)
                     } else {
-                        self?.showMessage(alertMessage: Lang.Login.invalidLogIn)
+                        self.showMessage(alertMessage: Lang.Login.invalidLogIn)
                     }
                 }
             })
