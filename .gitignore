@@ -37,6 +37,6 @@ DerivedData/
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 Pods/
-
+Hunger/GoogleService-Info.plist
 
 # End of https://www.toptal.com/developers/gitignore/api/xcode
