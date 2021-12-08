@@ -20,7 +20,18 @@ class RegisterViewController: UIViewController {
     // MARK: - Properties
     private let detailSegueId = "ShowDetailList"
     private let highlightText = "INGRESAR"
-    private let registerBussines = RegisterBussines()
+    private let registerBussines: RegisterBussines
+    
+    // MARK: - Init required for xib initialization
+    
+    init(registerBussines: RegisterBussines) {
+        self.registerBussines = registerBussines
+        super.init(nibName: "RegisterViewController", bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - ViewController life cycle
     override func viewDidLoad() {

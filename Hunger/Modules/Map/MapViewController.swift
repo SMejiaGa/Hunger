@@ -11,22 +11,33 @@ import CoreLocation
 
 class MapViewController: UIViewController {
 
-    private let bussines = MapBussines()
+    private let mapBussines: MapBussines
 
     @IBOutlet private weak var mapView: MKMapView!
     @IBAction private func backButton() {
         navigationController?.popViewController(animated: true)
     }
     
+    // MARK: - Init required for xib initialization
+    
+    init(mapBussines: MapBussines) {
+        self.mapBussines = mapBussines
+        super.init(nibName: "MapViewController", bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        bussines.locationPermissions()
+        mapBussines.locationPermissions()
         mapView.userTrackingMode = .follow
         fetchPins()
     }
     
     private func fetchPins() {
-        bussines.fetchLocations { [weak self] errorExist in
+        mapBussines.fetchLocations { [weak self] errorExist in
             guard let self = self else { return }
             if errorExist {
                 
@@ -40,7 +51,7 @@ class MapViewController: UIViewController {
     }
     
     private func addPointersToMap() {
-        for resLocation in self.bussines.pinsCarrier {
+        for resLocation in self.mapBussines.pinsCarrier {
             let pin = MKPointAnnotation()
             pin.coordinate = CLLocationCoordinate2D(
                 latitude: CLLocationDegrees(

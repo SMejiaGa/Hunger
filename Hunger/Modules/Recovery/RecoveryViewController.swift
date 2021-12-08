@@ -16,7 +16,18 @@ class RecoveryViewController: UIViewController {
     
     // MARK: - Properties
     private let facebookHighlightText = "FACEBOOK"
-    private let recoveryBussines = RecoveryBussines()
+    private let recoveryBussines: RecoveryBussines
+    
+    // MARK: - Init required for xib initialization
+    
+    init(recoveryBussines: RecoveryBussines) {
+        self.recoveryBussines = recoveryBussines
+        super.init(nibName: "RecoveryViewController", bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
@@ -35,7 +46,7 @@ class RecoveryViewController: UIViewController {
         showMessage(alertMessage: Lang.Main.notAvailableError)
     }
     
-    @IBAction func backButton(_ sender: Any) {
+    @IBAction func backButton() {
         navigationController?.popViewController(animated: true)
     }
     

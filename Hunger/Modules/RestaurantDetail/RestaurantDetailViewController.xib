@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceCodePro-Regular.ttf">
+            <string>SourceCodePro-Regular</string>
+        </array>
+        <array key="SourceCodePro-SemiBold.ttf">
+            <string>SourceCodePro-Semibold</string>
+        </array>
+        <array key="SourceSansPro-Regular.ttf">
+            <string>SourceSansPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantDetailViewController" customModule="Hunger" customModuleProvider="target">
+            <connections>
+                <outlet property="loader" destination="qB2-de-ocS" id="AcT-pG-obX"/>
+                <outlet property="restaurantAdressLabel" destination="4Gv-nd-pFg" id="HL6-Vp-hYS"/>
+                <outlet property="restaurantCommentsLabel" destination="7KA-Xq-tjN" id="jn6-yh-MF4"/>
+                <outlet property="restaurantIsFavImage" destination="DgO-6Z-jQy" id="Zxa-gF-suB"/>
+                <outlet property="restaurantIsOpenImage" destination="gUu-na-8h9" id="HVH-Ji-1ak"/>
+                <outlet property="restaurantIsOpenLabel" destination="ypZ-gv-iIl" id="thJ-Qv-dez"/>
+                <outlet property="restaurantNameLabel" destination="0Uk-hT-Fht" id="hod-tC-DmQ"/>
+                <outlet property="restaurantRatingLabel" destination="60P-uD-gml" id="BdW-GH-qBy"/>
+                <outlet property="view" destination="AJm-Ib-HEM" id="mlU-o9-iOU"/>
+                <outletCollection property="starsImagesColection" destination="rnP-Ak-9Rl" collectionClass="NSMutableArray" id="jJr-iG-kkb"/>
+                <outletCollection property="starsImagesColection" destination="RlS-sb-ocZ" collectionClass="NSMutableArray" id="jkn-Oh-pY1"/>
+                <outletCollection property="starsImagesColection" destination="QLb-48-7ZQ" collectionClass="NSMutableArray" id="1xZ-cs-YWN"/>
+                <outletCollection property="starsImagesColection" destination="r4U-EI-xeh" collectionClass="NSMutableArray" id="gUT-4B-YyL"/>
+                <outletCollection property="starsImagesColection" destination="ZGx-XM-05G" collectionClass="NSMutableArray" id="bnU-As-A9g"/>
+                <outletCollection property="starsImagesColection" destination="ZGx-XM-05G" collectionClass="NSMutableArray" id="2A5-tr-bRW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="AJm-Ib-HEM">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurantDetailImage" translatesAutoresizingMaskIntoConstraints="NO" id="Owa-Y6-GYu">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sd2-tG-POZ">
+                    <rect key="frame" x="20" y="54" width="25" height="28"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="backFromDetailIcon"/>
+                    <connections>
+                        <action selector="backButton" destination="-1" eventType="touchUpInside" id="4Pm-II-ZH6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kq1-TL-zZr">
+                    <rect key="frame" x="369" y="54" width="25" height="28"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="shareIcon"/>
+                    <connections>
+                        <action selector="shareButton" destination="-1" eventType="touchUpInside" id="6BZ-S8-wEo"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="wvi-p6-ZS3">
+                    <rect key="frame" x="20" y="558" width="384" height="313"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="4el-Ne-58k">
+                            <rect key="frame" x="0.0" y="0.0" width="384" height="45"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" image="coffeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rfN-8s-oNd">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="DdW-5m-inQ"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="knifeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Dyk-bX-4Pk">
+                                    <rect key="frame" x="62" y="0.0" width="42" height="45"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXR-2b-qx8">
+                                    <rect key="frame" x="116" y="0.0" width="268" height="45"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bocato di Passo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uk-hT-Fht">
+                            <rect key="frame" x="0.0" y="82" width="384" height="47"/>
+                            <fontDescription key="fontDescription" name="SourceCodePro-Semibold" family="Source Code Pro" pointSize="37"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tvX-4K-AVs">
+                            <rect key="frame" x="0.0" y="166" width="384" height="31.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="pinRestaurantDetailIcon" translatesAutoresizingMaskIntoConstraints="NO" id="NbD-gs-CrM">
+                                    <rect key="frame" x="0.0" y="0.0" width="25" height="31.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="25" id="hES-P6-y0a"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.12m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6N0-Nv-7Z4">
+                                    <rect key="frame" x="25" y="0.0" width="65" height="31.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="65" id="CMe-Ot-2Rb"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="17"/>
+                                    <color key="textColor" name="GrayForBorders"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="DIRECCION" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gv-nd-pFg">
+                                    <rect key="frame" x="90" y="0.0" width="294" height="31.5"/>
+                                    <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="25"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="lQe-hx-56w">
+                            <rect key="frame" x="0.0" y="234.5" width="384" height="21.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="emptyStarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rnP-Ak-9Rl">
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="21.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="oIF-2w-03x"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyStarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RlS-sb-ocZ">
+                                    <rect key="frame" x="31" y="0.0" width="30" height="21.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="lDj-b4-un8"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="emptyStarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="QLb-48-7ZQ">
+                                    <rect key="frame" x="62" y="0.0" width="30" height="21.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="qo2-8q-Adf"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="emptyStarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="r4U-EI-xeh">
+                                    <rect key="frame" x="93" y="0.0" width="30" height="21.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="OUT-0w-MVo"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="emptyStarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ZGx-XM-05G">
+                                    <rect key="frame" x="124" y="0.0" width="30" height="21.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="KKL-Fg-592"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="0/0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60P-uD-gml">
+                                    <rect key="frame" x="155" y="0.0" width="229" height="21.5"/>
+                                    <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="17"/>
+                                    <color key="textColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="X3d-fV-yHb">
+                            <rect key="frame" x="0.0" y="293" width="384" height="20"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="availableIcon" translatesAutoresizingMaskIntoConstraints="NO" id="gUu-na-8h9">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="aP3-Vl-m5C"/>
+                                        <constraint firstAttribute="width" constant="50" id="zzh-tg-0IL"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="ABIERTO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypZ-gv-iIl">
+                                    <rect key="frame" x="53" y="0.0" width="100" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="aF4-nw-UHb"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SourceCodePro-Regular" family="Source Code Pro" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="commentIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DWt-io-gfg">
+                                    <rect key="frame" x="156" y="0.0" width="50" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="AQ7-14-RU4"/>
+                                        <constraint firstAttribute="height" constant="20" id="gYs-Hh-SmI"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="COMENTARIOS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KA-Xq-tjN">
+                                    <rect key="frame" x="209" y="0.0" width="175" height="20"/>
+                                    <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="20"/>
+                                    <color key="textColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DgO-6Z-jQy">
+                    <rect key="frame" x="192" y="54.5" width="30" height="27"/>
+                </imageView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qB2-de-ocS">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="4CY-P5-SMr"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="qB2-de-ocS" firstAttribute="centerY" secondItem="AJm-Ib-HEM" secondAttribute="centerY" id="Bat-9s-hya"/>
+                <constraint firstItem="4CY-P5-SMr" firstAttribute="trailing" secondItem="wvi-p6-ZS3" secondAttribute="trailing" constant="10" id="D4w-6Y-jcG"/>
+                <constraint firstItem="Sd2-tG-POZ" firstAttribute="leading" secondItem="4CY-P5-SMr" secondAttribute="leading" constant="20" id="JJj-VJ-yvk"/>
+                <constraint firstItem="wvi-p6-ZS3" firstAttribute="leading" secondItem="4CY-P5-SMr" secondAttribute="leading" constant="20" id="NVa-sa-zea"/>
+                <constraint firstItem="4CY-P5-SMr" firstAttribute="trailing" secondItem="kq1-TL-zZr" secondAttribute="trailing" constant="20" id="O8q-oU-INE"/>
+                <constraint firstItem="Owa-Y6-GYu" firstAttribute="top" secondItem="AJm-Ib-HEM" secondAttribute="top" id="QDJ-Av-Krz"/>
+                <constraint firstItem="qB2-de-ocS" firstAttribute="centerX" secondItem="AJm-Ib-HEM" secondAttribute="centerX" id="QXS-sV-JaE"/>
+                <constraint firstItem="DgO-6Z-jQy" firstAttribute="centerY" secondItem="kq1-TL-zZr" secondAttribute="centerY" id="VYe-ya-8H0"/>
+                <constraint firstItem="Owa-Y6-GYu" firstAttribute="leading" secondItem="4CY-P5-SMr" secondAttribute="leading" id="WYL-gs-T41"/>
+                <constraint firstItem="4CY-P5-SMr" firstAttribute="trailing" secondItem="Owa-Y6-GYu" secondAttribute="trailing" id="ZUi-K2-rnS"/>
+                <constraint firstAttribute="bottom" secondItem="wvi-p6-ZS3" secondAttribute="bottom" constant="25" id="akZ-e9-LLf"/>
+                <constraint firstAttribute="bottom" secondItem="Owa-Y6-GYu" secondAttribute="bottom" id="mMw-CM-JA0"/>
+                <constraint firstItem="DgO-6Z-jQy" firstAttribute="centerY" secondItem="Sd2-tG-POZ" secondAttribute="centerY" id="qS7-Z7-nzE"/>
+                <constraint firstItem="kq1-TL-zZr" firstAttribute="top" secondItem="4CY-P5-SMr" secondAttribute="top" constant="10" id="s6X-r1-9af"/>
+                <constraint firstItem="DgO-6Z-jQy" firstAttribute="centerX" secondItem="AJm-Ib-HEM" secondAttribute="centerX" id="sWb-iq-W7g"/>
+                <constraint firstItem="Sd2-tG-POZ" firstAttribute="top" secondItem="4CY-P5-SMr" secondAttribute="top" constant="10" id="tqE-ka-tsw"/>
+            </constraints>
+            <point key="canvasLocation" x="-222" y="82"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="availableIcon" width="50" height="50"/>
+        <image name="backFromDetailIcon" width="25" height="25"/>
+        <image name="coffeIcon" width="28" height="19.5"/>
+        <image name="commentIcon" width="25" height="19.5"/>
+        <image name="emptyStarIcon" width="20" height="19.5"/>
+        <image name="favIcon" width="30" height="27"/>
+        <image name="knifeIcon" width="42" height="45"/>
+        <image name="pinRestaurantDetailIcon" width="13" height="22.5"/>
+        <image name="restaurantDetailImage" width="540" height="960"/>
+        <image name="shareIcon" width="25" height="28"/>
+        <namedColor name="GrayForBorders">
+            <color red="0.76499998569488525" green="0.80000001192092896" blue="0.83499997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

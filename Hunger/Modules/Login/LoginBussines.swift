@@ -8,10 +8,13 @@
 import Foundation
 
 final class LoginBussines {
-    #warning("TODO: create constructor")
-    // TODO: hacer constructor
-    // FIXME: hacer constructor
-    private let loginService = LoginService()
+
+    private let loginService: LoginService
+    
+    init(loginService: LoginService) {
+        self.loginService = loginService
+        
+    }
     
     func postLogin(
         email: String,

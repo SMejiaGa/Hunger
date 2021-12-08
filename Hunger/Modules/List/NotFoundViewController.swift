@@ -12,6 +12,7 @@ class NotFoundViewController: UIViewController {
     @IBAction func retryConection() {
         dismiss(animated: true)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

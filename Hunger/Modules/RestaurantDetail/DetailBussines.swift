@@ -10,11 +10,12 @@ import Foundation
 final class DetailBussines {
     
     // MARK: - Properties
-    private let restaurantService = RestaurantService()
+    private let restaurantService: RestaurantService
     private var restaurantID: Int
     
-    init(restaurantId: Int) {
+    init(restaurantId: Int, restaurantService: RestaurantService) {
         self.restaurantID = restaurantId
+        self.restaurantService = restaurantService
     }
    
     // MARK: - Private methods

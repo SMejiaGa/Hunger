@@ -9,7 +9,7 @@ import UIKit
 
 class AboutUsViewController: UIViewController {
     // MARK: - Properties
-    private let aboutUsBussines = AboutUsBussines()
+    private let aboutUsBussines: AboutUsBussines
 
     // MARK: - IBOutlets
     @IBOutlet private weak var loader: UIActivityIndicatorView!
@@ -19,6 +19,18 @@ class AboutUsViewController: UIViewController {
     @IBAction private func backButton() {
         navigationController?.popViewController(animated: true)
     }
+    // MARK: - Init required for xib initialization
+    
+    init(aboutUsBussines: AboutUsBussines) {
+        self.aboutUsBussines = aboutUsBussines
+        
+        super.init(nibName: "AboutUsViewController", bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()

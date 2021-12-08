@@ -8,7 +8,11 @@
 import Foundation
 
 final class RecoveryBussines {
-    let recoveryService = RecoveryService()
+    let recoveryService: RecoveryService
+    
+    init(recoveryService: RecoveryService) {
+        self.recoveryService = recoveryService
+    }
     
     func postRecovery(emailFromUser: String, onFinished: @escaping (String) -> Void) {
         let emailToRecover = Email(email: emailFromUser)

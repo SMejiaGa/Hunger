@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Regular.ttf">
+            <string>SourceSansPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController" customModule="Hunger" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionText" destination="mr8-Ig-IcG" id="JZr-eY-ANZ"/>
+                <outlet property="loader" destination="5ON-RY-eMV" id="NCJ-1S-qSI"/>
+                <outlet property="restaurantTable" destination="PYg-tU-NQL" id="LmH-9m-oi5"/>
+                <outlet property="view" destination="CeG-H4-CGf" id="XEK-QX-jys"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="CeG-H4-CGf">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6O-LJ-dER">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <items>
+                        <navigationItem id="32P-gv-bJ4">
+                            <barButtonItem key="rightBarButtonItem" image="SideBarIcon" id="CmZ-M5-GMl">
+                                <connections>
+                                    <action selector="showAlertButton" destination="-1" id="9HZ-QG-53G"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTAURANTES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ai6-3p-HMf">
+                    <rect key="frame" x="140.5" y="53.5" width="133" height="26"/>
+                    <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="20"/>
+                    <color key="textColor" red="0.1176470588" green="0.12549019610000001" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="erI-MF-wdg">
+                    <rect key="frame" x="0.0" y="84" width="414" height="812"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PYg-tU-NQL">
+                            <rect key="frame" x="0.0" y="106" width="414" height="706"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5ON-RY-eMV">
+                            <rect key="frame" x="197" y="396" width="20" height="20"/>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encuentra los lugares con buena comida a la medida del gusto y precio justo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mr8-Ig-IcG">
+                            <rect key="frame" x="30" y="0.0" width="359" height="72"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="72" id="Qad-PN-3BZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="GrayForBG"/>
+                    <constraints>
+                        <constraint firstItem="5ON-RY-eMV" firstAttribute="centerX" secondItem="erI-MF-wdg" secondAttribute="centerX" id="6Kh-7I-2Ls"/>
+                        <constraint firstItem="PYg-tU-NQL" firstAttribute="top" secondItem="mr8-Ig-IcG" secondAttribute="bottom" constant="34" id="bKs-Qi-wXt"/>
+                        <constraint firstItem="mr8-Ig-IcG" firstAttribute="leading" secondItem="erI-MF-wdg" secondAttribute="leading" constant="30" id="bk4-BF-3mv"/>
+                        <constraint firstAttribute="trailing" secondItem="mr8-Ig-IcG" secondAttribute="trailing" constant="25" id="dog-mj-Ozb"/>
+                        <constraint firstItem="5ON-RY-eMV" firstAttribute="centerY" secondItem="erI-MF-wdg" secondAttribute="centerY" id="h9a-N2-HmW"/>
+                        <constraint firstItem="mr8-Ig-IcG" firstAttribute="top" secondItem="erI-MF-wdg" secondAttribute="top" id="kCw-yh-AtV"/>
+                        <constraint firstAttribute="trailing" secondItem="PYg-tU-NQL" secondAttribute="trailing" id="kvt-Oi-evL"/>
+                        <constraint firstItem="PYg-tU-NQL" firstAttribute="leading" secondItem="erI-MF-wdg" secondAttribute="leading" id="lIL-01-9bi"/>
+                        <constraint firstAttribute="bottom" secondItem="PYg-tU-NQL" secondAttribute="bottom" id="pDK-fE-8bg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="3cO-hh-8y6"/>
+            <color key="backgroundColor" name="GrayForBG"/>
+            <constraints>
+                <constraint firstItem="r6O-LJ-dER" firstAttribute="leading" secondItem="3cO-hh-8y6" secondAttribute="leading" id="623-IC-Dwq"/>
+                <constraint firstItem="r6O-LJ-dER" firstAttribute="top" secondItem="3cO-hh-8y6" secondAttribute="top" id="IRk-6B-I4r"/>
+                <constraint firstItem="r6O-LJ-dER" firstAttribute="trailing" secondItem="3cO-hh-8y6" secondAttribute="trailing" id="NUx-rb-Jtg"/>
+                <constraint firstItem="erI-MF-wdg" firstAttribute="trailing" secondItem="3cO-hh-8y6" secondAttribute="trailing" id="OUr-mh-AdQ"/>
+                <constraint firstAttribute="bottom" secondItem="erI-MF-wdg" secondAttribute="bottom" id="XEz-Jd-THA"/>
+                <constraint firstItem="Ai6-3p-HMf" firstAttribute="centerX" secondItem="CeG-H4-CGf" secondAttribute="centerX" id="ZrV-U3-w0N"/>
+                <constraint firstItem="erI-MF-wdg" firstAttribute="top" secondItem="Ai6-3p-HMf" secondAttribute="bottom" constant="4.5" id="fSA-82-Fqa"/>
+                <constraint firstItem="Ai6-3p-HMf" firstAttribute="top" secondItem="3cO-hh-8y6" secondAttribute="top" constant="9.5" id="tVc-6j-afS"/>
+                <constraint firstItem="erI-MF-wdg" firstAttribute="leading" secondItem="3cO-hh-8y6" secondAttribute="leading" id="ugu-kH-dka"/>
+            </constraints>
+            <point key="canvasLocation" x="96" y="149"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="SideBarIcon" width="38" height="38"/>
+        <namedColor name="GrayForBG">
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

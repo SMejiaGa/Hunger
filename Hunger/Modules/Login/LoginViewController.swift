@@ -42,8 +42,19 @@ class LoginViewController: UIViewController {
     private let detailSegueId =  "ShowDetailList"
     private let registerHighlightText =  "QUIERO REGISTRARME"
     private let helpHighlightText =  "AYUDA"
-    private let loginBussines = LoginBussines()
+    private let loginBussines: LoginBussines
     private var router: Router?
+    
+    // MARK: - Init required for xib initialization
+    
+    init(loginBussines: LoginBussines) {
+        self.loginBussines = loginBussines
+        super.init(nibName: "LoginViewController", bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
@@ -62,7 +73,9 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func helpButton(_ gesture: UITapGestureRecognizer) {
-        performSegue(withIdentifier: helpSegueId, sender: nil)
+        let recoveryBussines = RecoveryBussines(recoveryService: RecoveryService())
+        let viewController = RecoveryViewController(recoveryBussines: recoveryBussines)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc func registerButtonAction(_ gesture: UITapGestureRecognizer) {

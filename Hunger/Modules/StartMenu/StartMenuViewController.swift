@@ -8,7 +8,7 @@
 import UIKit
 import Dodo
 
-class MainViewController: UIViewController {
+class StartMenuViewController: UIViewController {
     // MARK: - UI Referencies
     @IBOutlet private weak var emailbutton: UIButton!
     
@@ -16,14 +16,30 @@ class MainViewController: UIViewController {
     private let detailSegueId = "showDirectDetail"
     private let emailSegueId = "showEmailLogin"
     
+    // MARK: - Init required for xib initialization
+    
+    init() {
+        super.init(nibName: "StartMenuViewController", bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - ViewController life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     // MARK: - IBActions
     @IBAction private func checkButton() {
-        performSegue(withIdentifier: detailSegueId, sender: nil)
+        let listBussines = ListBussines(restaurantService: RestaurantService())
+        let viewController = ListViewController(bussines: listBussines)
+        
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction private func facebookLoginButton() {
@@ -31,7 +47,11 @@ class MainViewController: UIViewController {
     }
     
     @IBAction private func emailLoginButton() {
-        performSegue(withIdentifier: emailSegueId, sender: nil)
+        let loginBussines = LoginBussines(loginService: LoginService())
+        let viewController = LoginViewController(loginBussines: loginBussines)
+        
+        navigationController?.pushViewController(viewController, animated: true)
+        
     }
     
     // MARK: - private methods

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-SemiBold.ttf">
+            <string>SourceSansPro-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartMenuViewController" customModule="Hunger" customModuleProvider="target">
+            <connections>
+                <outlet property="emailbutton" destination="oTp-J1-naV" id="8m3-uP-DAA"/>
+                <outlet property="view" destination="2Tb-YT-cX9" id="bJN-cR-DOD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2Tb-YT-cX9">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxT-HI-dgx" customClass="HButton" customModule="Hunger" customModuleProvider="target">
+                    <rect key="frame" x="50" y="493" width="314" height="50"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="7cD-4B-DWs"/>
+                    </constraints>
+                    <color key="tintColor" red="0.38823529410000002" green="0.75686274509999996" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="DARÉ UN VISTASO"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="checkButton" destination="-1" eventType="touchUpInside" id="HEu-qh-eyu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTp-J1-naV" customClass="HButton" customModule="Hunger" customModuleProvider="target">
+                    <rect key="frame" x="50" y="689.5" width="314" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="0.37434324930000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ZRh-73-blk"/>
+                    </constraints>
+                    <state key="normal" title="MI CORREO ELECTRÓNICO">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="emailLoginButton" destination="-1" eventType="touchUpInside" id="0Iu-dG-180"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkq-UL-i8r" customClass="HButton" customModule="Hunger" customModuleProvider="target">
+                    <rect key="frame" x="50" y="614.5" width="314" height="50"/>
+                    <color key="backgroundColor" red="0.28627450980000002" green="0.33725490200000002" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="FsO-Z7-OvX"/>
+                    </constraints>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="MI CUENTA DE FACEBOOK"/>
+                    <connections>
+                        <action selector="facebookLoginButton" destination="-1" eventType="touchUpInside" id="WxO-uA-s99"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La guía de lugares baratos cerca de tu ubicación." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sz-bM-eSA">
+                    <rect key="frame" x="110" y="229" width="194" height="43"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="194" id="yz4-jK-1vD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Ingresa con: -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuL-gP-sTr">
+                    <rect key="frame" x="100" y="568" width="214" height="21.5"/>
+                    <color key="tintColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HungerLogo" translatesAutoresizingMaskIntoConstraints="NO" id="775-a2-rYj">
+                    <rect key="frame" x="60" y="144" width="294" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="uHz-z4-Fk8"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="jTX-yy-9E9"/>
+            <color key="backgroundColor" red="0.38823529410000002" green="0.75686274509999996" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="MxT-HI-dgx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3Sz-bM-eSA" secondAttribute="bottom" constant="25" id="7XH-cc-8LZ"/>
+                <constraint firstItem="gkq-UL-i8r" firstAttribute="leading" secondItem="jTX-yy-9E9" secondAttribute="leading" constant="50" id="8Hn-D1-KKP"/>
+                <constraint firstItem="oTp-J1-naV" firstAttribute="top" secondItem="gkq-UL-i8r" secondAttribute="bottom" constant="25" id="KP1-ux-fWd"/>
+                <constraint firstItem="3Sz-bM-eSA" firstAttribute="top" secondItem="775-a2-rYj" secondAttribute="bottom" constant="25" id="ONE-IE-4rr"/>
+                <constraint firstItem="jTX-yy-9E9" firstAttribute="trailing" secondItem="775-a2-rYj" secondAttribute="trailing" constant="60" id="Osr-zK-5SS"/>
+                <constraint firstItem="3Sz-bM-eSA" firstAttribute="centerX" secondItem="775-a2-rYj" secondAttribute="centerX" id="U8V-EG-2LS"/>
+                <constraint firstItem="MxT-HI-dgx" firstAttribute="leading" secondItem="jTX-yy-9E9" secondAttribute="leading" constant="50" id="Vlf-SE-S2O"/>
+                <constraint firstAttribute="trailing" secondItem="oTp-J1-naV" secondAttribute="trailing" constant="50" id="WcU-RJ-8VF"/>
+                <constraint firstItem="oTp-J1-naV" firstAttribute="leading" secondItem="2Tb-YT-cX9" secondAttribute="leading" constant="50" id="aFw-De-ZUX"/>
+                <constraint firstItem="775-a2-rYj" firstAttribute="leading" secondItem="jTX-yy-9E9" secondAttribute="leading" constant="60" id="cKd-Ce-oUS"/>
+                <constraint firstItem="775-a2-rYj" firstAttribute="top" secondItem="jTX-yy-9E9" secondAttribute="top" constant="100" id="cwH-yW-md5"/>
+                <constraint firstItem="NuL-gP-sTr" firstAttribute="top" secondItem="MxT-HI-dgx" secondAttribute="bottom" constant="25" id="p5g-zx-fuk"/>
+                <constraint firstItem="jTX-yy-9E9" firstAttribute="trailing" secondItem="NuL-gP-sTr" secondAttribute="trailing" constant="100" id="q19-r2-pMM"/>
+                <constraint firstItem="MxT-HI-dgx" firstAttribute="top" secondItem="2Tb-YT-cX9" secondAttribute="centerY" multiplier="110%" id="qMc-up-Ocp"/>
+                <constraint firstItem="jTX-yy-9E9" firstAttribute="trailing" secondItem="gkq-UL-i8r" secondAttribute="trailing" constant="50" id="rvl-Wr-K79"/>
+                <constraint firstItem="gkq-UL-i8r" firstAttribute="top" secondItem="NuL-gP-sTr" secondAttribute="bottom" constant="25" id="vw9-cI-ad1"/>
+                <constraint firstItem="jTX-yy-9E9" firstAttribute="trailing" secondItem="MxT-HI-dgx" secondAttribute="trailing" constant="50" id="xR0-5X-WNc"/>
+                <constraint firstItem="NuL-gP-sTr" firstAttribute="leading" secondItem="jTX-yy-9E9" secondAttribute="leading" constant="100" id="xVT-5z-SEB"/>
+            </constraints>
+            <point key="canvasLocation" x="-3" y="-542"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="HungerLogo" width="718" height="180"/>
+    </resources>
+</document>

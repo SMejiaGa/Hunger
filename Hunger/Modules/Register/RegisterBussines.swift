@@ -8,7 +8,11 @@
 import Foundation
 
 final class RegisterBussines {
-    let registerService = RegisterService()
+    let registerService: RegisterService
+    
+    init(registerService: RegisterService) {
+        self.registerService = registerService
+    }
     
     func postRegister(
         email: String,

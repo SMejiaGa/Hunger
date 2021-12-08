@@ -11,8 +11,12 @@ final class ListBussines {
     
     // MARK: - Properties
     private(set) var restaurantCarrier = [Restaurant]()
-    private let restaurantService = RestaurantService()
+    private let restaurantService: RestaurantService
     var selectedRestaurantID: Int?
+    
+    init(restaurantService: RestaurantService) {
+        self.restaurantService = restaurantService
+    }
     
     // MARK: - Private methods
     
