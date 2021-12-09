@@ -13,8 +13,8 @@ final class MapBussines {
     private(set) var pinsCarrier = [RestaurantLocation]()
     private let restaurantLocationService: MapService
     
-    init(restaurantLocationService: MapService) {
-        self.restaurantLocationService = restaurantLocationService
+    init(service: MapService) {
+        self.restaurantLocationService = service
     }
     
     func fetchLocations(onFinished: @escaping (Bool) -> Void) {

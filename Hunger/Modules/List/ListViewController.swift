@@ -35,7 +35,7 @@ class ListViewController: UIViewController {
     init(bussines: ListBussines) {
         self.bussines = bussines
         
-        super.init(nibName: "ListViewController", bundle: .main)
+        super.init(nibName: String(describing: ListViewController.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -57,26 +57,29 @@ class ListViewController: UIViewController {
     }
    
     @IBAction private func showAlertButton() {
-        let mapBussines = MapBussines(restaurantLocationService: MapService())
-        let mapViewController = MapViewController(mapBussines: mapBussines)
-        let aboutUsBussines = AboutUsBussines(aboutUsService: AboutUsService())
-        let aboutUsViewController = AboutUsViewController(aboutUsBussines: aboutUsBussines)
+        let mapBussines = MapBussines(service: MapService())
+        let mapViewController = MapViewController(bussines: mapBussines)
+        let aboutUsBussines = AboutUsBussines(service: AboutUsService())
+        let aboutUsViewController = AboutUsViewController(bussines: aboutUsBussines)
         
         let alert = UIAlertController(title: Lang.List.chooseAnOptionMessage, message: "", preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: Lang.List.showMapLabelMessage, style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: Lang.List.showMapLabelMessage, style: .default, handler: { [weak self] _ in
+            guard let self = self else { return }
             self.navigationController?.pushViewController(mapViewController, animated: true)
         }))
         
-        alert.addAction(UIAlertAction(title: Lang.List.aboutUsMessage, style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: Lang.List.aboutUsMessage, style: .default, handler: { [weak self] _ in
+            guard let self = self else { return }
             self.navigationController?.pushViewController(aboutUsViewController, animated: true)
         }))
         
-        alert.addAction(UIAlertAction(title: Lang.List.logoutMessage, style: .destructive, handler: { _ in
+        alert.addAction(UIAlertAction(title: Lang.List.logoutMessage, style: .destructive, handler: { [weak self] _ in
+            guard let self = self else { return }
             self.navigationController?.popViewController(animated: true)
         }))
         
-        alert.addAction(UIAlertAction(title: Lang.List.cancelMessage, style: .cancel, handler: {_ in
+        alert.addAction(UIAlertAction(title: Lang.List.cancelMessage, style: .cancel, handler: { _ in
             }))
         self.present(alert, animated: true, completion: {
         })
@@ -144,7 +147,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             }
             
             let service = RestaurantService()
-            let bussines = DetailBussines(restaurantId: selectedID, restaurantService: service)
+            let bussines = DetailBussines(restaurantId: selectedID, service: service)
             let viewController = RestaurantDetailViewController(bussines: bussines)
             
             navigationController?.pushViewController(viewController, animated: true)

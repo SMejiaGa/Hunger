@@ -47,9 +47,9 @@ class LoginViewController: UIViewController {
     
     // MARK: - Init required for xib initialization
     
-    init(loginBussines: LoginBussines) {
-        self.loginBussines = loginBussines
-        super.init(nibName: "LoginViewController", bundle: .main)
+    init(bussines: LoginBussines) {
+        self.loginBussines = bussines
+        super.init(nibName: String(describing: LoginViewController.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -73,8 +73,8 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func helpButton(_ gesture: UITapGestureRecognizer) {
-        let recoveryBussines = RecoveryBussines(recoveryService: RecoveryService())
-        let viewController = RecoveryViewController(recoveryBussines: recoveryBussines)
+        let recoveryBussines = RecoveryBussines(service: RecoveryService())
+        let viewController = RecoveryViewController(bussines: recoveryBussines)
         navigationController?.pushViewController(viewController, animated: true)
     }
     

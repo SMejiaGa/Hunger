@@ -42,7 +42,7 @@ class RestaurantDetailViewController: UIViewController {
     
     init(bussines: DetailBussines) {
         self.bussines = bussines
-        super.init(nibName: "RestaurantDetailViewController", bundle: .main)
+        super.init(nibName: String(describing: RestaurantDetailViewController.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {

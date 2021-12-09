@@ -9,7 +9,7 @@ import UIKit
 
 class NotFoundViewController: UIViewController {
 
-    @IBAction func retryConection() {
+    @IBAction private func retryConection() {
         dismiss(animated: true)
     }
     

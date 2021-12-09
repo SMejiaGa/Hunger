@@ -14,8 +14,8 @@ final class ListBussines {
     private let restaurantService: RestaurantService
     var selectedRestaurantID: Int?
     
-    init(restaurantService: RestaurantService) {
-        self.restaurantService = restaurantService
+    init(service: RestaurantService) {
+        self.restaurantService = service
     }
     
     // MARK: - Private methods

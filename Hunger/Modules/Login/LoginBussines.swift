@@ -11,8 +11,8 @@ final class LoginBussines {
 
     private let loginService: LoginService
     
-    init(loginService: LoginService) {
-        self.loginService = loginService
+    init(service: LoginService) {
+        self.loginService = service
         
     }
     

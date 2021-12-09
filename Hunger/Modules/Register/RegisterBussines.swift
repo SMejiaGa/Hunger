@@ -10,8 +10,8 @@ import Foundation
 final class RegisterBussines {
     let registerService: RegisterService
     
-    init(registerService: RegisterService) {
-        self.registerService = registerService
+    init(service: RegisterService) {
+        self.registerService = service
     }
     
     func postRegister(

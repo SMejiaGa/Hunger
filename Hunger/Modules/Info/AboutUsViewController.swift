@@ -21,10 +21,10 @@ class AboutUsViewController: UIViewController {
     }
     // MARK: - Init required for xib initialization
     
-    init(aboutUsBussines: AboutUsBussines) {
-        self.aboutUsBussines = aboutUsBussines
+    init(bussines: AboutUsBussines) {
+        self.aboutUsBussines = bussines
         
-        super.init(nibName: "AboutUsViewController", bundle: .main)
+        super.init(nibName: String(describing: AboutUsViewController.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {

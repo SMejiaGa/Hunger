@@ -11,8 +11,8 @@ final class AboutUsBussines {
  
     private let aboutUsService: AboutUsService
     
-    init(aboutUsService: AboutUsService) {
-        self.aboutUsService = aboutUsService
+    init(service: AboutUsService) {
+        self.aboutUsService = service
     }
     
     func fetchAboutUs(onFinished: @escaping (AboutUsResponse, Bool) -> Void) {

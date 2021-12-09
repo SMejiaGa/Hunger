@@ -13,9 +13,9 @@ final class DetailBussines {
     private let restaurantService: RestaurantService
     private var restaurantID: Int
     
-    init(restaurantId: Int, restaurantService: RestaurantService) {
+    init(restaurantId: Int, service: RestaurantService) {
         self.restaurantID = restaurantId
-        self.restaurantService = restaurantService
+        self.restaurantService = service
     }
    
     // MARK: - Private methods

@@ -20,9 +20,9 @@ class MapViewController: UIViewController {
     
     // MARK: - Init required for xib initialization
     
-    init(mapBussines: MapBussines) {
-        self.mapBussines = mapBussines
-        super.init(nibName: "MapViewController", bundle: .main)
+    init(bussines: MapBussines) {
+        self.mapBussines = bussines
+        super.init(nibName: String(describing: MapViewController.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {

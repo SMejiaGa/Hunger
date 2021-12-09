@@ -20,9 +20,9 @@ class RecoveryViewController: UIViewController {
     
     // MARK: - Init required for xib initialization
     
-    init(recoveryBussines: RecoveryBussines) {
-        self.recoveryBussines = recoveryBussines
-        super.init(nibName: "RecoveryViewController", bundle: .main)
+    init(bussines: RecoveryBussines) {
+        self.recoveryBussines = bussines
+        super.init(nibName: String(describing: RecoveryViewController.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {

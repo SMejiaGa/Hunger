@@ -24,9 +24,9 @@ class RegisterViewController: UIViewController {
     
     // MARK: - Init required for xib initialization
     
-    init(registerBussines: RegisterBussines) {
-        self.registerBussines = registerBussines
-        super.init(nibName: "RegisterViewController", bundle: .main)
+    init(bussines: RegisterBussines) {
+        self.registerBussines = bussines
+        super.init(nibName: String(describing: RegisterViewController.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {

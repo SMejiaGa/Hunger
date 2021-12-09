@@ -19,7 +19,7 @@ class StartMenuViewController: UIViewController {
     // MARK: - Init required for xib initialization
     
     init() {
-        super.init(nibName: "StartMenuViewController", bundle: .main)
+        super.init(nibName: String(describing: StartMenuViewController.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -36,7 +36,7 @@ class StartMenuViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction private func checkButton() {
-        let listBussines = ListBussines(restaurantService: RestaurantService())
+        let listBussines = ListBussines(service: RestaurantService())
         let viewController = ListViewController(bussines: listBussines)
         
         navigationController?.pushViewController(viewController, animated: true)
@@ -47,8 +47,8 @@ class StartMenuViewController: UIViewController {
     }
     
     @IBAction private func emailLoginButton() {
-        let loginBussines = LoginBussines(loginService: LoginService())
-        let viewController = LoginViewController(loginBussines: loginBussines)
+        let loginBussines = LoginBussines(service: LoginService())
+        let viewController = LoginViewController(bussines: loginBussines)
         
         navigationController?.pushViewController(viewController, animated: true)
         
