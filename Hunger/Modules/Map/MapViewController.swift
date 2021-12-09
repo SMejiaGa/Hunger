@@ -11,11 +11,22 @@ import CoreLocation
 
 class MapViewController: UIViewController {
 
-    private let bussines = MapBussines()
+    private let bussines: MapBussines
 
     @IBOutlet private weak var mapView: MKMapView!
     @IBAction private func backButton() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - Init required for xib initialization
+    
+    init(bussines: MapBussines) {
+        self.bussines = bussines
+        super.init(nibName: String(describing: MapViewController.self), bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {

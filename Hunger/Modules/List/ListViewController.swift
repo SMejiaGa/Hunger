@@ -12,24 +12,31 @@ class ListViewController: UIViewController {
     // MARK: - Properties
     private let customCellView = UINib(nibName: "CustomTableViewCell",
                                        bundle: nil)
-    private let bussines = ListBussines()
-    private var detailViewController = RestaurantDetailViewController()
+    private let bussines: ListBussines
     private let cellIdentifier = "CustomTableViewCell"
     private let cellReuseIdentifier = "myCell"
     private let descriptionToHighlightA = "buena comida"
     private let descriptionToHighlightB = "precio justo"
-    private let showMapSegue = "showMapSegue"
-    private let detailCheckSegue = "detailCheckSegue"
     private let highlightTextSize: CGFloat = 19
     private var slideMenuActive = false
     private var restaurantIDToFind: Int?
-    private let aboutUsSegue = "showAboutUsSegue"
-    private let notFoundSegue = "ShowNotFound"
     
     // MARK: - IBOutlets
-    @IBOutlet weak var restaurantTable: UITableView!
-    @IBOutlet weak var loader: UIActivityIndicatorView!
-    @IBOutlet weak var descriptionText: UILabel!
+    @IBOutlet private weak var restaurantTable: UITableView!
+    @IBOutlet private weak var loader: UIActivityIndicatorView!
+    @IBOutlet private weak var descriptionText: UILabel!
+    
+    // MARK: - Init required for xib initialization
+    
+    init(bussines: ListBussines) {
+        self.bussines = bussines
+        
+        super.init(nibName: String(describing: ListViewController.self), bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
@@ -46,15 +53,33 @@ class ListViewController: UIViewController {
     }
    
     @IBAction private func showAlertButton() {
+
         let alert = UIAlertController(title: Lang.List.chooseAnOptionMessage, message: "", preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: Lang.List.showMapLabelMessage, style: .default, handler: { _ in
-            self.performSegue(withIdentifier: self.showMapSegue, sender: nil)
+        alert.addAction(UIAlertAction(title: Lang.List.showMapLabelMessage, style: .default, handler: { [weak self] _ in
+            
+            let mapBussines = MapBussines(service: MapService())
+            let mapViewController = MapViewController(bussines: mapBussines)
+            
+            guard let self = self else { return }
+            self.navigationController?.pushViewController(mapViewController, animated: true)
         }))
-        alert.addAction(UIAlertAction(title: Lang.List.aboutUsMessage, style: .default, handler: { _ in
-            self.performSegue(withIdentifier: self.aboutUsSegue, sender: nil)
+        
+        alert.addAction(UIAlertAction(title: Lang.List.aboutUsMessage, style: .default, handler: { [weak self] _ in
+            
+            let aboutUsBussines = AboutUsBussines(service: AboutUsService())
+            let aboutUsViewController = AboutUsViewController(bussines: aboutUsBussines)
+            
+            guard let self = self else { return }
+            self.navigationController?.pushViewController(aboutUsViewController, animated: true)
         }))
-        alert.addAction(UIAlertAction(title: Lang.List.cancelMessage, style: .cancel, handler: {_ in
+        
+        alert.addAction(UIAlertAction(title: Lang.List.logoutMessage, style: .destructive, handler: { [weak self] _ in
+            guard let self = self else { return }
+            self.navigationController?.popViewController(animated: true)
+        }))
+        
+        alert.addAction(UIAlertAction(title: Lang.List.cancelMessage, style: .cancel, handler: { _ in
             }))
         self.present(alert, animated: true, completion: {
         })
@@ -62,11 +87,12 @@ class ListViewController: UIViewController {
     
     // MARK: - Private methods
     private func fetchData() {
+        let notFoundViewController = NotFoundViewController()
         bussines.fetchRestaurants(onFinished: { [weak self] errorExist in
             guard let self = self else { return }
             
             if errorExist {
-                self.performSegue(withIdentifier: self.notFoundSegue, sender: nil)
+                self.navigationController?.pushViewController(notFoundViewController, animated: true)
             } else {
                 DispatchQueue.main.async {
                     self.restaurantTable.reloadData()
@@ -91,19 +117,8 @@ class ListViewController: UIViewController {
             (descriptionToHighlightB, .blue, .bold(size: highlightTextSize))
         ])
     }
-    
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         if segue.destination is RestaurantDetailViewController {
-             let viewControllerVar = segue.destination as? RestaurantDetailViewController
-             guard let selectedID = bussines.selectedRestaurantID else {
-                 print(Lang.Error.commonError)
-                 return
-             }
-             viewControllerVar?.bussines = DetailBussines(restaurantId: selectedID)
-         }
-     }
-     
 }
+
 // MARK: - UITableViewDataSource & UITableViewDelegate
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -125,7 +140,17 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !bussines.restaurantCarrier[indexPath.row].isAvailable {
             bussines.selectedRestaurantID = bussines.restaurantCarrier[indexPath.row].id
-            performSegue(withIdentifier: detailCheckSegue, sender: nil)
+            
+            guard let selectedID = bussines.selectedRestaurantID else {
+                print(Lang.Error.commonError)
+                return
+            }
+            
+            let service = RestaurantService()
+            let bussines = DetailBussines(restaurantId: selectedID, service: service)
+            let viewController = RestaurantDetailViewController(bussines: bussines)
+            
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
     

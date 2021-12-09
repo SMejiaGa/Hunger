@@ -8,11 +8,15 @@
 import Foundation
 
 final class RecoveryBussines {
-    let recoveryService = RecoveryService()
+    let service: RecoveryService
+    
+    init(service: RecoveryService) {
+        self.service = service
+    }
     
     func postRecovery(emailFromUser: String, onFinished: @escaping (String) -> Void) {
         let emailToRecover = Email(email: emailFromUser)
-        recoveryService.postRecovery(email: emailToRecover) { messageFromWeb in
+        service.postRecovery(email: emailToRecover) { messageFromWeb in
             onFinished(messageFromWeb)
         }
     }

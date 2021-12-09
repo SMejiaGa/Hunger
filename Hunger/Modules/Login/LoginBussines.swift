@@ -8,10 +8,13 @@
 import Foundation
 
 final class LoginBussines {
-    #warning("TODO: create constructor")
-    // TODO: hacer constructor
-    // FIXME: hacer constructor
-    private let loginService = LoginService()
+
+    private let service: LoginService
+    
+    init(service: LoginService) {
+        self.service = service
+        
+    }
     
     func postLogin(
         email: String,
@@ -19,7 +22,7 @@ final class LoginBussines {
         onFinishedBussines: @escaping (Bool) -> Void
     ) {
         let loginReq = User(email: email, password: password)
-        loginService.postLogin(
+        service.postLogin(
             user: loginReq,
             onFinished: { isSucces in
                 onFinishedBussines(isSucces)

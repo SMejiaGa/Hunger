@@ -43,5 +43,6 @@ struct Lang {
         static let showMapLabelMessage = "Mostrar mapa"
         static let aboutUsMessage = "Sobre nosotros"
         static let cancelMessage = "Cancelar"
+        static let logoutMessage = "Cerrar sesión"
     }
 }

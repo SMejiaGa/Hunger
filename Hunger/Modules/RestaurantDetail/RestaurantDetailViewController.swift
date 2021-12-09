@@ -10,7 +10,7 @@ import UIKit
 class RestaurantDetailViewController: UIViewController {
     
     // MARK: - Properties
-    var bussines: DetailBussines?
+    private let bussines: DetailBussines
     private var shareText = Lang.DetailView.shareMessage
     private var restaurantIsOpenText = "ABIERTO"
     private var restaurantIsClosedText = "CERRADO"
@@ -33,9 +33,20 @@ class RestaurantDetailViewController: UIViewController {
     
     @IBAction private func shareButton() {
         let textToShare = [ shareText ]
-            let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
-            activityViewController.popoverPresentationController?.sourceView = self.view
-            self.present(activityViewController, animated: true, completion: nil)
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    // MARK: - Init required for xib initialization
+    
+    init(bussines: DetailBussines) {
+        self.bussines = bussines
+        super.init(nibName: String(describing: RestaurantDetailViewController.self), bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - ViewController LifeCycle
@@ -52,7 +63,7 @@ class RestaurantDetailViewController: UIViewController {
     // MARK: - Private functions
     
     private func fetchRestaurant() {
-        bussines?.fetchDetails(onFinished: { [weak self] detailData, errorIn in
+        bussines.fetchDetails(onFinished: { [weak self] detailData, errorIn in
             let restaurantName = detailData.name
             let restaurantAdress = detailData.address
             let localizedText = " %@! \n -Queda en: %@"

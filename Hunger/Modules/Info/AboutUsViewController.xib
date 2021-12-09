@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutUsViewController" customModule="Hunger" customModuleProvider="target">
+            <connections>
+                <outlet property="aboutUsTextView" destination="mxP-4F-Whs" id="xgH-hF-ROf"/>
+                <outlet property="loader" destination="7Pq-dv-TRM" id="umS-jb-mEa"/>
+                <outlet property="view" destination="pCk-nz-rGz" id="0gI-Nf-tWN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="pCk-nz-rGz">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erd-VM-gSy">
+                    <rect key="frame" x="20" y="64" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Loc-sG-geZ"/>
+                        <constraint firstAttribute="width" secondItem="Erd-VM-gSy" secondAttribute="height" multiplier="1:1" id="pNN-XI-dmV"/>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                    <state key="normal" image="BackButton"/>
+                    <connections>
+                        <action selector="backButton" destination="-1" eventType="touchUpInside" id="kLH-gm-Pmw"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUIÉNES SOMOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syv-1O-g3L">
+                    <rect key="frame" x="139" y="71" width="136" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.1176470588" green="0.12549019610000001" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxP-4F-Whs">
+                    <rect key="frame" x="20" y="102" width="374" height="760"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="7Pq-dv-TRM">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="YhF-pu-X0k"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Erd-VM-gSy" firstAttribute="top" secondItem="YhF-pu-X0k" secondAttribute="top" constant="20" id="6mO-CK-Zad"/>
+                <constraint firstItem="syv-1O-g3L" firstAttribute="centerY" secondItem="Erd-VM-gSy" secondAttribute="centerY" id="BeF-NW-dye"/>
+                <constraint firstItem="mxP-4F-Whs" firstAttribute="leading" secondItem="YhF-pu-X0k" secondAttribute="leading" constant="20" id="DIg-cX-ZrX"/>
+                <constraint firstItem="Erd-VM-gSy" firstAttribute="leading" secondItem="YhF-pu-X0k" secondAttribute="leading" constant="20" id="GDV-R0-KUd"/>
+                <constraint firstItem="7Pq-dv-TRM" firstAttribute="centerY" secondItem="pCk-nz-rGz" secondAttribute="centerY" id="Iza-49-40X"/>
+                <constraint firstItem="YhF-pu-X0k" firstAttribute="bottom" secondItem="mxP-4F-Whs" secondAttribute="bottom" id="PSd-g6-rKh"/>
+                <constraint firstItem="YhF-pu-X0k" firstAttribute="trailing" secondItem="mxP-4F-Whs" secondAttribute="trailing" constant="20" id="RS1-6I-Oda"/>
+                <constraint firstItem="mxP-4F-Whs" firstAttribute="top" secondItem="syv-1O-g3L" secondAttribute="bottom" constant="10" id="SYh-OA-Ky7"/>
+                <constraint firstItem="7Pq-dv-TRM" firstAttribute="centerX" secondItem="pCk-nz-rGz" secondAttribute="centerX" id="TKj-IK-iXO"/>
+                <constraint firstItem="syv-1O-g3L" firstAttribute="centerX" secondItem="pCk-nz-rGz" secondAttribute="centerX" id="dtI-vA-OnC"/>
+            </constraints>
+            <point key="canvasLocation" x="-177" y="73"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="BackButton" width="49" height="49"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

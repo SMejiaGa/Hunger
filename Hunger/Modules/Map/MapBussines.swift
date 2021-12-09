@@ -11,10 +11,14 @@ import CoreLocation
 final class MapBussines {
     private let locationManager = CLLocationManager()
     private(set) var pinsCarrier = [RestaurantLocation]()
-    private let restaurantLocationService = MapService()
+    private let service: MapService
+    
+    init(service: MapService) {
+        self.service = service
+    }
     
     func fetchLocations(onFinished: @escaping (Bool) -> Void) {
-        restaurantLocationService
+        service
             .getRestaurantsLocation(onFinished: {[weak self] locationData, receivedError in
                 self?.pinsCarrier = locationData
             onFinished(receivedError)

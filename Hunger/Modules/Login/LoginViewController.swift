@@ -8,26 +8,6 @@
 import UIKit
 import SimpleKeyboard
 
-enum AppRoutes {
-    enum Login: String {
-        case help = "showHelp"
-        case register = "showRegister"
-        case list = "ShowDetailList"
-    }
-}
-/// Esto no es una buena practica deberia utilizar un navigationController, pero como usos segues, lo manejo asi
-class Router {
-    private weak var viewController: UIViewController?
-    
-    init(viewController: UIViewController) {
-        self.viewController = viewController
-    }
-    
-    func route(destination: AppRoutes.Login) {
-        viewController?.performSegue(withIdentifier: destination.rawValue, sender: nil)
-    }
-}
-
 class LoginViewController: UIViewController {
     // MARK: - UI Referencies
     @IBOutlet private weak var emailTextField: UITextField!
@@ -37,13 +17,20 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var registerText: UILabel!
     
     // MARK: - Properties
-    private let helpSegueId = "showHelp"
-    private let registerSegueId = "showRegister"
-    private let detailSegueId =  "ShowDetailList"
     private let registerHighlightText =  "QUIERO REGISTRARME"
     private let helpHighlightText =  "AYUDA"
-    private let loginBussines = LoginBussines()
-    private var router: Router?
+    private let bussines: LoginBussines
+    
+    // MARK: - Init required for xib initialization
+    
+    init(bussines: LoginBussines) {
+        self.bussines = bussines
+        super.init(nibName: String(describing: LoginViewController.self), bundle: .main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
@@ -53,7 +40,6 @@ class LoginViewController: UIViewController {
         setupGestureToHelpText()
         setupRegisterText()
         setupGestureToRegisterText()
-        setupRouter()
     }
     
     // MARK: - IBActions
@@ -62,11 +48,15 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func helpButton(_ gesture: UITapGestureRecognizer) {
-        performSegue(withIdentifier: helpSegueId, sender: nil)
+        let recoveryBussines = RecoveryBussines(service: RecoveryService())
+        let viewController = RecoveryViewController(bussines: recoveryBussines)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc func registerButtonAction(_ gesture: UITapGestureRecognizer) {
-        router?.route(destination: .register)
+        let registerBussines = RegisterBussines(service: RegisterService())
+        let viewController = RegisterViewController(bussines: registerBussines)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction private func backAction() {
@@ -79,7 +69,7 @@ class LoginViewController: UIViewController {
         let userPassword = passwordTextField.text ?? ""
         
         if FormsUtils.isValidEmail(userEmail) && !userPassword.isEmpty {
-            loginBussines.postLogin(
+            bussines.postLogin(
                 email: userEmail,
                 password: userPassword,
                 onFinishedBussines: {  [weak self] succesFromService in
@@ -87,7 +77,9 @@ class LoginViewController: UIViewController {
                     
                 DispatchQueue.main.async {
                     if succesFromService == true {
-                        self.performSegue(withIdentifier: self.detailSegueId, sender: nil)
+                       let restaurantBussines = ListBussines(service: RestaurantService())
+                        let viewController = ListViewController(bussines: restaurantBussines)
+                        self.navigationController?.pushViewController(viewController, animated: true)
                     } else {
                         self.showMessage(alertMessage: Lang.Login.invalidLogIn)
                     }
@@ -96,10 +88,6 @@ class LoginViewController: UIViewController {
         } else {
             showMessage(alertMessage: Lang.Login.invalidEmailMessage)
         }
-    }
-    
-    private func setupRouter() {
-        router = Router(viewController: self)
     }
     
     private func setupHelpText() {
