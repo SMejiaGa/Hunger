@@ -9,10 +9,10 @@ import Foundation
 
 final class LoginBussines {
 
-    private let loginService: LoginService
+    private let service: LoginService
     
     init(service: LoginService) {
-        self.loginService = service
+        self.service = service
         
     }
     
@@ -22,7 +22,7 @@ final class LoginBussines {
         onFinishedBussines: @escaping (Bool) -> Void
     ) {
         let loginReq = User(email: email, password: password)
-        loginService.postLogin(
+        service.postLogin(
             user: loginReq,
             onFinished: { isSucces in
                 onFinishedBussines(isSucces)

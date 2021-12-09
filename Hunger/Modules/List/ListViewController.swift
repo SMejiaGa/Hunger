@@ -17,13 +17,9 @@ class ListViewController: UIViewController {
     private let cellReuseIdentifier = "myCell"
     private let descriptionToHighlightA = "buena comida"
     private let descriptionToHighlightB = "precio justo"
-    private let showMapSegue = "showMapSegue"
-    private let detailCheckSegue = "detailCheckSegue"
     private let highlightTextSize: CGFloat = 19
     private var slideMenuActive = false
     private var restaurantIDToFind: Int?
-    private let aboutUsSegue = "showAboutUsSegue"
-    private let notFoundSegue = "ShowNotFound"
     
     // MARK: - IBOutlets
     @IBOutlet private weak var restaurantTable: UITableView!
@@ -57,19 +53,23 @@ class ListViewController: UIViewController {
     }
    
     @IBAction private func showAlertButton() {
-        let mapBussines = MapBussines(service: MapService())
-        let mapViewController = MapViewController(bussines: mapBussines)
-        let aboutUsBussines = AboutUsBussines(service: AboutUsService())
-        let aboutUsViewController = AboutUsViewController(bussines: aboutUsBussines)
-        
+
         let alert = UIAlertController(title: Lang.List.chooseAnOptionMessage, message: "", preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: Lang.List.showMapLabelMessage, style: .default, handler: { [weak self] _ in
+            
+            let mapBussines = MapBussines(service: MapService())
+            let mapViewController = MapViewController(bussines: mapBussines)
+            
             guard let self = self else { return }
             self.navigationController?.pushViewController(mapViewController, animated: true)
         }))
         
         alert.addAction(UIAlertAction(title: Lang.List.aboutUsMessage, style: .default, handler: { [weak self] _ in
+            
+            let aboutUsBussines = AboutUsBussines(service: AboutUsService())
+            let aboutUsViewController = AboutUsViewController(bussines: aboutUsBussines)
+            
             guard let self = self else { return }
             self.navigationController?.pushViewController(aboutUsViewController, animated: true)
         }))

@@ -12,10 +12,6 @@ class StartMenuViewController: UIViewController {
     // MARK: - UI Referencies
     @IBOutlet private weak var emailbutton: UIButton!
     
-    // MARK: - Properties
-    private let detailSegueId = "showDirectDetail"
-    private let emailSegueId = "showEmailLogin"
-    
     // MARK: - Init required for xib initialization
     
     init() {

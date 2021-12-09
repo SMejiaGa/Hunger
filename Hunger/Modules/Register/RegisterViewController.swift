@@ -18,14 +18,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var alreadyHaveAnAccount: UILabel!
     
     // MARK: - Properties
-    private let detailSegueId = "ShowDetailList"
     private let highlightText = "INGRESAR"
-    private let registerBussines: RegisterBussines
+    private let bussines: RegisterBussines
     
     // MARK: - Init required for xib initialization
     
     init(bussines: RegisterBussines) {
-        self.registerBussines = bussines
+        self.bussines = bussines
         super.init(nibName: String(describing: RegisterViewController.self), bundle: .main)
     }
     
@@ -58,16 +57,17 @@ class RegisterViewController: UIViewController {
         let passwordToRegister = passwordTextField.text ?? ""
         let isValidPasswordLengh = passwordToRegister.count > 3
         let emailToRegister = registeredEmailTextField.text ?? ""
-        let detailSegueIdCaptured = detailSegueId
         
         if FormsUtils.isValidEmail(emailToRegister), isValidPasswordLengh {
-            registerBussines.postRegister(
+            bussines.postRegister(
                 email: emailToRegister,
                 password: passwordToRegister,
                 onFinished: { succesFromService in
                 DispatchQueue.main.async { [weak self] in
                     if succesFromService == true {
-                        self?.performSegue(withIdentifier: detailSegueIdCaptured, sender: nil)
+                        let loginBussines = LoginBussines(service: LoginService())
+                         let viewController = LoginViewController(bussines: loginBussines)
+                         self?.navigationController?.pushViewController(viewController, animated: true)
                     } else {
                         self?.showMessage(alertMessage: Lang.Register.errorMessage)
                     }

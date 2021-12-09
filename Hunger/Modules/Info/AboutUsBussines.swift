@@ -9,14 +9,14 @@ import Foundation
 
 final class AboutUsBussines {
  
-    private let aboutUsService: AboutUsService
+    private let service: AboutUsService
     
     init(service: AboutUsService) {
-        self.aboutUsService = service
+        self.service = service
     }
     
     func fetchAboutUs(onFinished: @escaping (AboutUsResponse, Bool) -> Void) {
-        aboutUsService.getAboutUs(onFinished: { aboutUsData, receivedError in
+        service.getAboutUs(onFinished: { aboutUsData, receivedError in
             onFinished(aboutUsData, receivedError)
         })
     }

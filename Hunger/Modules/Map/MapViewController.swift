@@ -11,7 +11,7 @@ import CoreLocation
 
 class MapViewController: UIViewController {
 
-    private let mapBussines: MapBussines
+    private let bussines: MapBussines
 
     @IBOutlet private weak var mapView: MKMapView!
     @IBAction private func backButton() {
@@ -21,7 +21,7 @@ class MapViewController: UIViewController {
     // MARK: - Init required for xib initialization
     
     init(bussines: MapBussines) {
-        self.mapBussines = bussines
+        self.bussines = bussines
         super.init(nibName: String(describing: MapViewController.self), bundle: .main)
     }
     
@@ -31,13 +31,13 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapBussines.locationPermissions()
+        bussines.locationPermissions()
         mapView.userTrackingMode = .follow
         fetchPins()
     }
     
     private func fetchPins() {
-        mapBussines.fetchLocations { [weak self] errorExist in
+        bussines.fetchLocations { [weak self] errorExist in
             guard let self = self else { return }
             if errorExist {
                 
@@ -51,7 +51,7 @@ class MapViewController: UIViewController {
     }
     
     private func addPointersToMap() {
-        for resLocation in self.mapBussines.pinsCarrier {
+        for resLocation in self.bussines.pinsCarrier {
             let pin = MKPointAnnotation()
             pin.coordinate = CLLocationCoordinate2D(
                 latitude: CLLocationDegrees(

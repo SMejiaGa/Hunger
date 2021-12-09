@@ -8,10 +8,10 @@
 import Foundation
 
 final class RegisterBussines {
-    let registerService: RegisterService
+    let service: RegisterService
     
     init(service: RegisterService) {
-        self.registerService = service
+        self.service = service
     }
     
     func postRegister(
@@ -19,7 +19,7 @@ final class RegisterBussines {
         password: String,
         onFinished: @escaping (Bool) -> Void) {
         let loginReq = User(email: email, password: password)
-            registerService.postRegister(
+            service.postRegister(
                 user: loginReq,
                 onFinished: { isSucces in
                 onFinished(isSucces)
