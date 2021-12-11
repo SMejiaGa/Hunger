@@ -15,13 +15,14 @@ class RecoveryViewController: UIViewController {
     @IBOutlet weak var facebookLoginText: UILabel!
     
     // MARK: - Properties
+    
     private let facebookHighlightText = "FACEBOOK"
-    private let recoveryBussines: RecoveryBussines
+    private let recoveryPresenter: RecoveryPresenter
     
     // MARK: - Init required for xib initialization
     
-    init(bussines: RecoveryBussines) {
-        self.recoveryBussines = bussines
+    init(presenter: RecoveryPresenter) {
+        self.recoveryPresenter = presenter
         super.init(nibName: String(describing: RecoveryViewController.self), bundle: .main)
     }
     
@@ -32,6 +33,7 @@ class RecoveryViewController: UIViewController {
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        recoveryPresenter.setViewDelegate(delegate: self)
         supportFlexibleLayout()
         setupFacebookText()
         setupGestureToHelpText()
@@ -51,17 +53,10 @@ class RecoveryViewController: UIViewController {
     }
     
     // MARK: - Private methods
-    private func recoverEmail(email: String) {
-        recoveryBussines.postRecovery(
-            emailFromUser: email,
-            onFinished: { [weak self] messageFromWeb in
-            self?.showMessage(alertMessage: messageFromWeb)
-        })
-    }
     
     private func checkEmail() {
         if recoveryTextField.text != nil {
-            recoverEmail(email: recoveryTextField.text ?? "")
+            startRecovery(email: recoveryTextField.text ?? "")
         } else {
             showMessage(alertMessage: Lang.Recovery.errorMessage)
         }
@@ -74,5 +69,15 @@ class RecoveryViewController: UIViewController {
     private func setupGestureToHelpText() {
         facebookLoginText.isUserInteractionEnabled = true
         facebookLoginText.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(facebookLoginButton)))
+    }
+}
+extension RecoveryViewController: RecoveryPresenterDelegate {
+    func startRecovery(email: String) {
+        recoveryPresenter.postRecovery(
+            emailFromUser: email)
+    }
+    
+    func recoveryResult(result: String) {
+        showMessage(alertMessage: result)
     }
 }

@@ -19,12 +19,12 @@ class RegisterViewController: UIViewController {
     
     // MARK: - Properties
     private let highlightText = "INGRESAR"
-    private let bussines: RegisterBussines
+    private let presenter: RegisterPresenter
     
     // MARK: - Init required for xib initialization
     
-    init(bussines: RegisterBussines) {
-        self.bussines = bussines
+    init(presenter: RegisterPresenter) {
+        self.presenter = presenter
         super.init(nibName: String(describing: RegisterViewController.self), bundle: .main)
     }
     
@@ -35,6 +35,7 @@ class RegisterViewController: UIViewController {
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.setViewDelegate(delegate: self)
         supportFlexibleLayout()
         setupRegisterText()
         setupGestureToRegisterText()
@@ -42,7 +43,7 @@ class RegisterViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction private func submitButton() {
-        performRegister()
+        presenter.postRegister()
     }
     
     @objc private func sendToLogin(_ gesture: UITapGestureRecognizer) {
@@ -53,30 +54,6 @@ class RegisterViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     // MARK: - Private methods
-    private func performRegister() {
-        let passwordToRegister = passwordTextField.text ?? ""
-        let isValidPasswordLengh = passwordToRegister.count > 3
-        let emailToRegister = registeredEmailTextField.text ?? ""
-        
-        if FormsUtils.isValidEmail(emailToRegister), isValidPasswordLengh {
-            bussines.postRegister(
-                email: emailToRegister,
-                password: passwordToRegister,
-                onFinished: { succesFromService in
-                DispatchQueue.main.async { [weak self] in
-                    if succesFromService == true {
-                        let loginBussines = LoginBussines(service: LoginService())
-                         let viewController = LoginViewController(bussines: loginBussines)
-                         self?.navigationController?.pushViewController(viewController, animated: true)
-                    } else {
-                        self?.showMessage(alertMessage: Lang.Register.errorMessage)
-                    }
-                }
-            })
-        } else {
-            self.showMessage(alertMessage: Lang.Register.alertMessage)
-        }
-    }
     
     private func setupRegisterText() {
         TextUtils.highlightTextInLabel(
@@ -93,5 +70,29 @@ class RegisterViewController: UIViewController {
             textToSetup: alreadyHaveAnAccount,
             onTapAction: #selector(sendToLogin)
         )
+    }
+}
+
+extension RegisterViewController: RegisterPresenterDelegate {
+    func showError(message: String) {
+        showMessage(alertMessage: message)
+    }
+    
+    func showRegisterResult(result: Bool) {
+        if result == true {
+            let loginPresenter = LoginPresenter(service: LoginService())
+             let viewController = LoginViewController(presenter: loginPresenter)
+             self.navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            self.showMessage(alertMessage: Lang.Register.errorMessage)
+        }
+    }
+    
+    func getEmail() -> String {
+        return registeredEmailTextField.text ?? ""
+    }
+    
+    func getPassword() -> String {
+        return passwordTextField.text ?? ""
     }
 }

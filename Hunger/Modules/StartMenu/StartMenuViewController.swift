@@ -32,8 +32,8 @@ class StartMenuViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction private func checkButton() {
-        let listBussines = ListBussines(service: RestaurantService())
-        let viewController = ListViewController(bussines: listBussines)
+        let listPresenter = ListPresenter(service: RestaurantService())
+        let viewController = ListViewController(presenter: listPresenter)
         
         navigationController?.pushViewController(viewController, animated: true)
     }
@@ -43,8 +43,8 @@ class StartMenuViewController: UIViewController {
     }
     
     @IBAction private func emailLoginButton() {
-        let loginBussines = LoginBussines(service: LoginService())
-        let viewController = LoginViewController(bussines: loginBussines)
+        let loginPresenter = LoginPresenter(service: LoginService())
+        let viewController = LoginViewController(presenter: loginPresenter)
         
         navigationController?.pushViewController(viewController, animated: true)
         

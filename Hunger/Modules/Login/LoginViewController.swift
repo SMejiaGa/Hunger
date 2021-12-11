@@ -19,12 +19,12 @@ class LoginViewController: UIViewController {
     // MARK: - Properties
     private let registerHighlightText =  "QUIERO REGISTRARME"
     private let helpHighlightText =  "AYUDA"
-    private let bussines: LoginBussines
+    private let presenter: LoginPresenter
     
     // MARK: - Init required for xib initialization
     
-    init(bussines: LoginBussines) {
-        self.bussines = bussines
+    init(presenter: LoginPresenter) {
+        self.presenter = presenter
         super.init(nibName: String(describing: LoginViewController.self), bundle: .main)
     }
     
@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.setViewDelegate(delegate: self)
         supportFlexibleLayout()
         setupHelpText()
         setupGestureToHelpText()
@@ -48,14 +49,14 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func helpButton(_ gesture: UITapGestureRecognizer) {
-        let recoveryBussines = RecoveryBussines(service: RecoveryService())
-        let viewController = RecoveryViewController(bussines: recoveryBussines)
+        let recoveryPresenter = RecoveryPresenter(service: RecoveryService())
+        let viewController = RecoveryViewController(presenter: recoveryPresenter)
         navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc func registerButtonAction(_ gesture: UITapGestureRecognizer) {
-        let registerBussines = RegisterBussines(service: RegisterService())
-        let viewController = RegisterViewController(bussines: registerBussines)
+        let registerPresenter = RegisterPresenter(service: RegisterService())
+        let viewController = RegisterViewController(presenter: registerPresenter)
         navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -69,24 +70,9 @@ class LoginViewController: UIViewController {
         let userPassword = passwordTextField.text ?? ""
         
         if FormsUtils.isValidEmail(userEmail) && !userPassword.isEmpty {
-            bussines.postLogin(
-                email: userEmail,
-                password: userPassword,
-                onFinishedBussines: {  [weak self] succesFromService in
-                    guard let self = self else { return }
-                    
-                DispatchQueue.main.async {
-                    if succesFromService == true {
-                       let restaurantBussines = ListBussines(service: RestaurantService())
-                        let viewController = ListViewController(bussines: restaurantBussines)
-                        self.navigationController?.pushViewController(viewController, animated: true)
-                    } else {
-                        self.showMessage(alertMessage: Lang.Login.invalidLogIn)
-                    }
-                }
-            })
+            startLogin( email: userEmail, password: userPassword)
         } else {
-            showMessage(alertMessage: Lang.Login.invalidEmailMessage)
+            showMessage(alertMessage: Lang.Login.invalidLogIn)
         }
     }
     
@@ -123,4 +109,23 @@ class LoginViewController: UIViewController {
             onTapAction: #selector(registerButtonAction)
         )
     }
+}
+
+extension LoginViewController: LoginPresenterDelegate {
+    func showLoginResult(result: Bool) {
+        if result {
+            DispatchQueue.main.async {
+                let restaurantPresenter = ListPresenter(service: RestaurantService())
+                let viewController = ListViewController(presenter: restaurantPresenter)
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+        } else {
+            showMessage(alertMessage: "Usuario no encontrado")
+        }
+    }
+    
+    func startLogin(email: String, password: String) {
+            presenter.postLogin(email: email, password: password)
+    }
+    
 }

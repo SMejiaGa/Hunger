@@ -11,7 +11,7 @@ import CoreLocation
 
 class MapViewController: UIViewController {
 
-    private let bussines: MapBussines
+    private let presenter: MapPresenter
 
     @IBOutlet private weak var mapView: MKMapView!
     @IBAction private func backButton() {
@@ -20,8 +20,8 @@ class MapViewController: UIViewController {
     
     // MARK: - Init required for xib initialization
     
-    init(bussines: MapBussines) {
-        self.bussines = bussines
+    init(presenter: MapPresenter) {
+        self.presenter = presenter
         super.init(nibName: String(describing: MapViewController.self), bundle: .main)
     }
     
@@ -31,38 +31,10 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bussines.locationPermissions()
+        presenter.setViewDelegate(delegate: self)
+        presenter.locationPermissions()
         mapView.userTrackingMode = .follow
-        fetchPins()
-    }
-    
-    private func fetchPins() {
-        bussines.fetchLocations { [weak self] errorExist in
-            guard let self = self else { return }
-            if errorExist {
-                
-                self.showMessage(
-                    alertMessage: Lang.Error.commonError
-                )
-            } else {
-                self.addPointersToMap()
-            }
-        }
-    }
-    
-    private func addPointersToMap() {
-        for resLocation in self.bussines.pinsCarrier {
-            let pin = MKPointAnnotation()
-            pin.coordinate = CLLocationCoordinate2D(
-                latitude: CLLocationDegrees(
-                    resLocation.location.latitude
-                ),
-                longitude: CLLocationDegrees(resLocation.location.longitude)
-            )
-            mapView.addAnnotation(pin)
-        }
-        
-        mapView.showAnnotations(mapView.annotations, animated: true)
+        presenter.fetchLocations()
     }
     
 }
@@ -78,4 +50,28 @@ private extension MKMapView {
       longitudinalMeters: regionRadius)
     setRegion(coordinateRegion, animated: true)
   }
+}
+
+extension MapViewController: MapPresenterDelegate {
+    
+    func showError() {
+        showMessage(alertMessage: Lang.Error.commonError)
+    }
+    
+    func setLocations() {
+        for resLocation in self.presenter.pinsCarrier {
+            let pin = MKPointAnnotation()
+            pin.coordinate = CLLocationCoordinate2D(
+                latitude: CLLocationDegrees(
+                    resLocation.location.latitude
+                ),
+                longitude: CLLocationDegrees(resLocation.location.longitude)
+            )
+            mapView.addAnnotation(pin)
+        }
+        
+        mapView.showAnnotations(mapView.annotations, animated: true)
+    
+    }
+    
 }
