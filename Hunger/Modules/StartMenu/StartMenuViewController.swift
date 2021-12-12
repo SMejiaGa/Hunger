@@ -10,6 +10,7 @@ import Dodo
 
 class StartMenuViewController: UIViewController {
     // MARK: - UI Referencies
+    
     @IBOutlet private weak var emailbutton: UIButton!
     
     // MARK: - Init required for xib initialization
@@ -31,6 +32,7 @@ class StartMenuViewController: UIViewController {
     }
     
     // MARK: - IBActions
+    
     @IBAction private func checkButton() {
         let listPresenter = ListPresenter(service: RestaurantService())
         let viewController = ListViewController(presenter: listPresenter)

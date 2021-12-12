@@ -105,6 +105,7 @@ class ListViewController: UIViewController {
 }
 
 // MARK: - ListPresenterDelegate
+
 extension ListViewController: ListPresenterDelegate {
     func toggleLoader(isLoading: Bool) {
         isLoading ? loader.startAnimating() : loader.stopAnimating()

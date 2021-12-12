@@ -21,6 +21,8 @@ final class AboutUsPresenter {
     init(service: AboutUsService) {
         self.service = service
     }
+  
+    // MARK: - Private methods
     
     func fetchAboutUs() {
         service.getAboutUs(onFinished: { [weak self] aboutUsData, receivedError in

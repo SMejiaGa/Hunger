@@ -24,6 +24,8 @@ final class MapPresenter {
         self.service = service
     }
      
+    // MARK: - Private methods
+    
     func fetchLocations() {
         mapViewDelegate?.toggleLoader(isEnabled: true)
         

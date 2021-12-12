@@ -22,6 +22,8 @@ final class RegisterPresenter {
         self.service = service
     }
     
+    // MARK: - Private methods
+    
     func postRegister() {
         guard let registerDelegate = registerViewDelegate else {
             return

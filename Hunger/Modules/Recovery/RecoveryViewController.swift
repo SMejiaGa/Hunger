@@ -83,6 +83,9 @@ class RecoveryViewController: UIViewController {
         )
     }
 }
+
+// MARK: - RecoveryPresenterDelegate
+
 extension RecoveryViewController: RecoveryPresenterDelegate {
     func toggleLoader(isEnabled: Bool) {
         isEnabled ? loaderActivityIndicatorView.startAnimating() : loaderActivityIndicatorView.stopAnimating()

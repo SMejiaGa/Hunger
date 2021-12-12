@@ -26,6 +26,7 @@ final class LoginPresenter {
         
     }
     
+    // MARK: - Private methods 
     func postLogin() {
         
         guard let loginViewDelegate = loginViewDelegate else {

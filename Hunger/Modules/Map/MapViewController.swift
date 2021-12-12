@@ -39,6 +39,7 @@ class MapViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 }
+// MARK: - MKMapView extension
 
 private extension MKMapView {
     func centerToLocation(
@@ -54,6 +55,8 @@ private extension MKMapView {
         setRegion(coordinateRegion, animated: true)
     }
 }
+
+// MARK: - MapPresenterDelegate
 
 extension MapViewController: MapPresenterDelegate {
     func toggleLoader(isEnabled: Bool) {

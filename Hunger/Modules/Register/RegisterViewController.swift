@@ -73,6 +73,8 @@ class RegisterViewController: UIViewController {
     }
 }
 
+// MARK: - RegisterPresenterDelegate
+
 extension RegisterViewController: RegisterPresenterDelegate {
     func showError(message: String) {
         showMessage(alertMessage: message)

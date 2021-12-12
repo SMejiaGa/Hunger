@@ -74,6 +74,7 @@ class RestaurantDetailViewController: UIViewController {
     }
 
 }
+// MARK: - RestaurantDetailPresenterDelegate
 
 extension RestaurantDetailViewController: DetailPresenterDelegate {
     func toggleloader(isEnabled: Bool) {

@@ -22,6 +22,8 @@ final class RecoveryPresenter {
         self.service = service
     }
     
+    // MARK: - Private methods
+    
     func postRecovery() {
         guard let recoveryViewDelegate = recoveryViewDelegate else {
             return

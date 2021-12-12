@@ -36,10 +36,10 @@ class AboutUsViewController: UIViewController {
         super.viewDidLoad()
         presenter.setViewDelegate(delegate: self)
         presenter.fetchAboutUs()
-        
     }
-    
 }
+
+// MARK: - AboutUsPresenterDelegate
 
 extension AboutUsViewController: AboutUsPresenterDelegate {
     
@@ -50,7 +50,7 @@ extension AboutUsViewController: AboutUsPresenterDelegate {
     }
     
     func showError() {
-        self.showMessage(alertMessage: Lang.Error.commonError)
+        showMessage(alertMessage: Lang.Error.commonError)
     }
     
     func toggleLoader(isEnabled: Bool) {

@@ -10,6 +10,7 @@ import SimpleKeyboard
 
 class LoginViewController: UIViewController {
     // MARK: - UI Referencies
+    
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var backButton: UIButton!
@@ -18,6 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var loader: UIActivityIndicatorView!
     
     // MARK: - Properties
+    
     private let registerHighlightText =  "QUIERO REGISTRARME"
     private let helpHighlightText =  "AYUDA"
     private let presenter: LoginPresenter
@@ -34,6 +36,7 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - ViewController life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.setViewDelegate(delegate: self)
@@ -45,6 +48,7 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - IBActions
+    
     @IBAction private func loginButton() {
         self.presenter.postLogin()
     }
@@ -101,6 +105,8 @@ class LoginViewController: UIViewController {
         )
     }
 }
+
+// MARK: - LoginPresenterDelegate
 
 extension LoginViewController: LoginPresenterDelegate {
     func toggleLoader(isEnabled: Bool) {
