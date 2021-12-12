@@ -13,8 +13,10 @@ struct Lang {
     }
     
     struct Login {
-        static let invalidEmailMessage = "invalid email"
-        static let invalidLogIn = "Incorrect, please try again"
+        static let invalidEmailMessage = "Correo electronico invalido"
+        static let invalidPasswordMessage = "Contraseña invalida"
+        static let invalidLogIn = "Incorrecto, intenta de nuevo mas tarde"
+        static let userNotFound = "Usuario no encontrado"
     }
     
     struct Recovery {

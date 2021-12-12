@@ -121,7 +121,6 @@ extension ListViewController: ListPresenterDelegate {
     func setRestaurantList() {
         DispatchQueue.main.async {
             self.restaurantTable.reloadData()
-            self.loader.stopAnimating()
         }
     }
 }

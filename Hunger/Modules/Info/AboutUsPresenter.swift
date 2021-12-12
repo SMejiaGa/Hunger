@@ -8,8 +8,9 @@
 import Foundation
 
 protocol AboutUsPresenterDelegate: AnyObject {
-    func fetchInfo(data: AboutUsResponse)
+    func infoReceived(data: AboutUsResponse)
     func showError()
+    func toggleLoader(isEnabled: Bool)
 }
 
 final class AboutUsPresenter {
@@ -23,8 +24,9 @@ final class AboutUsPresenter {
     
     func fetchAboutUs() {
         service.getAboutUs(onFinished: { [weak self] aboutUsData, receivedError in
+            self?.aboutUsViewDelegate?.toggleLoader(isEnabled: false)
             if !receivedError {
-                self?.aboutUsViewDelegate?.fetchInfo(data: aboutUsData)
+                self?.aboutUsViewDelegate?.infoReceived(data: aboutUsData)
             } else {
                 self?.aboutUsViewDelegate?.showError()
             }

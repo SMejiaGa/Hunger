@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var backButton: UIButton!
     @IBOutlet private weak var helpText: UILabel!
     @IBOutlet private weak var registerText: UILabel!
+    @IBOutlet private weak var loader: UIActivityIndicatorView!
     
     // MARK: - Properties
     private let registerHighlightText =  "QUIERO REGISTRARME"
@@ -25,7 +26,7 @@ class LoginViewController: UIViewController {
     
     init(presenter: LoginPresenter) {
         self.presenter = presenter
-        super.init(nibName: String(describing: LoginViewController.self), bundle: .main)
+        super.init(nibName: String(describing: Self.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -45,7 +46,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction private func loginButton() {
-        performLogin()
+        self.presenter.postLogin()
     }
     
     @objc private func helpButton(_ gesture: UITapGestureRecognizer) {
@@ -65,16 +66,6 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Private methods
-    private func performLogin() {
-        let userEmail = emailTextField.text ?? ""
-        let userPassword = passwordTextField.text ?? ""
-        
-        if FormsUtils.isValidEmail(userEmail) && !userPassword.isEmpty {
-            startLogin( email: userEmail, password: userPassword)
-        } else {
-            showMessage(alertMessage: Lang.Login.invalidLogIn)
-        }
-    }
     
     private func setupHelpText() {
         TextUtils.highlightTextInLabel(
@@ -112,6 +103,22 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: LoginPresenterDelegate {
+    func toggleLoader(isEnabled: Bool) {
+        isEnabled ? self.loader.startAnimating() : self.loader.stopAnimating()
+    }
+    
+    func showError(message: String) {
+        showMessage(alertMessage: message)
+    }
+    
+    func getEmail() -> String {
+        emailTextField.text ?? .init()
+    }
+    
+    func getPassword() -> String {
+         passwordTextField.text ?? .init()
+    }
+    
     func showLoginResult(result: Bool) {
         if result {
             DispatchQueue.main.async {
@@ -120,12 +127,7 @@ extension LoginViewController: LoginPresenterDelegate {
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
         } else {
-            showMessage(alertMessage: "Usuario no encontrado")
+            showMessage(alertMessage: Lang.Login.userNotFound)
         }
     }
-    
-    func startLogin(email: String, password: String) {
-            presenter.postLogin(email: email, password: password)
-    }
-    
 }

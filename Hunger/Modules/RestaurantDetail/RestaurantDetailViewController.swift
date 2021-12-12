@@ -23,7 +23,7 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet private weak var restaurantNameLabel: UILabel!
     @IBOutlet private weak var restaurantIsOpenImage: UIImageView!
     @IBOutlet private weak var restaurantCommentsLabel: UILabel!
-    @IBOutlet private weak var loader: UIActivityIndicatorView!
+    @IBOutlet private weak var loaderActivityIndicatorView: UIActivityIndicatorView!
     @IBOutlet private var starsImagesColection: [UIImageView]!
     // MARK: - IBActions
     
@@ -42,7 +42,7 @@ class RestaurantDetailViewController: UIViewController {
     
     init(presenter: DetailPresenter) {
         self.presenter = presenter
-        super.init(nibName: String(describing: RestaurantDetailViewController.self), bundle: .main)
+        super.init(nibName: String(describing: Self.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -76,6 +76,9 @@ class RestaurantDetailViewController: UIViewController {
 }
 
 extension RestaurantDetailViewController: DetailPresenterDelegate {
+    func toggleloader(isEnabled: Bool) {
+        isEnabled ? loaderActivityIndicatorView.startAnimating() : loaderActivityIndicatorView.stopAnimating()
+    }
     
     func setDetails(detailData: RestaurantDetail) {
         let restaurantName = detailData.name
@@ -85,7 +88,7 @@ extension RestaurantDetailViewController: DetailPresenterDelegate {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 self.shareText += formatedText
-                self.loader.stopAnimating()
+                self.loaderActivityIndicatorView.stopAnimating()
                 self.restaurantRatingLabel.text = "\(String(format: "%.1f", detailData.rating?.average ?? 0))/10"
                 self.restaurantCommentsLabel.text = "\(detailData.commentsCount) \(Lang.DetailView.comentsMessage)"
                 self.restaurantAdressLabel.text = "\(detailData.address)"

@@ -10,6 +10,8 @@ import Foundation
 protocol RecoveryPresenterDelegate: AnyObject {
     func startRecovery(email: String)
     func recoveryResult(result: String)
+    func getEmail() -> String
+    func toggleLoader(isEnabled: Bool)
 }
 
 final class RecoveryPresenter {
@@ -20,9 +22,15 @@ final class RecoveryPresenter {
         self.service = service
     }
     
-    func postRecovery(emailFromUser: String) {
-        let emailToRecover = Email(email: emailFromUser)
+    func postRecovery() {
+        guard let recoveryViewDelegate = recoveryViewDelegate else {
+            return
+        }
+        recoveryViewDelegate.toggleLoader(isEnabled: true)
+
+        let emailToRecover = Email(email: recoveryViewDelegate.getEmail())
         service.postRecovery(email: emailToRecover) { [weak self] messageFromWeb in
+            self?.recoveryViewDelegate?.toggleLoader(isEnabled: false)
             self?.recoveryViewDelegate?.recoveryResult(result: messageFromWeb)
         }
     }

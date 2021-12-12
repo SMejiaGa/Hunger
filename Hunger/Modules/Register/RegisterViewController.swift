@@ -25,7 +25,7 @@ class RegisterViewController: UIViewController {
     
     init(presenter: RegisterPresenter) {
         self.presenter = presenter
-        super.init(nibName: String(describing: RegisterViewController.self), bundle: .main)
+        super.init(nibName: String(describing: Self.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {

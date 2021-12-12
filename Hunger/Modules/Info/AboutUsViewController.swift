@@ -24,7 +24,7 @@ class AboutUsViewController: UIViewController {
     init(presenter: AboutUsPresenter) {
         self.presenter = presenter
         
-        super.init(nibName: String(describing: AboutUsViewController.self), bundle: .main)
+        super.init(nibName: String(describing: Self.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -36,19 +36,24 @@ class AboutUsViewController: UIViewController {
         super.viewDidLoad()
         presenter.setViewDelegate(delegate: self)
         presenter.fetchAboutUs()
+        
     }
     
 }
 
 extension AboutUsViewController: AboutUsPresenterDelegate {
-    func fetchInfo(data: AboutUsResponse) {
+    
+    func infoReceived(data: AboutUsResponse) {
         DispatchQueue.main.async {
-            self.loader.stopAnimating()
             self.aboutUsTextView.attributedText = data.text.htmlToAttributedString
         }
     }
     
     func showError() {
         self.showMessage(alertMessage: Lang.Error.commonError)
+    }
+    
+    func toggleLoader(isEnabled: Bool) {
+        isEnabled ? loader.startAnimating() : loader.stopAnimating()
     }
 }

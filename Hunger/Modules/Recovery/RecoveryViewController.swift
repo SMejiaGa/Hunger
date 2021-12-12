@@ -11,8 +11,9 @@ import SimpleKeyboard
 class RecoveryViewController: UIViewController {
     
     // MARK: - IBoutlets
-    @IBOutlet private weak var recoveryTextField: UITextField!
     @IBOutlet weak var facebookLoginText: UILabel!
+    @IBOutlet private weak var recoveryTextField: UITextField!
+    @IBOutlet weak var loaderActivityIndicatorView: UIActivityIndicatorView!
     
     // MARK: - Properties
     
@@ -23,7 +24,7 @@ class RecoveryViewController: UIViewController {
     
     init(presenter: RecoveryPresenter) {
         self.recoveryPresenter = presenter
-        super.init(nibName: String(describing: RecoveryViewController.self), bundle: .main)
+        super.init(nibName: String(describing: Self.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -55,26 +56,44 @@ class RecoveryViewController: UIViewController {
     // MARK: - Private methods
     
     private func checkEmail() {
-        if recoveryTextField.text != nil {
-            startRecovery(email: recoveryTextField.text ?? "")
+        if let recoveryText = recoveryTextField.text {
+            startRecovery(email: recoveryText)
         } else {
             showMessage(alertMessage: Lang.Recovery.errorMessage)
         }
     }
     
     private func setupFacebookText() {
-        TextUtils.highlightTextInLabel(textToSetup: facebookLoginText, textToHighlight: facebookHighlightText, color: .blue, font: .boldDefaulSize)
+        TextUtils.highlightTextInLabel(
+            textToSetup: facebookLoginText,
+            textToHighlight: facebookHighlightText,
+            color: .blue,
+            font: .boldDefaulSize
+        )
     }
     
     private func setupGestureToHelpText() {
         facebookLoginText.isUserInteractionEnabled = true
-        facebookLoginText.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(facebookLoginButton)))
+        
+        facebookLoginText.addGestureRecognizer(
+            UITapGestureRecognizer(
+                target: self,
+                action: #selector(facebookLoginButton)
+            )
+        )
     }
 }
 extension RecoveryViewController: RecoveryPresenterDelegate {
+    func toggleLoader(isEnabled: Bool) {
+        isEnabled ? loaderActivityIndicatorView.startAnimating() : loaderActivityIndicatorView.stopAnimating()
+    }
+    
+    func getEmail() -> String {
+        recoveryTextField.text ?? .init()
+    }
+    
     func startRecovery(email: String) {
-        recoveryPresenter.postRecovery(
-            emailFromUser: email)
+        recoveryPresenter.postRecovery()
     }
     
     func recoveryResult(result: String) {

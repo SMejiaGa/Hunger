@@ -10,6 +10,7 @@ import Foundation
 protocol DetailPresenterDelegate: AnyObject {
     func setDetails(detailData: RestaurantDetail)
     func restaurantError()
+    func toggleloader(isEnabled: Bool)
 }
 
 final class DetailPresenter {
@@ -27,11 +28,20 @@ final class DetailPresenter {
     // MARK: - Private methods
     
     func fetchDetails() {
-        restaurantService.getRestaurantDetail(onFinished: { [weak self] detailData, receivedError in
+        
+        guard let detailViewDelegate = self.detailViewDelegate else {
+            return
+        }
+        
+        detailViewDelegate.toggleloader(isEnabled: true)
+        
+        restaurantService.getRestaurantDetail(onFinished: { detailData, receivedError in
+
             if !receivedError {
-                self?.detailViewDelegate?.setDetails(detailData: detailData)
+                detailViewDelegate.toggleloader(isEnabled: false)
+                detailViewDelegate.setDetails(detailData: detailData)
             } else {
-                self?.detailViewDelegate?.restaurantError()
+                detailViewDelegate.restaurantError()
             }
             
         }, getDetail: restaurantID)

@@ -15,7 +15,7 @@ class StartMenuViewController: UIViewController {
     // MARK: - Init required for xib initialization
     
     init() {
-        super.init(nibName: String(describing: StartMenuViewController.self), bundle: .main)
+        super.init(nibName: String(describing: Self.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {

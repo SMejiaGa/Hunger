@@ -8,33 +8,53 @@
 import Foundation
 
 protocol LoginPresenterDelegate: AnyObject {
-    func startLogin(email: String, password: String)
     func showLoginResult(result: Bool)
+    func getEmail() -> String
+    func getPassword() -> String
+    func showError(message: String)
+    func toggleLoader(isEnabled: Bool)
+    
 }
 
 final class LoginPresenter {
-
+    
     private let service: LoginService
-    private weak var loginaViewDelegate: LoginPresenterDelegate?
+    private weak var loginViewDelegate: LoginPresenterDelegate?
     
     init(service: LoginService) {
         self.service = service
         
     }
     
-    func postLogin(
-        email: String,
-        password: String
-    ) {
-        let loginReq = User(email: email, password: password)
+    func postLogin() {
+        
+        guard let loginViewDelegate = loginViewDelegate else {
+            return
+        }
+        
+        if !FormsUtils.isValidEmail(loginViewDelegate.getEmail()) {
+            self.loginViewDelegate?.showError(message: Lang.Login.invalidEmailMessage)
+            return
+        }
+        
+        if loginViewDelegate.getPassword().isEmpty {
+            self.loginViewDelegate?.showError(message: Lang.Login.invalidPasswordMessage)
+            return
+        }
+        self.loginViewDelegate?.toggleLoader(isEnabled: true)
+        
+        let loginReq = User(
+            email: loginViewDelegate.getEmail(),
+            password: loginViewDelegate.getPassword())
         service.postLogin(
             user: loginReq,
             onFinished: { [weak self] isSucces in
-                self?.loginaViewDelegate?.showLoginResult(result: isSucces)
-        })
+                self?.loginViewDelegate?.showLoginResult(result: isSucces)
+                self?.loginViewDelegate?.toggleLoader(isEnabled: false)
+            })
     }
     
     func setViewDelegate(delegate: LoginPresenterDelegate) {
-        self.loginaViewDelegate = delegate
+        self.loginViewDelegate = delegate
     }
 }

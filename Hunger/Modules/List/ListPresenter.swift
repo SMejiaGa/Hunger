@@ -7,13 +7,6 @@
 
 import Foundation
 
-struct RestaurantViewData {
-    let id: Int
-    let distance: Int
-    let isAvailable: Bool
-    let name: String
-}
-
 protocol ListPresenterDelegate: AnyObject {
     func setRestaurantList()
     func showError()
@@ -49,7 +42,7 @@ final class ListPresenter {
             restaurantsData.forEach { restaurant in
                 let data = RestaurantViewData(
                     id: restaurant.id,
-                    distance: restaurant.distance * 10,
+                    distance: restaurant.distance,
                     isAvailable: restaurant.isAvailable,
                     name: restaurant.name
                 )

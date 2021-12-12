@@ -9,36 +9,40 @@ import Foundation
 import CoreLocation
 
 protocol MapPresenterDelegate: AnyObject {
-    func setLocations()
     func showError()
+    func setLocations()
+    func toggleLoader(isEnabled: Bool)
 }
 
 final class MapPresenter {
-    private weak var mapViewDelegate: MapPresenterDelegate?
+    private let service: MapService
     private let locationManager = CLLocationManager()
     private(set) var pinsCarrier = [RestaurantLocation]()
-    private let service: MapService
+    private weak var mapViewDelegate: MapPresenterDelegate?
     
     init(service: MapService) {
         self.service = service
     }
      
     func fetchLocations() {
-        service
-            .getRestaurantsLocation(onFinished: {[weak self] locationData, receivedError in
-                
-                if receivedError {
-                    self?.mapViewDelegate?.showError()
-                    return
-                }
-                self?.pinsCarrier = locationData
-                self?.mapViewDelegate?.setLocations()
-            })
+        mapViewDelegate?.toggleLoader(isEnabled: true)
+        
+        service.getRestaurantsLocation(onFinished: { [weak self] locationData, receivedError in
+            self?.mapViewDelegate?.toggleLoader(isEnabled: false)
+
+            if receivedError {
+                self?.mapViewDelegate?.showError()
+                return
+            }
+            
+            self?.pinsCarrier = locationData
+            self?.mapViewDelegate?.setLocations()
+        })
     }
     
     func locationPermissions() {
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
