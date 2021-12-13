@@ -1,7 +1,18 @@
 # Hunger
 
+
+- [Hunger](#hunger)
 - [Arquitectura](#arquitectura)
-- [Desarrollo](#Desarrollo)
+- [Desarrollo](#desarrollo)
+
+## Hunger?
+-Hungry es una aplicacion para iOS que estoy desarrollando para aplicar mis conocimientos en el sector, Hungry es una app que permite a un usuario localizar restaurantes cerca a -su ubicacion, consultarlos y ver en que lugar se encuentran.
+
+-Se usan autenticaciones, al crear usuarios que pueden ingresar y registrarse a la aplicacion, asi como enviar un correo de recuperación para sus contraseñas.
+
+-Se usan llamados a endpoints para obtener las listas de los restaurantes y obtener la informacion de cada uno de estos.
+
+-Se usa AppleMaps con un llamado a endpoint para conseguir las ubicaciones y ubicar pines en este.
 
 ## Arquitectura
 
@@ -22,12 +33,12 @@ Todos los modulos se dividen de la siguiente manera:
 
 - Hunger
 - - **Modules**
-- - - **Responsabilidad**
-- - - - **Presenter**
-- - - - **ViewController**
-- - - - **.XIB**
+- - - **Register**
+- - - - **RegisterPresenter**
+- - - - **RegisterViewController**
+- - - - **RegisterViewController.XIB**
 - - **NetWorking**
 - - - **WebRouter**
-- - - - **/Responsability/ Service**
+- - - - **Register Service**
 - - - **Models**
-- - - - **Webservice model**
+- - - - **UserResponse**
