@@ -22,6 +22,7 @@
                 <outlet property="backButton" destination="aHY-hf-KKj" id="GDa-QH-0to"/>
                 <outlet property="emailTextField" destination="PCG-Tj-wcS" id="Rub-Vu-G4G"/>
                 <outlet property="helpText" destination="OXo-gX-MY4" id="yHL-IA-cty"/>
+                <outlet property="loader" destination="7gz-yx-35S" id="9GJ-f2-7Ke"/>
                 <outlet property="passwordTextField" destination="u8E-Do-cVR" id="m8P-rf-Ht6"/>
                 <outlet property="registerText" destination="eBe-QC-rgY" id="gag-kI-E0Q"/>
                 <outlet property="view" destination="iEY-Ia-Hac" id="7bc-Dc-Y1h"/>
@@ -156,6 +157,9 @@
                         <constraint firstAttribute="height" constant="78" id="q9G-FK-Ct2"/>
                     </constraints>
                 </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7gz-yx-35S">
+                    <rect key="frame" x="197" y="592" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="K5W-pe-djm"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -163,6 +167,7 @@
                 <constraint firstItem="K5W-pe-djm" firstAttribute="trailing" secondItem="4pe-db-LrT" secondAttribute="trailing" constant="40" id="0Xv-BD-hT5"/>
                 <constraint firstItem="gPK-dX-ZTA" firstAttribute="top" secondItem="4pe-db-LrT" secondAttribute="bottom" constant="5" id="8bc-45-AOs"/>
                 <constraint firstItem="4pe-db-LrT" firstAttribute="leading" secondItem="K5W-pe-djm" secondAttribute="leading" constant="40" id="BYf-Mh-zqi"/>
+                <constraint firstItem="7gz-yx-35S" firstAttribute="top" secondItem="OXo-gX-MY4" secondAttribute="bottom" constant="43.5" id="C7R-Si-wDQ"/>
                 <constraint firstItem="g6K-1v-4u2" firstAttribute="leading" secondItem="K5W-pe-djm" secondAttribute="leading" constant="40" id="DyJ-OV-pEy"/>
                 <constraint firstItem="KNT-CR-kZz" firstAttribute="centerX" secondItem="iEY-Ia-Hac" secondAttribute="centerX" id="K5Z-qu-ahC"/>
                 <constraint firstItem="KNT-CR-kZz" firstAttribute="centerY" secondItem="aHY-hf-KKj" secondAttribute="centerY" id="Loz-K8-Z6j"/>
@@ -178,7 +183,9 @@
                 <constraint firstItem="OXo-gX-MY4" firstAttribute="top" secondItem="g6K-1v-4u2" secondAttribute="bottom" constant="30" id="vSe-5c-eAF"/>
                 <constraint firstItem="K5W-pe-djm" firstAttribute="trailing" secondItem="gPK-dX-ZTA" secondAttribute="trailing" constant="40" id="vff-rz-tkh"/>
                 <constraint firstItem="K5W-pe-djm" firstAttribute="trailing" secondItem="OXo-gX-MY4" secondAttribute="trailing" constant="40" id="xfr-y4-myx"/>
+                <constraint firstItem="DLB-Mi-jpY" firstAttribute="top" secondItem="7gz-yx-35S" secondAttribute="bottom" constant="172" id="xo9-VF-1qM"/>
                 <constraint firstItem="DLB-Mi-jpY" firstAttribute="bottom" secondItem="K5W-pe-djm" secondAttribute="bottom" id="zhO-MS-d1Z"/>
+                <constraint firstItem="7gz-yx-35S" firstAttribute="centerX" secondItem="iEY-Ia-Hac" secondAttribute="centerX" id="zif-l6-D9R"/>
             </constraints>
             <point key="canvasLocation" x="83" y="117"/>
         </view>

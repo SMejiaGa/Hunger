@@ -10,22 +10,25 @@ import SimpleKeyboard
 
 class LoginViewController: UIViewController {
     // MARK: - UI Referencies
+    
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var backButton: UIButton!
     @IBOutlet private weak var helpText: UILabel!
     @IBOutlet private weak var registerText: UILabel!
+    @IBOutlet private weak var loader: UIActivityIndicatorView!
     
     // MARK: - Properties
+    
     private let registerHighlightText =  "QUIERO REGISTRARME"
     private let helpHighlightText =  "AYUDA"
-    private let bussines: LoginBussines
+    private let presenter: LoginPresenter
     
     // MARK: - Init required for xib initialization
     
-    init(bussines: LoginBussines) {
-        self.bussines = bussines
-        super.init(nibName: String(describing: LoginViewController.self), bundle: .main)
+    init(presenter: LoginPresenter) {
+        self.presenter = presenter
+        super.init(nibName: String(describing: Self.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -33,8 +36,10 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - ViewController life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.setViewDelegate(delegate: self)
         supportFlexibleLayout()
         setupHelpText()
         setupGestureToHelpText()
@@ -43,19 +48,20 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - IBActions
+    
     @IBAction private func loginButton() {
-        performLogin()
+        self.presenter.postLogin()
     }
     
     @objc private func helpButton(_ gesture: UITapGestureRecognizer) {
-        let recoveryBussines = RecoveryBussines(service: RecoveryService())
-        let viewController = RecoveryViewController(bussines: recoveryBussines)
+        let recoveryPresenter = RecoveryPresenter(service: RecoveryService())
+        let viewController = RecoveryViewController(presenter: recoveryPresenter)
         navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc func registerButtonAction(_ gesture: UITapGestureRecognizer) {
-        let registerBussines = RegisterBussines(service: RegisterService())
-        let viewController = RegisterViewController(bussines: registerBussines)
+        let registerPresenter = RegisterPresenter(service: RegisterService())
+        let viewController = RegisterViewController(presenter: registerPresenter)
         navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -64,31 +70,6 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Private methods
-    private func performLogin() {
-        let userEmail = emailTextField.text ?? ""
-        let userPassword = passwordTextField.text ?? ""
-        
-        if FormsUtils.isValidEmail(userEmail) && !userPassword.isEmpty {
-            bussines.postLogin(
-                email: userEmail,
-                password: userPassword,
-                onFinishedBussines: {  [weak self] succesFromService in
-                    guard let self = self else { return }
-                    
-                DispatchQueue.main.async {
-                    if succesFromService == true {
-                       let restaurantBussines = ListBussines(service: RestaurantService())
-                        let viewController = ListViewController(bussines: restaurantBussines)
-                        self.navigationController?.pushViewController(viewController, animated: true)
-                    } else {
-                        self.showMessage(alertMessage: Lang.Login.invalidLogIn)
-                    }
-                }
-            })
-        } else {
-            showMessage(alertMessage: Lang.Login.invalidEmailMessage)
-        }
-    }
     
     private func setupHelpText() {
         TextUtils.highlightTextInLabel(
@@ -122,5 +103,37 @@ class LoginViewController: UIViewController {
             textToSetup: registerText,
             onTapAction: #selector(registerButtonAction)
         )
+    }
+}
+
+// MARK: - LoginPresenterDelegate
+
+extension LoginViewController: LoginPresenterDelegate {
+    func toggleLoader(isEnabled: Bool) {
+        isEnabled ? self.loader.startAnimating() : self.loader.stopAnimating()
+    }
+    
+    func showError(message: String) {
+        showMessage(alertMessage: message)
+    }
+    
+    func getEmail() -> String {
+        emailTextField.text ?? .init()
+    }
+    
+    func getPassword() -> String {
+         passwordTextField.text ?? .init()
+    }
+    
+    func showLoginResult(result: Bool) {
+        if result {
+            DispatchQueue.main.async {
+                let restaurantPresenter = ListPresenter(service: RestaurantService())
+                let viewController = ListViewController(presenter: restaurantPresenter)
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+        } else {
+            showMessage(alertMessage: Lang.Login.userNotFound)
+        }
     }
 }

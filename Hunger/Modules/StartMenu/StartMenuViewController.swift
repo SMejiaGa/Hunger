@@ -10,12 +10,13 @@ import Dodo
 
 class StartMenuViewController: UIViewController {
     // MARK: - UI Referencies
+    
     @IBOutlet private weak var emailbutton: UIButton!
     
     // MARK: - Init required for xib initialization
     
     init() {
-        super.init(nibName: String(describing: StartMenuViewController.self), bundle: .main)
+        super.init(nibName: String(describing: Self.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -31,9 +32,10 @@ class StartMenuViewController: UIViewController {
     }
     
     // MARK: - IBActions
+    
     @IBAction private func checkButton() {
-        let listBussines = ListBussines(service: RestaurantService())
-        let viewController = ListViewController(bussines: listBussines)
+        let listPresenter = ListPresenter(service: RestaurantService())
+        let viewController = ListViewController(presenter: listPresenter)
         
         navigationController?.pushViewController(viewController, animated: true)
     }
@@ -43,8 +45,8 @@ class StartMenuViewController: UIViewController {
     }
     
     @IBAction private func emailLoginButton() {
-        let loginBussines = LoginBussines(service: LoginService())
-        let viewController = LoginViewController(bussines: loginBussines)
+        let loginPresenter = LoginPresenter(service: LoginService())
+        let viewController = LoginViewController(presenter: loginPresenter)
         
         navigationController?.pushViewController(viewController, animated: true)
         

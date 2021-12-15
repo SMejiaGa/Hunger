@@ -9,7 +9,7 @@ import UIKit
 
 class AboutUsViewController: UIViewController {
     // MARK: - Properties
-    private let bussines: AboutUsBussines
+    private let presenter: AboutUsPresenter
 
     // MARK: - IBOutlets
     @IBOutlet private weak var loader: UIActivityIndicatorView!
@@ -21,10 +21,10 @@ class AboutUsViewController: UIViewController {
     }
     // MARK: - Init required for xib initialization
     
-    init(bussines: AboutUsBussines) {
-        self.bussines = bussines
+    init(presenter: AboutUsPresenter) {
+        self.presenter = presenter
         
-        super.init(nibName: String(describing: AboutUsViewController.self), bundle: .main)
+        super.init(nibName: String(describing: Self.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -34,20 +34,26 @@ class AboutUsViewController: UIViewController {
     // MARK: - ViewController LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchAboutUs()
+        presenter.setViewDelegate(delegate: self)
+        presenter.fetchAboutUs()
+    }
+}
+
+// MARK: - AboutUsPresenterDelegate
+
+extension AboutUsViewController: AboutUsPresenterDelegate {
+    
+    func infoReceived(data: AboutUsResponse) {
+        DispatchQueue.main.async {
+            self.aboutUsTextView.attributedText = data.text.htmlToAttributedString
+        }
     }
     
-    // MARK: - Private Functions
-    private func fetchAboutUs() {
-        bussines.fetchAboutUs { aboutUsData, errorExist in
-            if errorExist {
-                self.showMessage(alertMessage: Lang.Error.commonError)
-            } else {
-                DispatchQueue.main.async {
-                    self.loader.stopAnimating()
-                    self.aboutUsTextView.attributedText = aboutUsData.text.htmlToAttributedString
-                }
-            }
-        }
+    func showError() {
+        showMessage(alertMessage: Lang.Error.commonError)
+    }
+    
+    func toggleLoader(isEnabled: Bool) {
+        isEnabled ? loader.startAnimating() : loader.stopAnimating()
     }
 }

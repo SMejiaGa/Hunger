@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		0B5FCFE9272B5CFA006BA48F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FCFE8272B5CFA006BA48F /* User.swift */; };
 		0B5FCFEB272B5D72006BA48F /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FCFEA272B5D72006BA48F /* UserResponse.swift */; };
-		0B5FCFED272B6540006BA48F /* LoginBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FCFEC272B6540006BA48F /* LoginBussines.swift */; };
-		0B5FCFEF272B654B006BA48F /* RegisterBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FCFEE272B654B006BA48F /* RegisterBussines.swift */; };
+		0B5FCFED272B6540006BA48F /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FCFEC272B6540006BA48F /* LoginPresenter.swift */; };
+		0B5FCFEF272B654B006BA48F /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5FCFEE272B654B006BA48F /* RegisterPresenter.swift */; };
 		0B79AEA927610B42009F984D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B79AEA827610B42009F984D /* LoginViewController.xib */; };
 		0B79AEAB27610BF8009F984D /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B79AEAA27610BF8009F984D /* ListViewController.xib */; };
 		0B79AEAD27610EF0009F984D /* RestaurantDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B79AEAC27610EF0009F984D /* RestaurantDetailViewController.xib */; };
@@ -22,7 +22,7 @@
 		0B8B61CC272B687A00C8BE29 /* SimpleKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 0B8B61CB272B687A00C8BE29 /* SimpleKeyboard */; };
 		0B8B61CE272D052600C8BE29 /* RecoveryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61CD272D052600C8BE29 /* RecoveryResponse.swift */; };
 		0B8B61D0272D060C00C8BE29 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61CF272D060C00C8BE29 /* Email.swift */; };
-		0B8B61D2273064D500C8BE29 /* RecoveryBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61D1273064D500C8BE29 /* RecoveryBussines.swift */; };
+		0B8B61D2273064D500C8BE29 /* RecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61D1273064D500C8BE29 /* RecoveryPresenter.swift */; };
 		0B8B61E12731D19D00C8BE29 /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61E02731D19D00C8BE29 /* RestaurantService.swift */; };
 		0B8B61E32731D1D400C8BE29 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61E22731D1D400C8BE29 /* LoginService.swift */; };
 		0B8B61E52731D1F300C8BE29 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8B61E42731D1F300C8BE29 /* RegisterService.swift */; };
@@ -34,7 +34,7 @@
 		0BA60282271E77E60041F3C6 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA60281271E77E60041F3C6 /* UIViewController+Extensions.swift */; };
 		0BA60284271E7AEE0041F3C6 /* Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA60283271E7AEE0041F3C6 /* Lang.swift */; };
 		0BA60287271E7D700041F3C6 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA60286271E7D700041F3C6 /* RoundButton.swift */; };
-		0BA60289271F79260041F3C6 /* ListBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA60288271F79260041F3C6 /* ListBussines.swift */; };
+		0BA60289271F79260041F3C6 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA60288271F79260041F3C6 /* ListPresenter.swift */; };
 		0BA6028C2720C2840041F3C6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA6028B2720C2840041F3C6 /* Alamofire */; };
 		0BA6028F27211BCE0041F3C6 /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA6028E27211BCE0041F3C6 /* RoundTextField.swift */; };
 		0BA602A427211EE20041F3C6 /* SourceSansPro-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BA6029727211EE20041F3C6 /* SourceSansPro-BlackItalic.ttf */; };
@@ -58,17 +58,18 @@
 		0BB820EE2707E96500CE720D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB820ED2707E96500CE720D /* Assets.xcassets */; };
 		0BB820F12707E96500CE720D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB820EF2707E96500CE720D /* LaunchScreen.storyboard */; };
 		0BB887762761061600FC43D3 /* StartMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BB887752761061600FC43D3 /* StartMenuViewController.xib */; };
+		0BBA699C276565DD00378552 /* RestaurantViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBA699B276565DD00378552 /* RestaurantViewData.swift */; };
 		0BBC9C7F2761406A00D9DC8C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0BBC9C7E2761406A00D9DC8C /* FirebaseAnalytics */; };
 		0BBC9C812761406A00D9DC8C /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 0BBC9C802761406A00D9DC8C /* FirebaseInAppMessaging-Beta */; };
-		0BD020902759222800C651D0 /* DetailBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0208D2759222800C651D0 /* DetailBussines.swift */; };
+		0BD020902759222800C651D0 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0208D2759222800C651D0 /* DetailPresenter.swift */; };
 		0BD020912759222800C651D0 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0208E2759222800C651D0 /* RestaurantDetailViewController.swift */; };
 		0BD68C6F274F3E0600545F5C /* LegalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD68C6E274F3E0600545F5C /* LegalResponse.swift */; };
 		0BD68C71274F3E9600545F5C /* AboutUsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD68C70274F3E9600545F5C /* AboutUsService.swift */; };
-		0BD68C73274F493700545F5C /* AboutUsBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD68C72274F493700545F5C /* AboutUsBussines.swift */; };
+		0BD68C73274F493700545F5C /* AboutUsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD68C72274F493700545F5C /* AboutUsPresenter.swift */; };
 		0BD9662F2762628F002BBBA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BD9662E2762628F002BBBA9 /* GoogleService-Info.plist */; };
 		0BDEE54A2741CE4F00C1A67C /* MapPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDEE5492741CE4F00C1A67C /* MapPointer.swift */; };
 		0BDEE54F2741D16F00C1A67C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDEE54E2741D16F00C1A67C /* MapViewController.swift */; };
-		0BDEE5512741D1E700C1A67C /* MapBussines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDEE5502741D1E700C1A67C /* MapBussines.swift */; };
+		0BDEE5512741D1E700C1A67C /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDEE5502741D1E700C1A67C /* MapPresenter.swift */; };
 		0BDEE5532741D1F500C1A67C /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDEE5522741D1F500C1A67C /* MapService.swift */; };
 		0BE591E627082C3900E9BF32 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591E527082C3900E9BF32 /* LoginViewController.swift */; };
 		0BE591E827082C5C00E9BF32 /* RecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE591E727082C5C00E9BF32 /* RecoveryViewController.swift */; };
@@ -102,8 +103,8 @@
 /* Begin PBXFileReference section */
 		0B5FCFE8272B5CFA006BA48F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0B5FCFEA272B5D72006BA48F /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
-		0B5FCFEC272B6540006BA48F /* LoginBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBussines.swift; sourceTree = "<group>"; };
-		0B5FCFEE272B654B006BA48F /* RegisterBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBussines.swift; sourceTree = "<group>"; };
+		0B5FCFEC272B6540006BA48F /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		0B5FCFEE272B654B006BA48F /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		0B79AEA827610B42009F984D /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		0B79AEAA27610BF8009F984D /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		0B79AEAC27610EF0009F984D /* RestaurantDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantDetailViewController.xib; sourceTree = "<group>"; };
@@ -114,7 +115,7 @@
 		0B79AEB627613681009F984D /* NotFoundViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotFoundViewController.xib; sourceTree = "<group>"; };
 		0B8B61CD272D052600C8BE29 /* RecoveryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryResponse.swift; sourceTree = "<group>"; };
 		0B8B61CF272D060C00C8BE29 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
-		0B8B61D1273064D500C8BE29 /* RecoveryBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryBussines.swift; sourceTree = "<group>"; };
+		0B8B61D1273064D500C8BE29 /* RecoveryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPresenter.swift; sourceTree = "<group>"; };
 		0B8B61E02731D19D00C8BE29 /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
 		0B8B61E22731D1D400C8BE29 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		0B8B61E42731D1F300C8BE29 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
@@ -126,7 +127,7 @@
 		0BA60281271E77E60041F3C6 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		0BA60283271E7AEE0041F3C6 /* Lang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lang.swift; sourceTree = "<group>"; };
 		0BA60286271E7D700041F3C6 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
-		0BA60288271F79260041F3C6 /* ListBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBussines.swift; sourceTree = "<group>"; };
+		0BA60288271F79260041F3C6 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		0BA6028E27211BCE0041F3C6 /* RoundTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
 		0BA6029727211EE20041F3C6 /* SourceSansPro-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BlackItalic.ttf"; sourceTree = "<group>"; };
 		0BA6029827211EE20041F3C6 /* SourceSansPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -151,15 +152,16 @@
 		0BB820F02707E96500CE720D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BB820F22707E96500CE720D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BB887752761061600FC43D3 /* StartMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartMenuViewController.xib; sourceTree = "<group>"; };
-		0BD0208D2759222800C651D0 /* DetailBussines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBussines.swift; sourceTree = "<group>"; };
+		0BBA699B276565DD00378552 /* RestaurantViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewData.swift; sourceTree = "<group>"; };
+		0BD0208D2759222800C651D0 /* DetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		0BD0208E2759222800C651D0 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		0BD68C6E274F3E0600545F5C /* LegalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalResponse.swift; sourceTree = "<group>"; };
 		0BD68C70274F3E9600545F5C /* AboutUsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsService.swift; sourceTree = "<group>"; };
-		0BD68C72274F493700545F5C /* AboutUsBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsBussines.swift; sourceTree = "<group>"; };
+		0BD68C72274F493700545F5C /* AboutUsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsPresenter.swift; sourceTree = "<group>"; };
 		0BD9662E2762628F002BBBA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0BDEE5492741CE4F00C1A67C /* MapPointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPointer.swift; sourceTree = "<group>"; };
 		0BDEE54E2741D16F00C1A67C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		0BDEE5502741D1E700C1A67C /* MapBussines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBussines.swift; sourceTree = "<group>"; };
+		0BDEE5502741D1E700C1A67C /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		0BDEE5522741D1F500C1A67C /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
 		0BE591E527082C3900E9BF32 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0BE591E727082C5C00E9BF32 /* RecoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryViewController.swift; sourceTree = "<group>"; };
@@ -221,7 +223,7 @@
 			children = (
 				0B79AEA827610B42009F984D /* LoginViewController.xib */,
 				0BE591E527082C3900E9BF32 /* LoginViewController.swift */,
-				0B5FCFEC272B6540006BA48F /* LoginBussines.swift */,
+				0B5FCFEC272B6540006BA48F /* LoginPresenter.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -230,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				0BE591E727082C5C00E9BF32 /* RecoveryViewController.swift */,
-				0B8B61D1273064D500C8BE29 /* RecoveryBussines.swift */,
+				0B8B61D1273064D500C8BE29 /* RecoveryPresenter.swift */,
 				0B79AEAE2761173C009F984D /* RecoveryViewController.xib */,
 			);
 			path = Recovery;
@@ -240,7 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				0BE591E92708313000E9BF32 /* RegisterViewController.swift */,
-				0B5FCFEE272B654B006BA48F /* RegisterBussines.swift */,
+				0B5FCFEE272B654B006BA48F /* RegisterPresenter.swift */,
 				0B79AEB027611F7A009F984D /* RegisterViewController.xib */,
 			);
 			path = Register;
@@ -350,7 +352,7 @@
 		0BD0208B2759222800C651D0 /* RestaurantDetail */ = {
 			isa = PBXGroup;
 			children = (
-				0BD0208D2759222800C651D0 /* DetailBussines.swift */,
+				0BD0208D2759222800C651D0 /* DetailPresenter.swift */,
 				0BD0208E2759222800C651D0 /* RestaurantDetailViewController.swift */,
 				0B79AEAC27610EF0009F984D /* RestaurantDetailViewController.xib */,
 			);
@@ -361,7 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				0BDEE54E2741D16F00C1A67C /* MapViewController.swift */,
-				0BDEE5502741D1E700C1A67C /* MapBussines.swift */,
+				0BDEE5502741D1E700C1A67C /* MapPresenter.swift */,
 				0B79AEB22761329C009F984D /* MapViewController.xib */,
 			);
 			path = Map;
@@ -429,7 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				0BE591ED27095A6F00E9BF32 /* AboutUsViewController.swift */,
-				0BD68C72274F493700545F5C /* AboutUsBussines.swift */,
+				0BD68C72274F493700545F5C /* AboutUsPresenter.swift */,
 				0B79AEB427613359009F984D /* AboutUsViewController.xib */,
 			);
 			path = Info;
@@ -441,7 +443,7 @@
 				0B8B61D32730B65100C8BE29 /* CustomCells */,
 				0BE591EB2708316900E9BF32 /* ListViewController.swift */,
 				0BE591EF27095A7D00E9BF32 /* NotFoundViewController.swift */,
-				0BA60288271F79260041F3C6 /* ListBussines.swift */,
+				0BA60288271F79260041F3C6 /* ListPresenter.swift */,
 				0B79AEAA27610BF8009F984D /* ListViewController.xib */,
 				0B79AEB627613681009F984D /* NotFoundViewController.xib */,
 			);
@@ -459,6 +461,7 @@
 				0BDEE5492741CE4F00C1A67C /* MapPointer.swift */,
 				0BB723A3274C6B9400898D36 /* RestaurantDetail.swift */,
 				0BD68C6E274F3E0600545F5C /* LegalResponse.swift */,
+				0BBA699B276565DD00378552 /* RestaurantViewData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -708,13 +711,13 @@
 				0BA60282271E77E60041F3C6 /* UIViewController+Extensions.swift in Sources */,
 				0BA602B62723C6720041F3C6 /* AppColor.swift in Sources */,
 				0BB723A4274C6B9400898D36 /* RestaurantDetail.swift in Sources */,
-				0BD68C73274F493700545F5C /* AboutUsBussines.swift in Sources */,
-				0BDEE5512741D1E700C1A67C /* MapBussines.swift in Sources */,
+				0BD68C73274F493700545F5C /* AboutUsPresenter.swift in Sources */,
+				0BDEE5512741D1E700C1A67C /* MapPresenter.swift in Sources */,
 				0BA602B4272353BA0041F3C6 /* TextUtils.swift in Sources */,
 				0BA602B82723C6970041F3C6 /* AppFont.swift in Sources */,
-				0B8B61D2273064D500C8BE29 /* RecoveryBussines.swift in Sources */,
+				0B8B61D2273064D500C8BE29 /* RecoveryPresenter.swift in Sources */,
 				0BE591EA2708313000E9BF32 /* RegisterViewController.swift in Sources */,
-				0B5FCFEF272B654B006BA48F /* RegisterBussines.swift in Sources */,
+				0B5FCFEF272B654B006BA48F /* RegisterPresenter.swift in Sources */,
 				0B5FCFEB272B5D72006BA48F /* UserResponse.swift in Sources */,
 				0BE591F027095A7D00E9BF32 /* NotFoundViewController.swift in Sources */,
 				0BA60284271E7AEE0041F3C6 /* Lang.swift in Sources */,
@@ -722,16 +725,17 @@
 				0BD68C6F274F3E0600545F5C /* LegalResponse.swift in Sources */,
 				0B8B61E52731D1F300C8BE29 /* RegisterService.swift in Sources */,
 				0BB820E52707E96400CE720D /* AppDelegate.swift in Sources */,
-				0BD020902759222800C651D0 /* DetailBussines.swift in Sources */,
+				0BD020902759222800C651D0 /* DetailPresenter.swift in Sources */,
 				0BA6028F27211BCE0041F3C6 /* RoundTextField.swift in Sources */,
-				0BA60289271F79260041F3C6 /* ListBussines.swift in Sources */,
-				0B5FCFED272B6540006BA48F /* LoginBussines.swift in Sources */,
+				0BA60289271F79260041F3C6 /* ListPresenter.swift in Sources */,
+				0B5FCFED272B6540006BA48F /* LoginPresenter.swift in Sources */,
 				0B8B61E32731D1D400C8BE29 /* LoginService.swift in Sources */,
 				0BA6027D271E723E0041F3C6 /* FormsUtils.swift in Sources */,
 				0BDEE5532741D1F500C1A67C /* MapService.swift in Sources */,
 				0B8B61E72731D1FF00C8BE29 /* RecoveryService.swift in Sources */,
 				0BE591EC2708316900E9BF32 /* ListViewController.swift in Sources */,
 				0BDEE54A2741CE4F00C1A67C /* MapPointer.swift in Sources */,
+				0BBA699C276565DD00378552 /* RestaurantViewData.swift in Sources */,
 				0B5FCFE9272B5CFA006BA48F /* User.swift in Sources */,
 				0BE591F527095BEF00E9BF32 /* EndPoints.swift in Sources */,
 				0BA602B2272120ED0041F3C6 /* HButton.swift in Sources */,

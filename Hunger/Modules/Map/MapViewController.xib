@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController" customModule="Hunger" customModuleProvider="target">
             <connections>
+                <outlet property="loader" destination="crG-aa-3Rf" id="851-O7-gHq"/>
                 <outlet property="mapView" destination="rTn-2h-mVf" id="Hop-zN-t7g"/>
                 <outlet property="view" destination="it2-Vh-hLd" id="Est-v1-4NF"/>
             </connections>
@@ -25,6 +26,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="crG-aa-3Rf">
+                    <rect key="frame" x="374" y="71.5" width="20" height="20"/>
+                </activityIndicatorView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85B-Na-BLX">
                     <rect key="frame" x="10" y="64" width="35" height="35"/>
                     <constraints>
@@ -50,6 +54,7 @@
             <viewLayoutGuide key="safeArea" id="m8i-ll-luV"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="crG-aa-3Rf" firstAttribute="centerY" secondItem="Bi7-tA-CkZ" secondAttribute="centerY" id="AUB-2U-IHU"/>
                 <constraint firstItem="85B-Na-BLX" firstAttribute="top" secondItem="m8i-ll-luV" secondAttribute="top" constant="20" id="Gbl-97-uFK"/>
                 <constraint firstAttribute="bottom" secondItem="rTn-2h-mVf" secondAttribute="bottom" id="LSw-UK-Ttd"/>
                 <constraint firstItem="rTn-2h-mVf" firstAttribute="leading" secondItem="m8i-ll-luV" secondAttribute="leading" id="M2u-WL-hGT"/>
@@ -58,6 +63,7 @@
                 <constraint firstItem="m8i-ll-luV" firstAttribute="trailing" secondItem="rTn-2h-mVf" secondAttribute="trailing" id="bu2-4m-Wnr"/>
                 <constraint firstItem="Bi7-tA-CkZ" firstAttribute="centerY" secondItem="85B-Na-BLX" secondAttribute="centerY" id="eo1-G1-Dc3"/>
                 <constraint firstItem="85B-Na-BLX" firstAttribute="leading" secondItem="m8i-ll-luV" secondAttribute="leading" constant="10" id="ikQ-Da-wzJ"/>
+                <constraint firstItem="m8i-ll-luV" firstAttribute="trailing" secondItem="crG-aa-3Rf" secondAttribute="trailing" constant="20" id="vyf-35-o3O"/>
             </constraints>
             <point key="canvasLocation" x="62" y="159"/>
         </view>

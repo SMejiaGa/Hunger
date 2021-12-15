@@ -11,18 +11,20 @@ import SimpleKeyboard
 class RecoveryViewController: UIViewController {
     
     // MARK: - IBoutlets
-    @IBOutlet private weak var recoveryTextField: UITextField!
     @IBOutlet weak var facebookLoginText: UILabel!
+    @IBOutlet private weak var recoveryTextField: UITextField!
+    @IBOutlet weak var loaderActivityIndicatorView: UIActivityIndicatorView!
     
     // MARK: - Properties
+    
     private let facebookHighlightText = "FACEBOOK"
-    private let recoveryBussines: RecoveryBussines
+    private let recoveryPresenter: RecoveryPresenter
     
     // MARK: - Init required for xib initialization
     
-    init(bussines: RecoveryBussines) {
-        self.recoveryBussines = bussines
-        super.init(nibName: String(describing: RecoveryViewController.self), bundle: .main)
+    init(presenter: RecoveryPresenter) {
+        self.recoveryPresenter = presenter
+        super.init(nibName: String(describing: Self.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -32,6 +34,7 @@ class RecoveryViewController: UIViewController {
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        recoveryPresenter.setViewDelegate(delegate: self)
         supportFlexibleLayout()
         setupFacebookText()
         setupGestureToHelpText()
@@ -51,28 +54,52 @@ class RecoveryViewController: UIViewController {
     }
     
     // MARK: - Private methods
-    private func recoverEmail(email: String) {
-        recoveryBussines.postRecovery(
-            emailFromUser: email,
-            onFinished: { [weak self] messageFromWeb in
-            self?.showMessage(alertMessage: messageFromWeb)
-        })
-    }
     
     private func checkEmail() {
-        if recoveryTextField.text != nil {
-            recoverEmail(email: recoveryTextField.text ?? "")
+        if let recoveryText = recoveryTextField.text {
+            startRecovery(email: recoveryText)
         } else {
             showMessage(alertMessage: Lang.Recovery.errorMessage)
         }
     }
     
     private func setupFacebookText() {
-        TextUtils.highlightTextInLabel(textToSetup: facebookLoginText, textToHighlight: facebookHighlightText, color: .blue, font: .boldDefaulSize)
+        TextUtils.highlightTextInLabel(
+            textToSetup: facebookLoginText,
+            textToHighlight: facebookHighlightText,
+            color: .blue,
+            font: .boldDefaulSize
+        )
     }
     
     private func setupGestureToHelpText() {
         facebookLoginText.isUserInteractionEnabled = true
-        facebookLoginText.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(facebookLoginButton)))
+        
+        facebookLoginText.addGestureRecognizer(
+            UITapGestureRecognizer(
+                target: self,
+                action: #selector(facebookLoginButton)
+            )
+        )
+    }
+}
+
+// MARK: - RecoveryPresenterDelegate
+
+extension RecoveryViewController: RecoveryPresenterDelegate {
+    func toggleLoader(isEnabled: Bool) {
+        isEnabled ? loaderActivityIndicatorView.startAnimating() : loaderActivityIndicatorView.stopAnimating()
+    }
+    
+    func getEmail() -> String {
+        recoveryTextField.text ?? .init()
+    }
+    
+    func startRecovery(email: String) {
+        recoveryPresenter.postRecovery()
+    }
+    
+    func recoveryResult(result: String) {
+        showMessage(alertMessage: result)
     }
 }

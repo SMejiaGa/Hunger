@@ -12,7 +12,7 @@ class ListViewController: UIViewController {
     // MARK: - Properties
     private let customCellView = UINib(nibName: "CustomTableViewCell",
                                        bundle: nil)
-    private let bussines: ListBussines
+    private let presenter: ListPresenter
     private let cellIdentifier = "CustomTableViewCell"
     private let cellReuseIdentifier = "myCell"
     private let descriptionToHighlightA = "buena comida"
@@ -28,10 +28,10 @@ class ListViewController: UIViewController {
     
     // MARK: - Init required for xib initialization
     
-    init(bussines: ListBussines) {
-        self.bussines = bussines
-        
-        super.init(nibName: String(describing: ListViewController.self), bundle: .main)
+    init(presenter: ListPresenter) {
+        self.presenter = presenter
+    
+        super.init(nibName: String(describing: Self.self), bundle: .main)
     }
     
     required init?(coder: NSCoder) {
@@ -41,7 +41,8 @@ class ListViewController: UIViewController {
     // MARK: - ViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
+        presenter.setViewDelegate(delegate: self)
+        presenter.fetchRestaurants()
         setupTableView()
         setupDescriptionText()
     }
@@ -58,8 +59,8 @@ class ListViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: Lang.List.showMapLabelMessage, style: .default, handler: { [weak self] _ in
             
-            let mapBussines = MapBussines(service: MapService())
-            let mapViewController = MapViewController(bussines: mapBussines)
+            let mapPresenter = MapPresenter(service: MapService())
+            let mapViewController = MapViewController(presenter: mapPresenter)
             
             guard let self = self else { return }
             self.navigationController?.pushViewController(mapViewController, animated: true)
@@ -67,8 +68,8 @@ class ListViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: Lang.List.aboutUsMessage, style: .default, handler: { [weak self] _ in
             
-            let aboutUsBussines = AboutUsBussines(service: AboutUsService())
-            let aboutUsViewController = AboutUsViewController(bussines: aboutUsBussines)
+            let aboutUsPresenter = AboutUsPresenter(service: AboutUsService())
+            let aboutUsViewController = AboutUsViewController(presenter: aboutUsPresenter)
             
             guard let self = self else { return }
             self.navigationController?.pushViewController(aboutUsViewController, animated: true)
@@ -79,29 +80,13 @@ class ListViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }))
         
-        alert.addAction(UIAlertAction(title: Lang.List.cancelMessage, style: .cancel, handler: { _ in
-            }))
+        alert.addAction(UIAlertAction(title: Lang.List.cancelMessage, style: .cancel, handler: nil))
+        
         self.present(alert, animated: true, completion: {
         })
     }
     
-    // MARK: - Private methods
-    private func fetchData() {
-        let notFoundViewController = NotFoundViewController()
-        bussines.fetchRestaurants(onFinished: { [weak self] errorExist in
-            guard let self = self else { return }
-            
-            if errorExist {
-                self.navigationController?.pushViewController(notFoundViewController, animated: true)
-            } else {
-                DispatchQueue.main.async {
-                    self.restaurantTable.reloadData()
-                    self.loader.stopAnimating()
-                }
-            }
-        })
-    }
-    
+    // MARK: - Private methods 
     private func setupTableView() {
         restaurantTable.separatorStyle = .none
         restaurantTable.delegate = self
@@ -119,18 +104,40 @@ class ListViewController: UIViewController {
     }
 }
 
+// MARK: - ListPresenterDelegate
+
+extension ListViewController: ListPresenterDelegate {
+    func toggleLoader(isLoading: Bool) {
+        isLoading ? loader.startAnimating() : loader.stopAnimating()
+    }
+    
+    func showError() {
+        let notFoundViewController = NotFoundViewController()
+        navigationController?.pushViewController(
+            notFoundViewController,
+            animated: true
+        )
+    }
+    
+    func setRestaurantList() {
+        DispatchQueue.main.async {
+            self.restaurantTable.reloadData()
+        }
+    }
+}
+
 // MARK: - UITableViewDataSource & UITableViewDelegate
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bussines.restaurantCarrier.count
+        return presenter.restaurantCarrier.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? CustomTableViewCell {
             cell.configCell(
-                distance: bussines.restaurantCarrier[indexPath.row].distance,
-                restaurantName: bussines.restaurantCarrier[indexPath.row].name,
-                isAvailable: bussines.restaurantCarrier[indexPath.row].isAvailable
+                distance: presenter.restaurantCarrier[indexPath.row].distance,
+                restaurantName: presenter.restaurantCarrier[indexPath.row].name,
+                isAvailable: presenter.restaurantCarrier[indexPath.row].isAvailable
             )
             return cell
         }
@@ -138,17 +145,17 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if !bussines.restaurantCarrier[indexPath.row].isAvailable {
-            bussines.selectedRestaurantID = bussines.restaurantCarrier[indexPath.row].id
+        if !presenter.restaurantCarrier[indexPath.row].isAvailable {
+            presenter.selectedRestaurantID = presenter.restaurantCarrier[indexPath.row].id
             
-            guard let selectedID = bussines.selectedRestaurantID else {
+            guard let selectedID = presenter.selectedRestaurantID else {
                 print(Lang.Error.commonError)
                 return
             }
             
             let service = RestaurantService()
-            let bussines = DetailBussines(restaurantId: selectedID, service: service)
-            let viewController = RestaurantDetailViewController(bussines: bussines)
+            let presenter = DetailPresenter(restaurantId: selectedID, service: service)
+            let viewController = RestaurantDetailViewController(presenter: presenter)
             
             navigationController?.pushViewController(viewController, animated: true)
         }
