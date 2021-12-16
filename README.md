@@ -42,3 +42,13 @@ Todos los modulos se dividen de la siguiente manera:
 - - - - **Register Service**
 - - - **Models**
 - - - - **UserResponse**
+
+## ScreenShots
+ <img width="374" alt="Screen Shot 2021-12-15 at 10 37 36 PM" src="https://user-images.githubusercontent.com/67339434/146303867-ab0e65b4-f546-42a6-b62c-c8f5e2478544.png">
+ <img width="371" alt="Screen Shot 2021-12-15 at 10 37 59 PM" src="https://user-images.githubusercontent.com/67339434/146303932-0fba751e-d090-4612-85fe-2ecccbbf725e.png">
+ <img width="369" alt="Screen Shot 2021-12-15 at 10 38 17 PM" src="https://user-images.githubusercontent.com/67339434/146303966-812764ed-d405-404a-b976-c43e27ca7782.png">
+ <img width="368" alt="Screen Shot 2021-12-15 at 10 39 50 PM" src="https://user-images.githubusercontent.com/67339434/146304130-8669ddf2-0adb-443c-92d4-d66e77a947a5.png">
+ <img width="359" alt="Screen Shot 2021-12-15 at 10 40 20 PM" src="https://user-images.githubusercontent.com/67339434/146304184-d1bf4906-4a4b-44a6-91f0-dd6ca67785cf.png">
+<img width="370" alt="Screen Shot 2021-12-15 at 10 42 04 PM" src="https://user-images.githubusercontent.com/67339434/146304342-47252af8-435a-4951-992e-ab71be11729c.png">
+
+<img width="348" alt="Screen Shot 2021-12-15 at 10 43 56 PM" src="https://user-images.githubusercontent.com/67339434/146304507-260a404a-36af-409b-815c-478455379d05.png">
